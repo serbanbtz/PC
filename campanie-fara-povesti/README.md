@@ -21,6 +21,7 @@ Campania de toamnă pentru Facebook și TikTok, construită de la zero pe baza a
 5. [`05-calendar.md`](05-calendar.md): fiecare zi, 4 octombrie – 2 noiembrie
 6. [`06-lansare.md`](06-lansare.md): pașii exacți până la publicare, verificarea dinainte și rutina de luni
 7. [`vizuale/`](vizuale): 31 de imagini gata de încărcat
+8. [`index.html`](index.html): pagina campaniei (publicată ca artifact), care citește `campanie.json` și `previzualizari/`
 
 ## Vizualele
 

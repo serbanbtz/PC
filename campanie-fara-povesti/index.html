@@ -1,0 +1,523 @@
+<title>Fără povești · West Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* Layout: o coloană de lucru (max 1120 px) cu bara de secțiuni lipită sus; aceeași familie vizuală ca paginile West Auto din septembrie. */
+  :root {
+    --ground: #F4F3F0;
+    --card: #FFFFFF;
+    --ink: #17171A;
+    --muted: #5F616A;
+    --line: #E2E0DA;
+    --gold: #9C7427;
+    --gold-soft: #F3E8D0;
+    --chip-ink: #3B2A08;
+    --fb: #2F55B8; --fb-soft: #E3EAFA;
+    --tt: #0E7C86; --tt-soft: #DDF1F2;
+    --ads: #8A3B12; --ads-soft: #F8E6DA;
+    --ok: #2E7D4F; --ok-soft: #E1F1E7;
+    --warn: #9A4A12; --warn-soft: #FBEBDD;
+    --display: Montserrat, "Arial Black", "Segoe UI", sans-serif;
+    --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #121214; --card: #1B1B1F; --ink: #ECECEF; --muted: #A0A2AB; --line: #2C2C32;
+      --gold: #D8B36B; --gold-soft: #2F2717; --chip-ink: #F2DEB0;
+      --fb: #8FA9F0; --fb-soft: #1C2540; --tt: #5CC7CF; --tt-soft: #123033; --ads: #F0A06E; --ads-soft: #33200F;
+      --ok: #6FCB93; --ok-soft: #14301F; --warn: #F0A56A; --warn-soft: #2E1F14;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #121214; --card: #1B1B1F; --ink: #ECECEF; --muted: #A0A2AB; --line: #2C2C32;
+    --gold: #D8B36B; --gold-soft: #2F2717; --chip-ink: #F2DEB0;
+    --fb: #8FA9F0; --fb-soft: #1C2540; --tt: #5CC7CF; --tt-soft: #123033; --ads: #F0A06E; --ads-soft: #33200F;
+    --ok: #6FCB93; --ok-soft: #14301F; --warn: #F0A56A; --warn-soft: #2E1F14;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--ground); color: var(--ink); font: 16px/1.55 var(--body); padding-inline: 16px; padding-block: 0 72px; }
+  .wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 56px; }
+  h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; }
+  h1 { font-weight: 900; font-size: clamp(34px, 6vw, 60px); line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; }
+  h2 { font-weight: 800; font-size: clamp(22px, 3vw, 30px); line-height: 1.15; }
+  h3 { font-weight: 700; font-size: 17px; line-height: 1.3; }
+  h4 { font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  p { margin: 0; max-width: 70ch; }
+  a { color: var(--gold); }
+  .gold { color: var(--gold); }
+  .muted { color: var(--muted); }
+  .brand { font: 700 12px/1 var(--display); letter-spacing: .22em; color: var(--gold); text-transform: uppercase; }
+  section { display: grid; gap: 20px; scroll-margin-top: 72px; }
+  .sub { color: var(--muted); max-width: 70ch; }
+
+  /* bara de secțiuni */
+  nav.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--ground); border-bottom: 1px solid var(--line); margin-inline: -16px; padding: 10px 16px; display: flex; gap: 6px; overflow-x: auto; }
+  nav.bar a { flex: none; font: 700 13px/1 var(--display); color: var(--ink); text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; }
+  nav.bar a:hover { border-color: var(--gold); }
+  a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* deschidere */
+  header.hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: center; padding-top: 36px; }
+  header.hero .txt { display: grid; gap: 16px; min-width: 0; }
+  .lede { font-size: 19px; color: var(--muted); }
+  .hero img { width: 100%; max-width: 100%; border-radius: 14px; box-shadow: 0 24px 48px rgba(0, 0, 0, .18); display: block; }
+  .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+  .facts > div { padding: 14px 16px; display: grid; gap: 2px; align-content: start; min-width: 0; }
+  .facts > div + div { border-left: 1px solid var(--line); }
+  .facts b { font: 800 20px/1.2 var(--display); font-variant-numeric: tabular-nums; }
+  .facts span { font-size: 14px; color: var(--muted); }
+
+  /* faze */
+  .phases { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+  .phase { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; }
+  .phase b { font: 800 15px/1.2 var(--display); }
+  .phase span { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .phase.now { border-color: var(--gold); background: var(--gold-soft); }
+  .phase.now span { color: var(--chip-ink); }
+
+  /* casete */
+  .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .box ul, .box ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .box.warn { background: var(--warn-soft); border-color: transparent; }
+  .box.warn h3 { color: var(--warn); }
+  .idea { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px; display: grid; gap: 14px; }
+  .idea .big { font: 900 clamp(28px, 4.4vw, 46px)/1.05 var(--display); text-transform: uppercase; }
+  .idea .big s { color: var(--muted); text-decoration-color: #e0533f; text-decoration-thickness: 4px; font-weight: 700; font-size: .5em; display: block; text-transform: none; }
+
+  /* tabele */
+  .tablewrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  th { font: 700 12px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-top: 0; background: var(--ground); white-space: nowrap; }
+  td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.rec td { background: var(--gold-soft); color: var(--chip-ink); }
+
+  /* galerie */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+  .gallery figure { margin: 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
+  .gallery img { width: 100%; max-width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; background: var(--line); }
+  .gallery figcaption { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+  .gallery figcaption b { color: var(--ink); font-weight: 600; display: block; }
+  .gallery.wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+  /* texte de copiat */
+  .copies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .copy { background: var(--card); border: 1px solid var(--line); border-radius: 14px; display: grid; grid-template-rows: auto 1fr auto; min-width: 0; }
+  .copy header { padding: 14px 18px 0; display: grid; gap: 4px; }
+  .copy header small { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+  .copy pre { margin: 0; padding: 12px 18px; white-space: pre-wrap; overflow-wrap: anywhere; font: 15px/1.5 var(--body); }
+  .copy button, button.btn { justify-self: start; margin: 0 18px 16px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font: 600 14px/1 var(--body); cursor: pointer; }
+  .copy button:hover, button.btn:hover { border-color: var(--gold); }
+  .tag { display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 10px; font: 700 12px/1.4 var(--display); letter-spacing: .03em; width: fit-content; }
+  .tag.fb { background: var(--fb-soft); color: var(--fb); }
+  .tag.tt { background: var(--tt-soft); color: var(--tt); }
+  .tag.ads { background: var(--ads-soft); color: var(--ads); }
+  .tag.ready { background: var(--gold-soft); color: var(--chip-ink); }
+  .picker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  select { font: 600 15px/1.2 var(--body); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; max-width: 100%; }
+  .dosar-view { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .dosar-view img { width: 100%; max-width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
+
+  /* scripturi */
+  details.script { background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+  details.script summary { cursor: pointer; list-style: none; padding: 16px 20px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  details.script summary::-webkit-details-marker { display: none; }
+  details.script summary::after { content: "+"; font: 800 20px/1 var(--display); color: var(--gold); }
+  details.script[open] summary::after { content: "−"; }
+  details.script summary span { color: var(--muted); font-size: 14px; }
+  .script-body { padding: 0 20px 18px; display: grid; gap: 12px; }
+  .script-body table { min-width: 560px; }
+
+  /* calendar */
+  .wk { display: grid; gap: 10px; }
+  .wk-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .wk-head span { color: var(--muted); }
+  .days { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .row { display: grid; grid-template-columns: 120px repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .row:first-child { border-top: 0; }
+  .row > div { padding: 12px 14px; display: grid; gap: 4px; align-content: start; font-size: 15px; min-width: 0; }
+  .row.head { background: var(--ground); }
+  .row.head > div { font: 700 12px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-block: 10px; }
+  .row .date { display: flex; gap: 10px; align-items: flex-start; }
+  .date b { font: 800 15px/1.2 var(--display); display: block; font-variant-numeric: tabular-nums; }
+  .date small { color: var(--muted); font-size: 12px; }
+  .row.today { background: var(--gold-soft); }
+  .row.today .date small { color: var(--chip-ink); font-weight: 700; }
+  .row.isdone { opacity: .55; }
+  .row.isdone .date b { text-decoration: line-through; }
+  .cell-label { display: none; }
+  .dash { color: var(--muted); }
+  input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--ok); margin-top: 2px; flex: none; }
+
+  /* pași */
+  .steps { display: grid; gap: 14px; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; display: grid; gap: 10px; }
+  .step-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .step-head span { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .step ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .step li label { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; cursor: pointer; }
+  .step li input:checked + span { text-decoration: line-through; color: var(--muted); }
+  .struct { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .struct .box h3 small { font: 600 14px var(--body); color: var(--muted); }
+  footer { color: var(--muted); font-size: 14px; display: grid; gap: 6px; }
+  .err { color: var(--warn); }
+
+  @media (max-width: 900px) {
+    header.hero { grid-template-columns: minmax(0, 1fr); }
+    header.hero .hero-img { max-width: 260px; }
+    .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .facts > div:nth-child(3) { border-left: 0; }
+    .facts > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .cols, .copies, .struct { grid-template-columns: minmax(0, 1fr); }
+    .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 720px) {
+    .two { grid-template-columns: minmax(0, 1fr); }
+    .row { grid-template-columns: minmax(0, 1fr); }
+    .row.head { display: none; }
+    .row > div { padding-block: 6px; }
+    .row > div:first-child { padding-top: 12px; }
+    .row > div:last-child { padding-bottom: 14px; }
+    .cell-label { display: inline-flex; }
+    .row > div.empty { display: none; }
+    .dosar-view { grid-template-columns: minmax(0, 1fr); }
+    .dosar-view img { max-width: 300px; }
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<nav class="bar" aria-label="Secțiuni">
+  <a href="#audit">Audit</a><a href="#strategie">Strategie</a><a href="#vizuale">Vizuale</a><a href="#texte">Texte</a><a href="#video">Video</a><a href="#calendar">Calendar</a><a href="#lansare">Lansare</a>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="txt">
+      <div class="brand">West Auto Botoșani · campania de toamnă</div>
+      <h1>Fără povești.<br><span class="gold">Doar acte.</span></h1>
+      <p class="lede">Oamenii nu se tem de prețul unei mașini second-hand, se tem de țeapă. Campania face din dosarul fiecărei mașini motivul pentru care se cumpără de la West Auto. Oricine îl poate cere scriind DOSAR pe WhatsApp.</p>
+      <div class="facts">
+        <div><b>7 oct – 1 nov</b><span>pregătirea începe pe 4 oct</span></div>
+        <div><b>≈ 1.380 lei</b><span>bugetul recomandat</span></div>
+        <div><b>≤ 20 lei</b><span>cost țintă pe conversație</span></div>
+        <div><b>≥ 70</b><span>conversații DOSAR</span></div>
+      </div>
+    </div>
+    <img class="hero-img" src="previzualizari/01-manifest-feed.jpg" alt="Postarea de lansare: Fără povești. Doar acte., cu lista din dosarul mașinii și numărul de WhatsApp" width="540" height="675">
+  </header>
+
+  <section aria-labelledby="h-faze">
+    <h2 id="h-faze">Fazele</h2>
+    <div class="phases" id="phases">
+      <div class="phase" data-from="2026-10-01" data-to="2026-10-06"><b>Pregătire</b><span>4–6 oct · aprobări, conturi, dosare</span></div>
+      <div class="phase" data-from="2026-10-07" data-to="2026-10-11"><b>Lansare</b><span>7–11 oct · manifest, reclame, filmarea #1</span></div>
+      <div class="phase" data-from="2026-10-12" data-to="2026-10-25"><b>Amplificare</b><span>12–25 oct · clipul principal, seria dosarelor</span></div>
+      <div class="phase" data-from="2026-10-26" data-to="2026-11-01"><b>Conversie</b><span>26 oct – 1 nov · retargeting, iarna</span></div>
+      <div class="phase" data-from="2026-11-02" data-to="2026-11-08"><b>Raport</b><span>2 nov · rezultate, planul pe noiembrie</span></div>
+    </div>
+  </section>
+
+  <section id="audit" aria-labelledby="h-audit">
+    <h2 id="h-audit">Auditul: de unde pornim</h2>
+    <p class="sub">Am pornit de la paginile din septembrie (postările programate, planul pe octombrie, schema de filmare) și de la celelalte thread-uri. Din această sesiune nu văd Business Suite, TikTok sau WhatsApp, deci cifrele reale le confirmi luni.</p>
+    <div class="cols">
+      <div class="box">
+        <h3>Ce s-a făcut</h3>
+        <ul>
+          <li>19 postări Facebook programate, 29 sept – 5 oct, câte 3 pe zi</li>
+          <li>Posterul „Schimbă mașina înainte de iarnă” cu codul OCTOMBRIE</li>
+          <li>Planul pe octombrie: TikTok zilnic la 18:00, Facebook la 19:00</li>
+          <li>Schema de filmare: 12 cadre pe mașină, 45 de minute pe săptămână</li>
+          <li>9 clipuri montate, în variante Facebook și TikTok</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Ce e programat</h3>
+        <ul>
+          <li>Facebook: Kangoo, Volvo V40, Sportage manual (4 oct), Toledo (5 oct)</li>
+          <li>TikTok: C-HR, Audi A6 Avant, Peugeot 207 (4–6 oct)</li>
+          <li>Reclama WhatsApp de 30 lei/zi: <b>schiță, nepornită</b></li>
+          <li>Din 7 octombrie: <b>nimic produs</b>, doar planul</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Ce lipsește</h3>
+        <ul>
+          <li>Un motiv să alegi West Auto și nu alt parc: totul e „mașina X, prețul Y”</li>
+          <li>Reclame care rulează</li>
+          <li>Măsurarea până la test drive și vânzare</li>
+          <li>Clipuri care să nu depindă de o singură persoană</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box warn">
+      <h3>De verificat cu un jurist (ați avut deja un dosar la ANPC)</h3>
+      <ul>
+        <li><b>Prețurile tăiate:</b> prețul vechi trebuie să fie cel mai mic preț practicat în ultimele 30 de zile.</li>
+        <li><b>„12 luni garanție” ca argument principal:</b> la mașinile second-hand vândute persoanelor fizice, 12 luni e minimul legal (OUG 140/2021). Prezentat ca avantaj special, poate fi practică incorectă (Legea 363/2007). În campanie apare doar ca informație.</li>
+        <li><b>Prețurile „+ TVA”</b> în reclame văzute de persoane fizice: prețul final cu TVA trebuie să fie cel mai vizibil.</li>
+        <li><b>„FSD inclus” la Model Y:</b> FSD nu are omologare UE; formularea spune că funcțiile sunt limitate.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="strategie" aria-labelledby="h-strat">
+    <h2 id="h-strat">Strategia</h2>
+    <div class="idea">
+      <h4>Ideea</h4>
+      <p class="big"><s>„A fost a unui neamț bătrân.” „Km reali, pe cuvânt.”</s>Fără povești. <span class="gold">Doar acte.</span></p>
+      <p>Luăm poveștile pe care le-a auzit oricine a cumpărat o mașină second-hand și le tăiem. În locul lor punem dosarul mașinii: istoricul de service și facturile, raportul pe seria de șasiu, kilometrii verificabili, test drive și garanția în scris. Fiecare material se încheie cu același îndemn: <b>Scrie DOSAR pe WhatsApp.</b></p>
+    </div>
+    <div class="cols">
+      <div class="box"><h3>Pentru client</h3><p>Vede actele înainte să facă drumul până în Botoșani.</p></div>
+      <div class="box"><h3>Pentru voi</h3><p>Cine cere dosarul unei mașini anume e mult mai aproape de cumpărare decât cine întreabă „mai e?”.</p></div>
+      <div class="box"><h3>Pentru măsurare</h3><p>Conversațiile DOSAR se numără separat de cele OCTOMBRIE de pe posterul vechi.</p></div>
+    </div>
+
+    <h3>Pe cine vrem să convingem</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Segment</th><th>Buget</th><th>Ce vrea</th><th>Unde îl prindem</th></tr></thead>
+      <tbody>
+        <tr><td>Familii și navetiști cu SUV în minte, 30–55 de ani, Botoșani, Suceava, Iași</td><td class="n">6–12 mii €</td><td>4x4, automată, Webasto, istoric curat</td><td>Setul B, TikTok</td></tr>
+        <tr><td>Prima mașină sau mașina de navetă, 24–40 de ani, Botoșani și împrejurimi</td><td class="n">2,5–8 mii €</td><td>Consum mic, fără surprize, rate</td><td>Setul A, TikTok</td></tr>
+        <tr><td>Firme și PFA (secundar)</td><td class="n">20–32 mii €</td><td>Hibrid sau electric, TVA deductibil</td><td>Doar organic, în acest val</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Canalele</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Canal</th><th>Rol</th><th>Cum</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag ads">Reclame Meta</span></td><td>Aduc conversațiile DOSAR</td><td>„Trimite mesaj pe WhatsApp”, 3 seturi: local, regional SUV, retargeting</td></tr>
+        <tr><td><span class="tag fb">Facebook</span></td><td>Încredere și stoc</td><td>O postare pe zi la 19:00</td></tr>
+        <tr><td><span class="tag tt">TikTok</span></td><td>Atenție și comentarii</td><td>Un clip pe zi la 18:00, seria „Fără povești” + formatele din octombrie</td></tr>
+        <tr><td><span class="tag tt">TikTok Promote</span></td><td>Amplifică ce merge</td><td>Clipul cel mai bun al săptămânii, 90 de lei. Ads Manager cere minimum 20 $ pe zi pe grup, prea mult acum.</td></tr>
+        <tr><td><span class="tag ready">WhatsApp</span></td><td>Duce la test drive</td><td>Răspunsuri rapide, etichete, dosarele pregătite în telefon</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="two">
+      <div>
+        <h3 style="margin-bottom:10px">Bugetul</h3>
+        <div class="tablewrap"><table id="t-buget"><thead><tr><th>Variantă</th><th>Meta</th><th>TikTok</th><th>Total</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:10px">Ținte (de recalibrat după săptămâna 1)</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Indicator</th><th>Țintă</th><th>Alarmă</th></tr></thead>
+          <tbody>
+            <tr><td>Cost pe conversație (reclame)</td><td class="n">≤ 20 lei</td><td class="n">&gt; 25 lei după 7 zile</td></tr>
+            <tr><td>Conversații DOSAR</td><td class="n">≥ 70</td><td class="n">&lt; 10 pe săptămână</td></tr>
+            <tr><td>Test drive-uri</td><td class="n">≥ 15</td><td class="n">&lt; 2 pe săptămână</td></tr>
+            <tr><td>Vânzări din campanie</td><td class="n">≥ 4</td><td class="n">0 după 3 săptămâni</td></tr>
+            <tr><td>TikTok peste 10.000 de vizualizări</td><td class="n">1 clip/săpt.</td><td class="n">0 în 2 săptămâni</td></tr>
+            <tr><td>Răspuns pe WhatsApp, în program</td><td class="n">&lt; 15 min</td><td class="n">&gt; 1 oră</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+    <p class="sub">Ce nu spunem în reclame: rate și avans 0 (pot muta reclama în categoria specială pentru servicii financiare, cu public restrâns), prețuri tăiate fără istoric de 30 de zile, „FSD inclus”. Ratele rămân în postările organice și pe WhatsApp.</p>
+  </section>
+
+  <section id="vizuale" aria-labelledby="h-viz">
+    <h2 id="h-viz">Vizualele</h2>
+    <p class="sub">31 de imagini în identitatea West Auto. Aici vezi previzualizări; fișierele la rezoluție completă sunt în folderul <code>campanie-fara-povesti/vizuale</code> din repo și în arhiva trimisă în conversație.</p>
+    <h3>Lansare și carusel</h3>
+    <div class="gallery" id="g-main"></div>
+    <h3>Dosarul fiecărei mașini</h3>
+    <p class="sub">Pentru setul B de reclame, pentru „Dosarul săptămânii” și ca primă imagine trimisă pe WhatsApp când cineva scrie DOSAR.</p>
+    <div class="gallery" id="g-dosare"></div>
+    <h3>Video și pagină</h3>
+    <div class="gallery wide" id="g-extra"></div>
+  </section>
+
+  <section id="texte" aria-labelledby="h-texte">
+    <h2 id="h-texte">Texte gata de copiat</h2>
+    <h3>Reclame Meta</h3>
+    <div class="copies" id="c-reclame"></div>
+    <div class="box"><h3>Titluri</h3><ul id="c-titluri"></ul><p class="muted" id="c-desc"></p></div>
+    <h3>Postări Facebook</h3>
+    <div class="copies" id="c-postari"></div>
+    <h3>Dosarul săptămânii</h3>
+    <div class="picker"><label for="sel-dosar">Mașina:</label><select id="sel-dosar"></select></div>
+    <div class="dosar-view"><img id="dosar-img" alt="" src="previzualizari/05-dosar-sportA.jpg"><div class="copy" id="dosar-copy"></div></div>
+    <h3>TikTok</h3>
+    <div class="copies" id="c-tiktok"></div>
+    <h3>WhatsApp Business</h3>
+    <div class="copies" id="c-wa"></div>
+    <h3>Răspunsuri la comentarii</h3>
+    <div class="tablewrap"><table id="t-com"><thead><tr><th>Când cineva scrie</th><th>Răspunsul</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="video" aria-labelledby="h-video">
+    <h2 id="h-video">Scripturi video</h2>
+    <p class="sub">Verticale, 9:16, după regulile din schema de filmare. Fiecare clip al campaniei are eticheta „Fără povești” în primele 3 secunde și cadrul final cu WhatsApp-ul.</p>
+    <div class="steps" id="v-list"></div>
+  </section>
+
+  <section id="calendar" aria-labelledby="h-cal">
+    <h2 id="h-cal">Calendarul zi cu zi</h2>
+    <p class="sub">TikTok la 18:00, Facebook la 19:00. P1–P6 și D trimit la textele de mai sus. Bifele se păstrează doar în browserul tău.</p>
+    <div id="cal" style="display:grid;gap:28px"></div>
+  </section>
+
+  <section id="lansare" aria-labelledby="h-lans">
+    <h2 id="h-lans">Lansare pas cu pas</h2>
+    <p class="sub">Din această sesiune nu pot apăsa „Publică” în conturile voastre. Mai jos e fiecare pas, în ordine. Bifele se păstrează doar în browserul tău.</p>
+    <h3>Structura reclamelor Meta</h3>
+    <div class="struct" id="s-struct"></div>
+    <h3>Pașii</h3>
+    <div class="steps" id="s-steps"></div>
+    <div class="copy" id="s-prompt"></div>
+  </section>
+
+  <footer>
+    <span>West Auto Botoșani · Bd. Mihai Eminescu 2A · WhatsApp 0771 311 941</span>
+    <span>Prețurile și datele mașinilor sunt din postările programate pe 29 septembrie. Verifică stocul înainte de fiecare publicare.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, attrs, kids) => {
+    const n = document.createElement(tag);
+    if (attrs) for (const k in attrs) { if (k === 'text') n.textContent = attrs[k]; else if (k === 'cls') n.className = attrs[k]; else n.setAttribute(k, attrs[k]); }
+    (kids || []).forEach((c) => c && n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
+    return n;
+  };
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k) || '{}'); } catch (e) { return {}; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+  };
+  const TODAY = new Date().toISOString().slice(0, 10);
+
+  document.querySelectorAll('.phase').forEach((p) => {
+    if (TODAY >= p.dataset.from && TODAY <= p.dataset.to) p.classList.add('now');
+  });
+  if (TODAY < '2026-10-01') document.querySelector('.phase').classList.add('now');
+
+  function copyCard(title, meta, text, tagCls, tagText) {
+    const pre = el('pre', { text });
+    const btn = el('button', { type: 'button', text: 'Copiază textul' });
+    btn.addEventListener('click', () => {
+      const ok = () => { btn.textContent = 'Copiat'; setTimeout(() => (btn.textContent = 'Copiază textul'), 1600); };
+      const fallback = () => { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Textul e selectat: Ctrl+C'; };
+      try { navigator.clipboard.writeText(text).then(ok, fallback); } catch (e) { fallback(); }
+    });
+    const head = el('header', null, [tagText ? el('span', { cls: 'tag ' + tagCls, text: tagText }) : null, el('h3', { text: title }), meta ? el('small', { text: meta }) : null]);
+    return el('article', { cls: 'copy' }, [head, pre, btn]);
+  }
+  function fillCopy(node, card) { node.replaceWith(card); return card; }
+
+  const MAIN = [['01-manifest-feed', 'Manifest · feed', '1080×1350'], ['02-manifest-story', 'Manifest · story', '1080×1920'], ['04-stoc-feed', 'Stocul cu dosar', '1080×1350'],
+    ['03-carusel-1', 'Carusel 1/6', 'copertă'], ['03-carusel-2', 'Carusel 2/6', 'istoric'], ['03-carusel-3', 'Carusel 3/6', 'raport'], ['03-carusel-4', 'Carusel 4/6', 'kilometri'], ['03-carusel-5', 'Carusel 5/6', 'garanție'], ['03-carusel-6', 'Carusel 6/6', 'îndemn']];
+  const EXTRA = [['06-video-final', 'Cadrul final al clipurilor', '1080×1920'], ['07-video-eticheta', 'Eticheta „Fără povești”', 'PNG transparent, peste video'], ['08-coperta-facebook', 'Coperta paginii', '1640×624']];
+  const fig = (file, name, meta) => el('figure', null, [el('img', { src: 'previzualizari/' + file + '.jpg', alt: name, loading: 'lazy' }), el('figcaption', null, [el('b', { text: name }), file + '.png · ' + meta])]);
+  MAIN.forEach((m) => $('#g-main').appendChild(fig(...m)));
+  EXTRA.forEach((m) => $('#g-extra').appendChild(fig(...m)));
+
+  fetch('campanie.json').then((r) => r.json()).then((D) => {
+    // galerie dosare + selector
+    const dos = Object.entries(D.postari).filter(([k]) => k.startsWith('D-'));
+    dos.forEach(([k, p]) => $('#g-dosare').appendChild(fig('05-dosar-' + k.slice(2), p.nume.replace('Dosarul săptămânii: ', ''), '1080×1350')));
+    const sel = $('#sel-dosar');
+    dos.forEach(([k, p]) => sel.appendChild(el('option', { value: k, text: p.nume.replace('Dosarul săptămânii: ', '') })));
+    let dc = $('#dosar-copy');
+    const showDosar = () => {
+      const p = D.postari[sel.value];
+      $('#dosar-img').src = 'previzualizari/05-dosar-' + sel.value.slice(2) + '.jpg';
+      $('#dosar-img').alt = 'Dosarul pentru ' + p.nume;
+      dc = fillCopy(dc, copyCard(p.nume, 'Vizual: ' + p.vizual, p.text, 'fb', 'Facebook · 19:00'));
+    };
+    sel.addEventListener('change', showDosar); showDosar();
+
+    // reclame
+    D.reclame.texte_principale.forEach((t) => $('#c-reclame').appendChild(copyCard(t.id + ' · ' + t.nume, 'Text principal', t.text, 'ads', 'Reclamă')));
+    D.reclame.dosare.forEach((t) => $('#c-reclame').appendChild(copyCard('Setul B · ' + t.nume, t.vizual + ' · mesaj precompletat: „' + t.mesaj_precompletat + '”', t.text, 'ads', 'Reclamă')));
+    D.reclame.titluri.forEach((t) => $('#c-titluri').appendChild(el('li', { text: t })));
+    $('#c-desc').textContent = 'Descriere: ' + D.reclame.descriere + ' · Mesaj precompletat (setul A): „' + D.reclame.mesaj_precompletat_general + '”';
+
+    Object.entries(D.postari).filter(([k]) => !k.startsWith('D-')).forEach(([k, p]) => $('#c-postari').appendChild(copyCard(k + ' · ' + p.nume, 'Vizual: ' + p.vizual, p.text, 'fb', 'Facebook')));
+
+    $('#c-tiktok').appendChild(copyCard('Bio', 'Profil → Editează profilul', D.tiktok.bio, 'tt', 'TikTok'));
+    $('#c-tiktok').appendChild(copyCard('Hashtaguri', 'La finalul fiecărei descrieri', D.tiktok.hashtaguri, 'tt', 'TikTok'));
+    Object.entries(D.tiktok.descrieri).forEach(([k, v]) => $('#c-tiktok').appendChild(copyCard('Descriere · ' + k, 'Înlocuiești ce e între acolade', v + '\n\n' + D.tiktok.hashtaguri, 'tt', 'TikTok · 18:00')));
+
+    $('#c-wa').appendChild(copyCard('Mesaj de bun venit', 'Instrumente pentru afaceri', D.whatsapp.salut, 'ready', 'WhatsApp'));
+    $('#c-wa').appendChild(copyCard('Mesaj de absență', 'Instrumente pentru afaceri', D.whatsapp.absent, 'ready', 'WhatsApp'));
+    D.whatsapp.rapide.forEach((r) => $('#c-wa').appendChild(copyCard('Răspuns rapid ' + r.cod, 'Instrumente pentru afaceri → Răspunsuri rapide', r.text, 'ready', 'WhatsApp')));
+    $('#c-wa').appendChild(copyCard('Etichete', 'Câte una pe fiecare conversație nouă', D.whatsapp.etichete.join('\n'), 'ready', 'WhatsApp'));
+    D.whatsapp.comentarii.forEach((c) => $('#t-com tbody').appendChild(el('tr', null, [el('td', { text: c.cand }), el('td', { text: c.raspuns })])));
+
+    D.buget.forEach((b) => $('#t-buget tbody').appendChild(el('tr', { cls: b.varianta === 'Recomandat' ? 'rec' : '' }, [el('td', null, [el('b', { text: b.varianta })]), el('td', { text: b.meta }), el('td', { text: b.tiktok }), el('td', { cls: 'n', text: b.total })])));
+
+    // video
+    D.video.forEach((v) => {
+      const rows = v.cadre.map((c) => el('tr', null, [el('td', { cls: 'n', text: c.timp }), el('td', { text: c.ce }), el('td', { text: c.text || '—' })]));
+      const tbl = el('div', { cls: 'tablewrap' }, [el('table', null, [el('thead', null, [el('tr', null, [el('th', { text: 'Timp' }), el('th', { text: 'Ce se vede' }), el('th', { text: 'Text pe ecran' })])]), el('tbody', null, rows)])]);
+      const body = el('div', { cls: 'script-body' }, [el('p', null, [el('b', { text: 'Rol: ' }), v.rol]), el('p', null, [el('b', { text: 'Cine apare: ' }), v.cine]), tbl, el('p', null, [el('b', { text: 'Variantă: ' }), v.varianta]), el('p', null, [el('b', { text: 'Sunet: ' }), v.sunet])]);
+      const d = el('details', { cls: 'script' }, [el('summary', null, [el('h3', { text: v.id + ' · ' + v.titlu }), el('span', { text: v.durata })]), body]);
+      $('#v-list').appendChild(d);
+    });
+
+    // calendar
+    const WD = ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'];
+    const MO = ['ian.', 'feb.', 'mar.', 'apr.', 'mai', 'iun.', 'iul.', 'aug.', 'sept.', 'oct.', 'nov.', 'dec.'];
+    const done = store.get('fp-cal');
+    const weeks = [];
+    D.calendar.forEach((c) => {
+      const dt = new Date(c.data + 'T12:00:00');
+      const mon = new Date(dt); mon.setDate(dt.getDate() - ((dt.getDay() + 6) % 7));
+      const k = mon.toISOString().slice(0, 10);
+      let w = weeks.find((x) => x.k === k); if (!w) { w = { k, rows: [] }; weeks.push(w); }
+      w.rows.push({ c, dt });
+    });
+    weeks.forEach((w, i) => {
+      const a = w.rows[0].dt, b = w.rows[w.rows.length - 1].dt;
+      const box = el('div', { cls: 'days' }, [el('div', { cls: 'row head', role: 'presentation' }, ['Ziua', 'Facebook · 19:00', 'TikTok · 18:00', 'Reclame', 'Tu / echipa'].map((t) => el('div', { text: t })))]);
+      w.rows.forEach(({ c, dt }) => {
+        const id = 'd-' + c.data;
+        const cb = el('input', { type: 'checkbox', id });
+        cb.checked = !!done[c.data];
+        const cell = (txt, cls, lbl) => el('div', txt ? null : { cls: 'empty' }, txt ? [el('span', { cls: 'tag cell-label ' + cls, text: lbl }), txt] : [el('span', { cls: 'tag cell-label ' + cls, text: lbl }), el('span', { cls: 'dash', text: '—' })]);
+        const row = el('div', { cls: 'row' + (c.data === TODAY ? ' today' : '') + (done[c.data] ? ' isdone' : '') }, [
+          el('div', { cls: 'date' }, [cb, el('label', { for: id }, [el('b', { text: WD[dt.getDay()] + ' ' + dt.getDate() + ' ' + MO[dt.getMonth()] }), el('small', { text: c.data === TODAY ? 'azi · ' + c.faza : c.faza })])]),
+          cell(c.facebook, 'fb', 'Facebook'), cell(c.tiktok, 'tt', 'TikTok'), cell(c.reclame, 'ads', 'Reclame'), cell(c.tu, 'ready', 'Tu'),
+        ]);
+        cb.addEventListener('change', () => { if (cb.checked) done[c.data] = 1; else delete done[c.data]; store.set('fp-cal', done); row.classList.toggle('isdone', cb.checked); });
+        box.appendChild(row);
+      });
+      $('#cal').appendChild(el('div', { cls: 'wk' }, [el('div', { cls: 'wk-head' }, [el('h3', { text: 'Săptămâna ' + (i + 1) }), el('span', { text: a.getDate() + ' ' + MO[a.getMonth()] + ' – ' + b.getDate() + ' ' + MO[b.getMonth()] })]), box]));
+    });
+
+    // structură + pași
+    D.structura.forEach((s) => {
+      const kids = [el('h3', null, [s.nivel + ': ' + s.nume + ' ', s.buget ? el('small', { text: '· ' + s.buget }) : null]), el('ul', null, s.setari.map((x) => el('li', { text: x })))];
+      if (s.reclame) kids.push(el('h4', { text: 'Reclame' }), el('ul', null, s.reclame.map((x) => el('li', { text: x }))));
+      $('#s-struct').appendChild(el('div', { cls: 'box' }, kids));
+    });
+    const sdone = store.get('fp-pasi');
+    D.pasi.forEach((e, i) => {
+      const count = el('span');
+      const upd = () => { count.textContent = e.pasi.filter((_, j) => sdone[i + '-' + j]).length + ' din ' + e.pasi.length; };
+      const items = e.pasi.map((p, j) => {
+        const id = 'p-' + i + '-' + j;
+        const cb = el('input', { type: 'checkbox', id }); cb.checked = !!sdone[i + '-' + j];
+        cb.addEventListener('change', () => { if (cb.checked) sdone[i + '-' + j] = 1; else delete sdone[i + '-' + j]; store.set('fp-pasi', sdone); upd(); });
+        return el('li', null, [el('label', { for: id }, [cb, el('span', { text: p })])]);
+      });
+      upd();
+      $('#s-steps').appendChild(el('div', { cls: 'step' }, [el('div', { cls: 'step-head' }, [el('h3', { text: e.etapa }), count]), el('ul', null, items)]));
+    });
+    fillCopy($('#s-prompt'), copyCard('Prompt pentru sesiunea Claude de pe calculatorul tău', 'Dacă vrei ca programarea să o facă Claude cu Chrome, ca la postările din septembrie. Campania o publici tu.', D.prompt_local, 'ready', 'Opțional'));
+  }).catch(() => {
+    document.querySelectorAll('#c-reclame, #cal, #s-steps').forEach((n) => { n.textContent = 'Nu am putut încărca datele campaniei. Reîncarcă pagina.'; n.classList.add('err'); });
+  });
+})();
+</script>
