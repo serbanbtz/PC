@@ -1,0 +1,859 @@
+{
+ "reclame": {
+  "texte_principale": [
+   {
+    "id": "T1",
+    "nume": "Manifest",
+    "text": "„A fost a unui neamț bătrân.” „A plâns când a vândut-o.” „Km reali, pe cuvânt.”\n\nLe-ai auzit și tu. La West Auto nu auzi povești, vezi actele.\n\nFiecare mașină din parc are dosarul ei: istoric de service și facturi, raport pe seria de șasiu, kilometri pe care îi poți verifica, test drive și 12 luni garanție în scris.\n\n👉 Apasă „Trimite mesaj”, scrie DOSAR și modelul care te interesează. Îți trimitem dosarul pe WhatsApp.\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară"
+   },
+   {
+    "id": "T2",
+    "nume": "Scurt",
+    "text": "Înainte să dai un leu pe o mașină second-hand, cere-i dosarul.\n\nLa noi îl primești pe WhatsApp pentru oricare mașină din parc: istoricul, raportul și pozele cu actele. Scrie DOSAR și modelul.\n\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară"
+   },
+   {
+    "id": "T3",
+    "nume": "Iarna",
+    "text": "Iarna se cumpără SUV-ul, nu povestea lui.\n\n4x4, Webasto, scaune încălzite: le vezi la test drive. Istoricul, facturile și raportul pe seria de șasiu le vezi în dosar, înainte să vii.\n\n👉 Scrie DOSAR și modelul pe WhatsApp.\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară"
+   }
+  ],
+  "titluri": [
+   "Fără povești. Doar acte.",
+   "Cere dosarul mașinii pe WhatsApp",
+   "Mașini cu istoric, în Botoșani",
+   "SUV pentru iarnă, cu dosar complet",
+   "Vezi actele înainte de test drive"
+  ],
+  "descriere": "West Auto Botoșani · Bd. Mihai Eminescu 2A",
+  "mesaj_precompletat_general": "Bună! Vreau DOSARUL unei mașini. Mă interesează: ",
+  "dosare": [
+   {
+    "masina": "sportA",
+    "nume": "Kia Sportage 4x4 automat",
+    "vizual": "05-dosar-sportA.png",
+    "text": "Kia Sportage 4x4 automat, 2014 · 9.996 €\n\nCe e în dosar:\n✅ 261.000 km, carte service completă în reprezentanță, raport CarVertical\n✅ Kit transmisie (curea + role) nou, plăcuțe de frână și bucșe noi\n✅ ITP efectuat la 259.000 km\n✅ 4x4 cu blocare la buton, consum mixt ~6 l/100 km\n\nCere dosarul complet pe WhatsApp înainte să vii la test drive. Fără povești, doar acte.\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară",
+    "mesaj_precompletat": "Bună! Vreau DOSARUL pentru Kia Sportage 4x4 automat."
+   },
+   {
+    "masina": "qqt",
+    "nume": "Nissan Qashqai automat",
+    "vizual": "05-dosar-qqt.png",
+    "text": "Nissan Qashqai automat, 2014 · 9.999 €\n\nCe e în dosar:\n✅ 240.000 km, carte service completă în reprezentanță\n✅ Ultima inspecție la 230.000 km, raport RAR disponibil\n✅ Amortizoare și bucșe noi, ulei și filtre schimbate\n✅ Consum mixt ~6 l/100 km\n\nCere dosarul complet pe WhatsApp înainte să vii la test drive. Fără povești, doar acte.\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară",
+    "mesaj_precompletat": "Bună! Vreau DOSARUL pentru Nissan Qashqai automat."
+   },
+   {
+    "masina": "tiguan",
+    "nume": "VW Tiguan 4Motion",
+    "vizual": "05-dosar-tiguan.png",
+    "text": "VW Tiguan 4Motion, 2012 · 7.999 €\n\nCe e în dosar:\n✅ 190.000 km, carte service completă, raport CarVertical disponibil\n✅ Revizie majoră: kit distribuție pe lanț + pompă de apă\n✅ Bucșe de suspensie înlocuite, ulei și filtre schimbate\n✅ Tracțiune integrală 4Motion, consum mixt ~6 l/100 km\n\nCere dosarul complet pe WhatsApp înainte să vii la test drive. Fără povești, doar acte.\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară",
+    "mesaj_precompletat": "Bună! Vreau DOSARUL pentru VW Tiguan 4Motion."
+   },
+   {
+    "masina": "duster",
+    "nume": "Dacia Duster",
+    "vizual": "05-dosar-duster.png",
+    "text": "Dacia Duster, 2013 · 5.999 €\n\nCe e în dosar:\n✅ 139.000 km reali, verificabili\n✅ Carte service completată până la 130.000 km\n✅ Ultima inspecție tehnică: martie 2026\n✅ AC, geamuri electrice, proiectoare, bare pe plafon, ESP\n\nCere dosarul complet pe WhatsApp înainte să vii la test drive. Fără povești, doar acte.\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară",
+    "mesaj_precompletat": "Bună! Vreau DOSARUL pentru Dacia Duster."
+   }
+  ]
+ },
+ "structura": [
+  {
+   "nivel": "Campanie",
+   "nume": "WA | Fără povești | oct 2026",
+   "setari": [
+    "Obiectiv: Interacțiune (Engagement)",
+    "Locul conversației: Aplicații de mesagerie → WhatsApp",
+    "Categorii speciale de reclame: niciuna (reclamele nu vorbesc despre rate sau credit)",
+    "Buget pe set de reclame (nu Advantage+ campaign budget), ca să controlezi fiecare public",
+    "Test A/B: nu"
+   ]
+  },
+  {
+   "nivel": "Set A",
+   "nume": "A · Local 40 km · Încredere",
+   "buget": "25 lei/zi",
+   "setari": [
+    "Număr WhatsApp: 0771 311 941 (legat de pagină)",
+    "Obiectiv de performanță: Maximizează numărul de conversații",
+    "Locație: Botoșani + 40 km (persoane care locuiesc aici sau au fost recent)",
+    "Vârstă: 24–60 de ani, toate genurile",
+    "Public Advantage+: oprit (folosești opțiunile de public de mai sus)",
+    "Plasamente manuale: Facebook Feed, Reels, Stories, Marketplace; Instagram Feed, Reels, Stories. Fără Audience Network și Messenger",
+    "Program: start miercuri 7 oct, 06:00; fără dată de final (o oprești pe 1 nov)"
+   ],
+   "reclame": [
+    "A1 Manifest: 01-manifest-feed.png (feed) + 02-manifest-story.png (Stories/Reels), text T1, titlu „Fără povești. Doar acte.”",
+    "A2 Carusel: 03-carusel-1…6.png, text T2, titlu „Cere dosarul mașinii pe WhatsApp”",
+    "A3 Stoc: 04-stoc-feed.png, text T2, titlu „Mașini cu istoric, în Botoșani”",
+    "A4 (din 12 oct) Video „Povești de parc” (V1), text T1"
+   ]
+  },
+  {
+   "nivel": "Set B",
+   "nume": "B · Botoșani, Suceava, Iași · SUV de iarnă",
+   "buget": "15 lei/zi",
+   "setari": [
+    "Același număr de WhatsApp și același obiectiv de performanță",
+    "Locație: Botoșani + 40 km, Suceava + 25 km, Iași + 25 km (adaugi cele trei orașe; Meta nu acceptă o rază mai mare de 80 km)",
+    "Vârstă: 27–60 de ani",
+    "Aceleași plasamente ca la A"
+   ],
+   "reclame": [
+    "B1 Dosar Kia Sportage 4x4 automat (05-dosar-sportA.png)",
+    "B2 Dosar Nissan Qashqai automat (05-dosar-qqt.png)",
+    "B3 Dosar VW Tiguan 4Motion (05-dosar-tiguan.png)",
+    "B4 Dosar Dacia Duster (05-dosar-duster.png)",
+    "Text: textul fiecărui dosar de mai jos sau T3; mesaj precompletat cu modelul mașinii",
+    "Din 12 oct: B5–B6 video „Dosarul în 15 secunde” (V2) pentru Sportage și Tiguan"
+   ]
+  },
+  {
+   "nivel": "Set C",
+   "nume": "C · Retargeting 30 de zile",
+   "buget": "10 lei/zi, din 26 oct",
+   "setari": [
+    "Public personalizat: persoane care au interacționat cu pagina sau cu reclamele în ultimele 30 de zile + cei care au văzut 50% din clipuri",
+    "Exclude: persoanele care ți-au scris deja pe WhatsApp (dacă Meta oferă publicul de conversații)",
+    "Locație: aceleași trei orașe ca la setul B"
+   ],
+   "reclame": [
+    "Dosarele mașinilor rămase în stoc (maximum 4), text „Ai văzut-o deja. Vino s-o conduci: test drive cu dosarul la vedere.”"
+   ]
+  }
+ ],
+ "buget": [
+  {
+   "varianta": "Minim",
+   "meta": "30 lei/zi doar setul A (≈ 780 lei pentru 26 de zile)",
+   "tiktok": "0 lei",
+   "total": "≈ 780 lei",
+   "cand": "Dacă vrei doar să testezi conceptul."
+  },
+  {
+   "varianta": "Recomandat",
+   "meta": "A 25 + B 15 lei/zi, apoi + C 10 lei/zi din 26 oct (≈ 1.110 lei)",
+   "tiktok": "3 promovări × 90 lei (≈ 270 lei)",
+   "total": "≈ 1.380 lei",
+   "cand": "Planul pe care e construit calendarul."
+  },
+  {
+   "varianta": "Accelerat",
+   "meta": "70 lei/zi (≈ 1.820 lei)",
+   "tiktok": "6 promovări × 90 lei (≈ 540 lei)",
+   "total": "≈ 2.360 lei",
+   "cand": "Doar după ce costul pe conversație e sub 20 lei două săptămâni la rând."
+  }
+ ],
+ "postari": {
+  "P1": {
+   "nume": "Manifestul (lansare)",
+   "vizual": "01-manifest-feed.png",
+   "text": "Am auzit toți poveștile. „A fost a unui neamț bătrân.” „Mergea doar duminica.” „Km reali, pe cuvânt.” 🙂\n\nDe azi, la West Auto le înlocuim cu ceva mai simplu: un dosar pentru fiecare mașină din parc.\n\n📁 Ce e în dosar:\n✅ istoricul de service și facturile\n✅ raportul de istoric pe seria de șasiu\n✅ kilometrii, ca să-i compari singur\n✅ 12 luni garanție, în scris\n\nȘi test drive înainte de orice decizie.\n\nVrei dosarul unei mașini? Scrie DOSAR și modelul pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Care e cea mai tare poveste pe care ai auzit-o când ți-ai cumpărat mașina? Scrie-o în comentarii 👇\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "P2": {
+   "nume": "Carusel „Ce e în dosar”",
+   "vizual": "03-carusel-1…6.png",
+   "text": "Ce vezi la noi înainte să dai un leu 👉 glisează.\n\n1. Istoricul de service: ce s-a schimbat și când, cu facturi.\n2. Raportul de istoric pe seria de șasiu.\n3. Kilometrii, pe care îi compari singur cu cartea de service.\n4. Garanția de 12 luni, scrisă în contract.\n\nAlege orice mașină din parc și cere-i dosarul: scrie DOSAR pe WhatsApp la https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "P3": {
+   "nume": "Stocul cu dosar",
+   "vizual": "04-stoc-feed.png",
+   "text": "Fiecare mașină din parc, cu dosarul ei 📁\n\nKia Sportage 4x4 automat · Nissan Qashqai automat · VW Tiguan 4Motion · Dacia Duster · Renault Clio · Volvo V40 și alte mașini în parc.\n\nSpune-ne ce model te interesează și îți trimitem dosarul: istoric, raport, poze cu actele.\n📲 https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Pe care ai alege-o tu? Scrie modelul în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "P4": {
+   "nume": "Pregătite de iarnă (carusel)",
+   "vizual": "05-dosar-sportA.png + 05-dosar-sportM.png + 05-dosar-tiguan.png",
+   "text": "Pregătite de iarnă, cu dosar complet ❄️\n\nTrei SUV-uri 4x4 din parc, cu istoricul lor la vedere: Kia Sportage automat (cu Webasto), Kia Sportage manual și VW Tiguan 4Motion. Glisează pentru dosarul fiecăruia.\n\nScrie DOSAR și modelul pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "P5": {
+   "nume": "Reel „Povești de parc” (V1)",
+   "vizual": "video V1",
+   "text": "Poveștile le știm cu toții 🙂 La noi primești altceva: dosarul mașinii.\n\nCere-l pentru orice mașină din parc: scrie DOSAR pe WhatsApp la https://wa.me/40771311941\n\n❓ Ce poveste ai auzit tu? Scrie-o în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "P6": {
+   "nume": "Vândute",
+   "vizual": "video sau poză de la predare (doar cu acordul clientului)",
+   "text": "Încă o mașină a plecat acasă, cu dosarul ei 🔑 Mulțumim pentru încredere!\n\nUrmătoarea poate fi a ta. Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-duster": {
+   "nume": "Dosarul săptămânii: Dacia Duster",
+   "vizual": "05-dosar-duster.png",
+   "text": "📁 Dosarul săptămânii: Dacia Duster, 2013\n\n1.6 benzină aspirat (fără turbo), cutie manuală\n\nCe e în dosar:\n✅ 139.000 km reali, verificabili\n✅ Carte service completată până la 130.000 km\n✅ Ultima inspecție tehnică: martie 2026\n✅ AC, geamuri electrice, proiectoare, bare pe plafon, ESP\n\nDotări: \n\n💰 5.999 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-tiguan": {
+   "nume": "Dosarul săptămânii: VW Tiguan 4Motion",
+   "vizual": "05-dosar-tiguan.png",
+   "text": "📁 Dosarul săptămânii: VW Tiguan 4Motion, 2012\n\n1.4 TSI 160 CP, manuală 6+1 trepte\n\nCe e în dosar:\n✅ 190.000 km, carte service completă, raport CarVertical disponibil\n✅ Revizie majoră: kit distribuție pe lanț + pompă de apă\n✅ Bucșe de suspensie înlocuite, ulei și filtre schimbate\n✅ Tracțiune integrală 4Motion, consum mixt ~6 l/100 km\n\nDotări: Parcare automată asistată + senzori de parcare · Scaune față încălzite · Climatronic, pilot automat, comenzi pe volan · Faruri adaptive cu senzor de lumină, proiectoare de ceață\n\n💰 7.999 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-teslay": {
+   "nume": "Dosarul săptămânii: Tesla Model Y Performance",
+   "vizual": "05-dosar-teslay.png",
+   "text": "📁 Dosarul săptămânii: Tesla Model Y Performance, 2022\n\nDual Motor AWD, 534 CP, baterie 82 kWh\n\nCe e în dosar:\n✅ 158.169 km, fabricată în Gigafactory Berlin\n✅ Garanție oficială Tesla pentru baterie și motoare până la 24.06.2030 sau 192.000 km\n✅ Full Self-Driving (FSD) inclus în preț\n✅ Procesor AMD Ryzen, asistent Grok integrat\n\nDotări: Jante 21″ Überturbine, frâne Performance cu etrieri roșii, eleron carbon · Faruri Full Matrix LED · Volan, scaune față și banchetă spate încălzite · Plafon panoramic din sticlă, geamuri spate fumurii\n\n💰 32.065 € cu TVA (26.500 € + TVA pentru firme, TVA deductibil)\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-clio": {
+   "nume": "Dosarul săptămânii: Renault Clio",
+   "vizual": "05-dosar-clio.png",
+   "text": "📁 Dosarul săptămânii: Renault Clio, 2018\n\n1.5 dCi, cutie manuală\n\nCe e în dosar:\n✅ 193.000 km, carte service completă în reprezentanță, raport CarVertical disponibil\n✅ Kit distribuție schimbat la 175.000 km\n✅ Inspecție tehnică la 192.000 km, ulei și filtru schimbate recent\n✅ Euro 6, consum mixt ~5 l/100 km\n\nDotări: Faruri LED cu lumini de zi, faruri automate, proiectoare de ceață · Climatronic · Multimedia cu Bluetooth și comenzi pe volan · Pilot automat, computer de bord, afișaj digital\n\n💰 7.499 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-qqt": {
+   "nume": "Dosarul săptămânii: Nissan Qashqai automat",
+   "vizual": "05-dosar-qqt.png",
+   "text": "📁 Dosarul săptămânii: Nissan Qashqai automat, 2014\n\n1.6 dCi 131 CP, cutie automată\n\nCe e în dosar:\n✅ 240.000 km, carte service completă în reprezentanță\n✅ Ultima inspecție la 230.000 km, raport RAR disponibil\n✅ Amortizoare și bucșe noi, ulei și filtre schimbate\n✅ Consum mixt ~6 l/100 km\n\nDotări: Camere 360° + parcare automată asistată · Plafon panoramic vitrat · Keyless Entry & Keyless Go · Scaune încălzite, tapițerie mixtă piele + textil\n\n💰 9.999 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-chr": {
+   "nume": "Dosarul săptămânii: Toyota C-HR Hybrid",
+   "vizual": "05-dosar-chr.png",
+   "text": "📁 Dosarul săptămânii: Toyota C-HR Hybrid, 2021\n\n2.0 Hybrid 184 CP, cutie automată e-CVT\n\nCe e în dosar:\n✅ 130.000 km, istoric complet de service cu facturi\n✅ Ultima revizie: 16.10.2025\n✅ Euro 6, mod 100% electric (EV Mode)\n\nDotări: Scaune sport Alcantara/piele cu cusături roșii, volan sport din piele · Jante bicolore GR Sport, styling exterior exclusiv · Faruri Full LED Bi-Beam, fază lungă automată · Audio JBL, Apple CarPlay wireless și Android Auto\n\n💰 22.499 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-p207": {
+   "nume": "Dosarul săptămânii: Peugeot 207 SW",
+   "vizual": "05-dosar-p207.png",
+   "text": "📁 Dosarul săptămânii: Peugeot 207 SW, 2011\n\n1.6 HDi, cutie manuală\n\nCe e în dosar:\n✅ 280.000 km\n✅ Înmatriculată în România, ITP valabil până în 2027\n✅ Consum mixt 4,5–5 l/100 km\n\nDotări: Aer condiționat · Jante din aliaj originale Peugeot · Bare longitudinale pe acoperiș · Proiectoare de ceață\n\n💰 2.699 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-sportA": {
+   "nume": "Dosarul săptămânii: Kia Sportage 4x4 automat",
+   "vizual": "05-dosar-sportA.png",
+   "text": "📁 Dosarul săptămânii: Kia Sportage 4x4 automat, 2014\n\n2.0 CRDi 136 CP, cutie automată\n\nCe e în dosar:\n✅ 261.000 km, carte service completă în reprezentanță, raport CarVertical\n✅ Kit transmisie (curea + role) nou, plăcuțe de frână și bucșe noi\n✅ ITP efectuat la 259.000 km\n✅ 4x4 cu blocare la buton, consum mixt ~6 l/100 km\n\nDotări: Încălzire auxiliară Webasto + volan, scaune față și banchetă încălzite · Faruri Xenon + LED adaptive, proiectoare de ceață · Climatronic, pilot automat, Start/Stop · Asistență la coborârea în pantă, mod Active ECO\n\n💰 9.996 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-tesla3": {
+   "nume": "Dosarul săptămânii: Tesla Model 3 Long Range",
+   "vizual": "05-dosar-tesla3.png",
+   "text": "📁 Dosarul săptămânii: Tesla Model 3 Long Range, 2019\n\nDual Motor AWD\n\nCe e în dosar:\n✅ 120.500 km\n✅ Baterie de înaltă tensiune nouă, schimbată la reprezentanța Tesla în 05.2026\n✅ Autonomie reală ~470 km\n✅ Garanție oficială Tesla pentru baterie și motoare până în 09.2027 sau 192.000 km\n\nDotări: Enhanced Autopilot, Hardware 3.0 (FSD Ready) · Volan tip Yoke + display suplimentar de bord · Summon din telefon, actualizări over-the-air · Scaune față și banchetă spate încălzite\n\n💰 24.199 € cu TVA (19.999 € + TVA pentru firme, TVA deductibil)\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-golf": {
+   "nume": "Dosarul săptămânii: VW Golf 5",
+   "vizual": "05-dosar-golf.png",
+   "text": "📁 Dosarul săptămânii: VW Golf 5, 2008\n\n1.4 benzină 80 CP, cutie manuală\n\nCe e în dosar:\n✅ 225.000 km, înmatriculată în România\n✅ Revizie recentă: ulei și filtre schimbate\n✅ Plăcuțe de frână, bucșe și anvelope noi\n✅ Euro 4\n\nDotări: Climatizare / aer condiționat · Geamuri electrice, oglinzi electrice și încălzite · Sistem audio original Radio/CD · Închidere centralizată, ABS, ESP, airbag-uri\n\n💰 3.499 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-arona": {
+   "nume": "Dosarul săptămânii: SEAT Arona",
+   "vizual": "05-dosar-arona.png",
+   "text": "📁 Dosarul săptămânii: SEAT Arona, 2018\n\n1.6 TDI 95 CP, cutie manuală\n\nCe e în dosar:\n✅ 230.000 km, carte service completă, import Finlanda\n✅ Distribuție schimbată la 194.000 km (01.2024), service major la 209.000 km\n✅ Revizie nouă în 04.2026 (ulei și filtre)\n✅ Euro 6\n\nDotări: Apple CarPlay și Android Auto, ecran tactil · Pilot automat adaptiv (ACC) + Front Assist · Keyless Entry & Keyless Go · Cameră marșarier + senzori de parcare\n\n💰 9.999 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-qq2": {
+   "nume": "Dosarul săptămânii: Nissan Qashqai+2, 7 locuri",
+   "vizual": "05-dosar-qq2.png",
+   "text": "📁 Dosarul săptămânii: Nissan Qashqai+2, 7 locuri, 2011\n\n1.5 dCi 110 CP, manuală 6+1 trepte\n\nCe e în dosar:\n✅ 230.000 km certificați, carte service completă, raport CarVertical\n✅ Plăcuțe de frână și bucșe noi, ulei și filtre schimbate\n✅ Inspecție tehnică la 220.000 km\n✅ Consum mixt ~6 l/100 km\n\nDotări: 7 locuri · Plafon panoramic vitrat · Navigație Android cu ecran tactil, Bluetooth · Scaune față încălzite, Klimatronic\n\n💰 6.499 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-laguna": {
+   "nume": "Dosarul săptămânii: Renault Laguna",
+   "vizual": "05-dosar-laguna.png",
+   "text": "📁 Dosarul săptămânii: Renault Laguna, 2011\n\n1.5 dCi 110 CP, manuală 6 trepte\n\nCe e în dosar:\n✅ 195.000 km, carte service completă în reprezentanță, inspecție la 180.000 km\n✅ Discuri și plăcuțe de frână noi, ulei și filtre schimbate\n✅ Consum mixt ~5 l/100 km\n\nDotări: Scaune electrice cu memorie și încălzire · Keyless Entry & Keyless Go · Navigație TomTom integrată · Faruri Xenon adaptive + lumini de zi LED\n\n💰 4.499 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-scenic": {
+   "nume": "Dosarul săptămânii: Renault Scenic",
+   "vizual": "05-dosar-scenic.png",
+   "text": "📁 Dosarul săptămânii: Renault Scenic, 2018\n\n1.5 dCi 95 CP, cutie manuală\n\nCe e în dosar:\n✅ 165.000 km, carte service completă în reprezentanță, raport CarVertical\n✅ Inspecție tehnică la 158.000 km, revizie recentă (ulei și filtru)\n✅ Euro 6, consum mixt ~5 l/100 km\n\nDotări: Faruri LED cu lumini de zi, faruri automate · Senzori de lumină și ploaie · Climatronic, pilot automat, computer de bord · Display digital, audio cu Bluetooth\n\n💰 7.999 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-a6man": {
+   "nume": "Dosarul săptămânii: Audi A6 S-Line",
+   "vizual": "05-dosar-a6man.png",
+   "text": "📁 Dosarul săptămânii: Audi A6 S-Line, 2012\n\n2.0 TDI 177 CP, manuală 6+1 trepte\n\nCe e în dosar:\n✅ 260.000 km, carte service completată până la 255.000 km\n✅ Raport CarVertical disponibil\n✅ Discuri și plăcuțe de frână față noi, ulei și filtru schimbate recent\n✅ Euro 5, consum mixt ~7 l/100 km\n\nDotări: Navigație MMI color · Climatronic bi-zonă · Faruri Xenon + lumini de zi LED + stopuri LED, senzori de ploaie și lumină · Pilot automat, comenzi pe volan, Start/Stop + Auto Hold\n\n💰 9.499 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-kangoo": {
+   "nume": "Dosarul săptămânii: Renault Kangoo",
+   "vizual": "05-dosar-kangoo.png",
+   "text": "📁 Dosarul săptămânii: Renault Kangoo, 2012\n\n1.5 dCi 110 CP, cutie manuală\n\nCe e în dosar:\n✅ 260.000 km, istoric complet, verificabil\n✅ Revizie recentă: ulei și filtre schimbate\n✅ Consum mixt ~5 l/100 km\n\nDotări: 2 uși laterale culisante · 5 locuri spațioase, banchetă rabatabilă complet · Cârlig de remorcare, bare pe pavilion · Aer condiționat\n\n💰 4.699 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-v40": {
+   "nume": "Dosarul săptămânii: Volvo V40",
+   "vizual": "05-dosar-v40.png",
+   "text": "📁 Dosarul săptămânii: Volvo V40, 2014\n\n1.6 D, manuală 6+1 trepte\n\nCe e în dosar:\n✅ 222.300 km verificabili, istoric complet\n✅ Investiții 04.2026: distribuție, kit ambreiaj + volantă, brațe de suspensie, discuri și plăcuțe de frână, ulei și filtre – toate noi\n✅ Consum mixt ~4,7 l/100 km\n\nDotări: Detalii exclusive interior/exterior, tapițerie dedicată · Jante din aliaj originale Volvo · Climatronic bi-zonă · City Safety (frânare automată la viteze mici)\n\n💰 6.199 €\n🛡️ 12 luni garanție completă (motor, cutie, injectoare, turbină, DPF)\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-sportM": {
+   "nume": "Dosarul săptămânii: Kia Sportage 4x4 manual",
+   "vizual": "05-dosar-sportM.png",
+   "text": "📁 Dosarul săptămânii: Kia Sportage 4x4 manual, 2014\n\n2.0 CRDi 136 CP, manuală 6+1 trepte\n\nCe e în dosar:\n✅ 260.000 km, carte service completă în reprezentanță, istoric verificabil\n✅ Kit transmisie (curea + role) nou, plăcuțe de frână și bucșe noi\n✅ 4x4 cu blocare la buton, consum mixt ~6 l/100 km\n\nDotări: Volan, scaune față și banchetă spate încălzite · Faruri Xenon + LED adaptive, faruri automate · Climatronic, pilot automat, Start/Stop · Asistență la coborârea în pantă, moduri Eco/Normal/Sport\n\n💰 9.497 €\n🛡️ 12 luni garanție\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  },
+  "D-toledo": {
+   "nume": "Dosarul săptămânii: SEAT Toledo",
+   "vizual": "05-dosar-toledo.png",
+   "text": "📁 Dosarul săptămânii: SEAT Toledo, 2013\n\n1.6 TDI 105 CP, cutie manuală\n\nCe e în dosar:\n✅ 248.000 km, carte service completă, raport RAR disponibil\n✅ Bucșe de suspensie înlocuite, ulei și filtru schimbate\n✅ Euro 5, consum mixt ~4,3 l/100 km\n\nDotări: Climatronic · Scaune încălzite · Senzori de parcare · Pilot automat, computer de bord, Start/Stop\n\n💰 5.999 €\n🛡️ 12 luni garanție fără limită de km\n\nVrei tot dosarul (istoric, raport, poze cu actele)? Scrie DOSAR pe WhatsApp: https://wa.me/40771311941\n📍 Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară\n\n❓ Ce ai vrea să vezi în dosarul unei mașini înainte s-o cumperi? Scrie-ne în comentarii.\n\n#WestAuto #Botosani #FaraPovesti"
+  }
+ },
+ "tiktok": {
+  "bio": "Mașini second-hand cu dosar complet 📁 Scrie DOSAR pe WhatsApp: 0771 311 941 · Bd. Mihai Eminescu 2A, Botoșani",
+  "hashtaguri": "#botosani #suceava #iasi #masinisecondhand #parcauto #FaraPovesti #WestAuto",
+  "descrieri": {
+   "manifest": "Fără povești. Doar acte. 📁 Fiecare mașină din parc are dosarul ei. Scrie DOSAR pe WhatsApp: 0771 311 941",
+   "V1": "Le știi pe toate? 😅 La noi primești dosarul mașinii. Ce poveste ai auzit tu? 👇",
+   "V2": "{Model} · {preț}. Ăsta e dosarul lui, în 15 secunde. Scrie DOSAR pe WhatsApp: 0771 311 941",
+   "V3": "POV: suni la un anunț 📞 Între timp, la West Auto… 📁",
+   "V4": "Răspuns la comentariu: am adus actele 📁",
+   "V5": "Pornire la rece, fără povești ❄️ Ce zici de sunetul ăsta?",
+   "iarna": "3 SUV-uri 4x4 pregătite de iarnă, cu dosar. Pe care o alegi: 1, 2 sau 3? 👇"
+  }
+ },
+ "whatsapp": {
+  "etichete": [
+   "DOSAR · reclamă FB",
+   "DOSAR · TikTok",
+   "DOSAR · organic",
+   "OCTOMBRIE",
+   "Test drive programat",
+   "Vândut"
+  ],
+  "salut": "Bună, aici West Auto Botoșani! 👋 Spune-ne ce mașină te interesează și îți trimitem dosarul ei: istoricul de service, raportul pe seria de șasiu și pozele cu actele.",
+  "absent": "Mulțumim că ne-ai scris! Acum suntem închiși. Mâine dimineață îți răspundem printre primii. Până atunci, spune-ne ce mașină te interesează.",
+  "rapide": [
+   {
+    "cod": "/dosar",
+    "text": "Mulțumim! Îți trimit acum dosarul pentru [mașina]: fișa mașinii, istoricul de service și raportul de istoric. Dacă ai întrebări după ce te uiți pe el, sunt aici. Vrei să vii și la un test drive?"
+   },
+   {
+    "cod": "/testdrive",
+    "text": "Super! Ce zi și ce oră ți se potrivesc? Pregătim mașina și dosarul la vedere. Ne găsești pe Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară. Ia cu tine buletinul și permisul."
+   },
+   {
+    "cod": "/rate",
+    "text": "Se poate și în rate, cu avans de la 0. Ca să-ți calculăm rata, spune-ne suma, pe câte luni și dacă ai venit din salariu sau din firmă/PFA."
+   },
+   {
+    "cod": "/locatie",
+    "text": "Ne găsești pe Bd. Mihai Eminescu 2A, Botoșani, lângă Kaufland Gară. [link Google Maps]"
+   },
+   {
+    "cod": "/vandut",
+    "text": "Mașina asta s-a vândut chiar zilele trecute. Ce buget ai și ce cauți? Îți trimit dosarele mașinilor apropiate din parc."
+   }
+  ],
+  "comentarii": [
+   {
+    "cand": "Preț?",
+    "raspuns": "Prețul e în descriere. Îți trimitem și dosarul complet pe WhatsApp: scrie DOSAR la 0771 311 941."
+   },
+   {
+    "cand": "Mai e disponibilă?",
+    "raspuns": "Da, e încă în parc. Scrie DOSAR pe WhatsApp la 0771 311 941 și îți trimitem tot."
+   },
+   {
+    "cand": "Se poate în rate?",
+    "raspuns": "Da, cu avans de la 0. Scrie-ne pe WhatsApp la 0771 311 941 și îți calculăm rata."
+   },
+   {
+    "cand": "„Sigur e dată înapoi la km”",
+    "raspuns": "Întrebare corectă. De asta are dosar: carte service și raport pe seria de șasiu. Ți le trimitem pe WhatsApp (0771 311 941) și le verifici singur."
+   },
+   {
+    "cand": "E accidentată?",
+    "raspuns": "Raportul de istoric arată daunele declarate. Îl primești pe WhatsApp: scrie DOSAR la 0771 311 941."
+   },
+   {
+    "cand": "De unde e adusă?",
+    "raspuns": "Țara de proveniență e trecută în dosar. Scrie DOSAR pe WhatsApp și ți-l trimitem."
+   },
+   {
+    "cand": "Comentariu răutăcios",
+    "raspuns": "Mulțumim de comentariu. Dosarul e la dispoziția oricui vrea să verifice."
+   }
+  ]
+ },
+ "video": [
+  {
+   "id": "V1",
+   "titlu": "Povești de parc",
+   "durata": "20–25 s",
+   "rol": "Clipul principal: reclamă (set A) și TikTok/Reels",
+   "cine": "Prezentatorul West Auto + un prieten care joacă „vânzătorul cu povești” (ochelari de soare, sprijinit de capotă)",
+   "cadre": [
+    {
+     "timp": "0–2 s",
+     "ce": "„Vânzătorul”, plan apropiat, lângă o mașină: „A fost a unui neamț bătrân…”",
+     "text": "CE AUZI LA MAȘINI SECOND-HAND"
+    },
+    {
+     "timp": "2–4 s",
+     "ce": "Același, mai convins: „…a plâns când a vândut-o.”",
+     "text": ""
+    },
+    {
+     "timp": "4–6 s",
+     "ce": "Bate cu palma în capotă: „Km reali, pe cuvânt!”",
+     "text": ""
+    },
+    {
+     "timp": "6–7 s",
+     "ce": "Imaginea îngheață (efect în montaj); prezentatorul intră în cadru și clatină din cap.",
+     "text": ""
+    },
+    {
+     "timp": "7–15 s",
+     "ce": "Prezentatorul pune un dosar pe capotă și îl deschide: cartea de service (filă cu filă), o factură, telefonul cu raportul, bordul la pornire cu kilometrajul.",
+     "text": "CARTE SERVICE · RAPORT PE SERIA DE ȘASIU · KM VERIFICABILI"
+    },
+    {
+     "timp": "15–20 s",
+     "ce": "Prezentatorul, în cameră: „La noi nu auzi povești. Vezi actele. Cere dosarul oricărei mașini.”",
+     "text": "FĂRĂ POVEȘTI. DOAR ACTE."
+    },
+    {
+     "timp": "20–23 s",
+     "ce": "Cadrul final (06-video-final.png).",
+     "text": "SCRIE DOSAR PE WHATSAPP · 0771 311 941"
+    }
+   ],
+   "varianta": "Dacă nu ai pe cineva pentru rolul de „vânzător”: prezentatorul citește poveștile de pe telefon, ca pe niște comentarii, râde, apoi deschide dosarul.",
+   "sunet": "Fără muzică în primele 6 secunde (se aude vocea), apoi un sunet în trend, încet."
+  },
+  {
+   "id": "V2",
+   "titlu": "Dosarul în 15 secunde",
+   "durata": "15 s",
+   "rol": "Serie: câte un clip pe mașină; reclamă în setul B",
+   "cine": "Doar mâinile prezentatorului și, opțional, vocea lui",
+   "cadre": [
+    {
+     "timp": "0–2 s",
+     "ce": "Mașina, față ¾ de jos (cadrul 1 din schema de filmare).",
+     "text": "{MODEL} · {PREȚ} · ÎȚI ARĂT DOSARUL"
+    },
+    {
+     "timp": "2–5 s",
+     "ce": "Dosarul pe capotă se deschide; cartea de service cu ștampilele (numele fostului proprietar acoperit).",
+     "text": "CARTE SERVICE"
+    },
+    {
+     "timp": "5–8 s",
+     "ce": "O factură sau piesa schimbată (ex.: kit transmisie nou).",
+     "text": "CE S-A SCHIMBAT"
+    },
+    {
+     "timp": "8–11 s",
+     "ce": "Telefonul cu raportul (CarVertical sau RAR), derulat încet; seria de șasiu parțial acoperită.",
+     "text": "RAPORT PE SERIA DE ȘASIU"
+    },
+    {
+     "timp": "11–13 s",
+     "ce": "Bordul la pornire, cu kilometrajul.",
+     "text": "{KM} KM"
+    },
+    {
+     "timp": "13–15 s",
+     "ce": "Cadrul final.",
+     "text": "SCRIE DOSAR PE WHATSAPP"
+    }
+   ],
+   "varianta": "Voce (opțional): „{Model}, {preț} euro. Ăsta e dosarul lui. Scrie DOSAR și ți-l trimitem.”",
+   "sunet": "Sunet în trend, ritmat; tăieturile cad pe ritm."
+  },
+  {
+   "id": "V3",
+   "titlu": "POV: suni la un anunț",
+   "durata": "15–18 s",
+   "rol": "TikTok, pentru distribuiri și comentarii",
+   "cine": "Prezentatorul, singur",
+   "cadre": [
+    {
+     "timp": "0–3 s",
+     "ce": "Prezentatorul la telefon, plictisit, dă din cap.",
+     "text": "POV: SUNI LA UN ANUNȚ"
+    },
+    {
+     "timp": "3–8 s",
+     "ce": "Pe ecran apar pe rând replicile din telefon; el își dă ochii peste cap la fiecare.",
+     "text": "„NEAMȚ BĂTRÂN” · „DOAR LA BISERICĂ” · „NU ARE NIMIC”"
+    },
+    {
+     "timp": "8–10 s",
+     "ce": "Închide telefonul.",
+     "text": "ÎNTRE TIMP, LA WEST AUTO:"
+    },
+    {
+     "timp": "10–15 s",
+     "ce": "Dosarul trântit pe capotă, se deschide; zâmbește în cameră.",
+     "text": "FĂRĂ POVEȘTI. DOAR ACTE."
+    }
+   ],
+   "varianta": "Merge și cu un sunet de tip „dialog” din trenduri, peste care pui replicile ca text.",
+   "sunet": "Un sunet amuzant din „Trending”."
+  },
+  {
+   "id": "V4",
+   "titlu": "Răspuns la comentariu",
+   "durata": "15–25 s",
+   "rol": "TikTok: transformă suspiciunea în dovadă",
+   "cine": "Prezentatorul, lângă mașina din comentariu",
+   "cadre": [
+    {
+     "timp": "0–2 s",
+     "ce": "În TikTok: „Răspunde cu un videoclip” la un comentariu de tipul „sigur e dată înapoi la km”. Comentariul apare automat pe ecran.",
+     "text": ""
+    },
+    {
+     "timp": "2–15 s",
+     "ce": "Prezentatorul deschide dosarul acelei mașini: cartea de service, raportul pe telefon, bordul.",
+     "text": "AM ADUS ACTELE"
+    },
+    {
+     "timp": "15–20 s",
+     "ce": "„Le vrei pe toate? Scrie DOSAR pe WhatsApp.”",
+     "text": "SCRIE DOSAR · 0771 311 941"
+    }
+   ],
+   "varianta": "Alege comentarii politicoase sau neutre; nu răspunde ironic.",
+   "sunet": "Vocea, fără muzică sau cu muzică foarte încet."
+  },
+  {
+   "id": "V5",
+   "titlu": "Pornire la rece, fără povești",
+   "durata": "10–12 s",
+   "rol": "Toamnă–iarnă: diesel și 4x4",
+   "cine": "Nimeni în cadru; dimineața devreme, mașina a stat afară peste noapte",
+   "cadre": [
+    {
+     "timp": "0–2 s",
+     "ce": "Bordul: temperatura de afară pe afișaj.",
+     "text": "PORNIRE LA RECE · {X}°C"
+    },
+    {
+     "timp": "2–8 s",
+     "ce": "Capota deschisă, pornirea, motorul la ralanti; apoi țeava de eșapament.",
+     "text": "FĂRĂ POVEȘTI"
+    },
+    {
+     "timp": "8–12 s",
+     "ce": "Cadrul final.",
+     "text": "{MODEL} · DOSAR PE WHATSAPP"
+    }
+   ],
+   "varianta": "Filmează doar mașini care pornesc curat; un clip cu fum sau zgomote face mai mult rău decât bine.",
+   "sunet": "Doar sunetul motorului."
+  }
+ ],
+ "calendar": [
+  {
+   "data": "2026-10-04",
+   "faza": "Pregătire",
+   "facebook": "Programate deja: Kangoo 09:00, Volvo V40 13:00, Sportage manual 19:00",
+   "tiktok": "Toyota C-HR (montat, din planul vechi)",
+   "reclame": "",
+   "tu": "Citești planul și aprobi conceptul, vizualele și bugetul (30 min). Notezi ce mașini s-au vândut."
+  },
+  {
+   "data": "2026-10-05",
+   "faza": "Pregătire",
+   "facebook": "Programat deja: Seat Toledo 09:00. Seara: Reel Duster (planul vechi)",
+   "tiktok": "Audi A6 Avant narat (montat)",
+   "reclame": "",
+   "tu": "În Ads Manager: verificarea identității de advertiser, metoda de plată, WhatsApp legat de pagină (30 min). Reclama „OCTOMBRIE” rămâne schiță."
+  },
+  {
+   "data": "2026-10-06",
+   "faza": "Pregătire",
+   "facebook": "Reel Tesla Model 3 (planul vechi)",
+   "tiktok": "Peugeot 207 SW (montat)",
+   "reclame": "Seara: campania „Fără povești” publicată, cu start miercuri la 06:00",
+   "tu": "WhatsApp Business: mesaje rapide și etichete (20 min). Programezi postările 7–16 oct. Pregătești pozele cu actele pentru cele 4 mașini din setul B."
+  },
+  {
+   "data": "2026-10-07",
+   "faza": "Lansare",
+   "facebook": "P1 Manifestul (01-manifest-feed) + fixat sus pe pagină. Coperta nouă (08)",
+   "tiktok": "Postare foto: manifest + caruselul cu dosarul (02, 03-2…6)",
+   "reclame": "Pornesc seturile A și B. Nu modifici nimic 72 de ore.",
+   "tu": "Răspuns la mesajele DOSAR în sub 15 minute (tu sau cineva din echipă)."
+  },
+  {
+   "data": "2026-10-08",
+   "faza": "Lansare",
+   "facebook": "P2 Carusel „Ce e în dosar” (03-carusel-1…6)",
+   "tiktok": "Clipul existent Audi A6 automat + eticheta „Fără povești” + cadrul final",
+   "reclame": "Doar verifici că reclamele rulează",
+   "tu": "Ziua interviului: WhatsApp-ul îl preia cineva din echipă."
+  },
+  {
+   "data": "2026-10-09",
+   "faza": "Lansare",
+   "facebook": "D Dosarul săptămânii: Kia Sportage 4x4 automat",
+   "tiktok": "Postare foto: 3 SUV-uri de iarnă cu dosar (Sportage automat, Tiguan, Qashqai automat)",
+   "reclame": "",
+   "tu": "Salvezi cele mai bune „povești” din comentarii, pentru clipurile de luni."
+  },
+  {
+   "data": "2026-10-10",
+   "faza": "Lansare",
+   "facebook": "P3 Stocul cu dosar (04-stoc-feed)",
+   "tiktok": "Tur prin parc (filmat dimineață)",
+   "reclame": "",
+   "tu": "FILMARE #1, cca 90 min: V1, V2 pentru Sportage automat, Qashqai automat, Tiguan și Duster, V5, cadrele standard pentru Tiguan și Sportage manual, turul parcului."
+  },
+  {
+   "data": "2026-10-11",
+   "faza": "Lansare",
+   "facebook": "Reel „Pornire la rece” (V5)",
+   "tiktok": "V5 Pornire la rece, fără povești",
+   "reclame": "",
+   "tu": "Răspunzi la comentarii în prima oră după 18:00."
+  },
+  {
+   "data": "2026-10-12",
+   "faza": "Amplificare",
+   "facebook": "P5 Reel „Povești de parc” (V1)",
+   "tiktok": "V1 Povești de parc (clipul principal al campaniei)",
+   "reclame": "Verificarea săptămânii 1. Adaugi V1 în setul A și V2 Sportage/Tiguan în B. Oprești reclama cu cel mai mare cost pe conversație.",
+   "tu": "Verificarea de luni (15 min)."
+  },
+  {
+   "data": "2026-10-13",
+   "faza": "Amplificare",
+   "facebook": "D Dosar: Nissan Qashqai automat",
+   "tiktok": "V2 Dosarul în 15 secunde: Kia Sportage 4x4 automat",
+   "reclame": "TikTok Promote pe cel mai bun clip din săptămâna 1 (30 lei/zi, 3 zile)",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-14",
+   "faza": "Amplificare",
+   "facebook": "Reel V2 Kia Sportage",
+   "tiktok": "A sau B? Tiguan 4Motion vs Sportage manual",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-15",
+   "faza": "Amplificare",
+   "facebook": "D Dosar: VW Tiguan 4Motion",
+   "tiktok": "V2 Dosarul în 15 secunde: VW Tiguan",
+   "reclame": "Verificare la jumătatea lunii",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-16",
+   "faza": "Amplificare",
+   "facebook": "P6 Vândute (dacă s-a vândut) sau D Dosar: Dacia Duster",
+   "tiktok": "Vândute sau V2 Dosar Dacia Duster",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-17",
+   "faza": "Amplificare",
+   "facebook": "Stocul actualizat (04-stoc-feed refăcut fără mașinile vândute)",
+   "tiktok": "Tur prin parc",
+   "reclame": "",
+   "tu": "FILMARE #2, cca 60 min: V3, V2 pentru Clio, V40 și Qashqai+2, două V4 (răspunsuri la comentarii), turul parcului."
+  },
+  {
+   "data": "2026-10-18",
+   "faza": "Amplificare",
+   "facebook": "D Dosar: Volvo V40",
+   "tiktok": "V2 Dosar Nissan Qashqai automat",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-19",
+   "faza": "Amplificare",
+   "facebook": "Reel V3 „POV: suni la un anunț”",
+   "tiktok": "V3 POV: suni la un anunț",
+   "reclame": "Verificarea săptămânii 2. Scoți reclamele mașinilor vândute; pui V2 nou dacă a mers.",
+   "tu": "Verificarea de luni (15 min)."
+  },
+  {
+   "data": "2026-10-20",
+   "faza": "Amplificare",
+   "facebook": "D Dosar: Renault Clio",
+   "tiktok": "V4 Răspuns la comentariu #1",
+   "reclame": "TikTok Promote pe cel mai bun clip din săptămâna 2",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-21",
+   "faza": "Amplificare",
+   "facebook": "Reel V2 Volvo V40",
+   "tiktok": "V2 Dosar Volvo V40",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-22",
+   "faza": "Amplificare",
+   "facebook": "D Dosar: Nissan Qashqai+2, 7 locuri",
+   "tiktok": "V2 Dosar Qashqai+2 („pentru familie”)",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-23",
+   "faza": "Amplificare",
+   "facebook": "P6 Vândute sau D Dosar: Renault Scenic",
+   "tiktok": "V4 #2 sau Vândute",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-24",
+   "faza": "Amplificare",
+   "facebook": "Stocul actualizat",
+   "tiktok": "Tur prin parc",
+   "reclame": "",
+   "tu": "FILMARE #3, cca 60 min: „Povești de parc” episodul 2, încă un V5, clipul „Gata de iarnă” (Webasto, 4x4, anvelope), V2 pentru mașinile nou intrate."
+  },
+  {
+   "data": "2026-10-25",
+   "faza": "Amplificare",
+   "facebook": "Reel V2 Renault Clio",
+   "tiktok": "V2 Dosar Renault Clio",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-26",
+   "faza": "Conversie",
+   "facebook": "Reel „Gata de iarnă”",
+   "tiktok": "„Gata de iarnă”: 3 SUV-uri cu dosar",
+   "reclame": "Verificarea săptămânii 3. Pornești setul C (retargeting, 10 lei/zi).",
+   "tu": "Verificarea de luni (15 min)."
+  },
+  {
+   "data": "2026-10-27",
+   "faza": "Conversie",
+   "facebook": "D Dosar: SEAT Arona",
+   "tiktok": "Ghicește prețul (Arona)",
+   "reclame": "TikTok Promote pe cel mai bun clip din săptămâna 3",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-28",
+   "faza": "Conversie",
+   "facebook": "Reel „Povești de parc” ep. 2",
+   "tiktok": "„Povești de parc” ep. 2",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-29",
+   "faza": "Conversie",
+   "facebook": "P4 Pregătite de iarnă (carusel cu 3 dosare 4x4)",
+   "tiktok": "V5 Pornire la rece #2",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-30",
+   "faza": "Conversie",
+   "facebook": "Recapitularea lunii: mașinile vândute",
+   "tiktok": "Vândute: recapitularea lunii",
+   "reclame": "",
+   "tu": ""
+  },
+  {
+   "data": "2026-10-31",
+   "faza": "Conversie",
+   "facebook": "Stocul actualizat",
+   "tiktok": "Tur prin parc",
+   "reclame": "",
+   "tu": "FILMARE #4, pentru noiembrie."
+  },
+  {
+   "data": "2026-11-01",
+   "faza": "Conversie",
+   "facebook": "D Dosar: mașina cu cele mai multe întrebări în octombrie",
+   "tiktok": "Cel mai bun format al lunii, cu o mașină nouă",
+   "reclame": "Ultima zi a primului val",
+   "tu": ""
+  },
+  {
+   "data": "2026-11-02",
+   "faza": "Raport",
+   "facebook": "",
+   "tiktok": "",
+   "reclame": "Raportul final al campaniei",
+   "tu": "Raportul + planul pentru noiembrie (Black Friday e pe 27 noiembrie). 30 min cu mine."
+  }
+ ],
+ "pasi": [
+  {
+   "etapa": "Aprobări (duminică 4 oct)",
+   "pasi": [
+    "Aprobi conceptul „Fără povești. Doar acte.” și cuvântul DOSAR pe WhatsApp.",
+    "Aprobi vizualele din folderul vizuale/ (sau îmi spui ce schimb).",
+    "Alegi bugetul: Minim, Recomandat sau Accelerat.",
+    "Alegi prezentatorul clipurilor (recomandarea mea: persoana care va conduce zi de zi parcul).",
+    "Confirmi stocul: ce mașini s-au vândut ies din reclame și din calendar.",
+    "Confirmi că fiecare mașină din reclame are dosarul pregătit: poze cu cartea de service și facturile (cu datele fostului proprietar acoperite) și raportul pe seria de șasiu."
+   ]
+  },
+  {
+   "etapa": "Meta: contul de reclame (luni 5 oct, 30 min)",
+   "pasi": [
+    "business.facebook.com → Setări → Conturi de reclame: verifici că West-Auto Botoșani are cont de reclame în RON.",
+    "Ads Manager: dacă apare bannerul „Confirmă cine se află în spatele reclamelor”, completezi verificarea cu buletinul. Poate dura până la 48 de ore, de aceea o faci luni.",
+    "Ads Manager → Facturare și plăți: adaugi cardul firmei.",
+    "Pagina West-Auto Botoșani → Setări → Conturi conectate → WhatsApp: conectezi 0771 311 941 (primești un cod pe WhatsApp).",
+    "Reclama veche „OCTOMBRIE” rămâne schiță. Dacă rulează deja, o oprești miercuri dimineață, când pornește campania nouă."
+   ]
+  },
+  {
+   "etapa": "WhatsApp Business (marți 6 oct, 20 min)",
+   "pasi": [
+    "Instrumente pentru afaceri → Mesaj de bun venit: lipești textul „salut” de mai jos.",
+    "Instrumente pentru afaceri → Mesaj de absență: lipești textul „absent”, cu programul vostru.",
+    "Instrumente pentru afaceri → Răspunsuri rapide: adaugi /dosar, /testdrive, /rate, /locatie, /vandut.",
+    "Etichete: creezi etichetele din listă și le pui pe fiecare conversație nouă.",
+    "Pe telefon: un album „DOSARE” cu câte un subfolder pe mașină (imaginea 05-dosar-…png + pozele cu actele + raportul PDF)."
+   ]
+  },
+  {
+   "etapa": "Meta: campania de reclame (marți 6 oct, 40 min)",
+   "pasi": [
+    "Ads Manager → Creează → Interacțiune → Continuă. Nume: „WA | Fără povești | oct 2026”.",
+    "Categorii speciale: niciuna. Bugetul campaniei Advantage+: oprit.",
+    "Setul A: setările din tabelul „Structura”. Locul conversației: Aplicații de mesagerie → WhatsApp. Obiectiv: maximizează conversațiile.",
+    "Reclama A1: format Imagine. Încarci 01-manifest-feed.png, iar la „Personalizare per plasament” pui 02-manifest-story.png pentru Stories și Reels.",
+    "Text principal T1, titlu „Fără povești. Doar acte.”, buton „Trimite mesaj pe WhatsApp”. Șablonul de mesaj: textul precompletat de mai jos.",
+    "Oprești „Îmbunătățirile creative Advantage+” (Meta poate altfel să adauge muzică sau să schimbe textul).",
+    "Reclama A2: format Carusel cu cele 6 cadre 03-carusel-1…6, text T2. Reclama A3: 04-stoc-feed.png, text T2.",
+    "Setul B: duplici setul A, schimbi numele, locațiile (Botoșani + 40 km, Suceava + 25 km, Iași + 25 km), vârsta și bugetul. Ștergi reclamele copiate și creezi B1–B4 cu dosarele și mesajul precompletat cu modelul.",
+    "Programul: start miercuri 7 oct la 06:00. Publici marți seara; aprobarea Meta vine de obicei în câteva ore.",
+    "După aprobare: deschizi fiecare reclamă din „Previzualizare” pe telefon și apeși butonul, ca să vezi că deschide WhatsApp-ul corect."
+   ]
+  },
+  {
+   "etapa": "Postările Facebook (marți 6 oct, 30 min)",
+   "pasi": [
+    "Meta Business Suite → Planificator → Creează postare. Alegi doar pagina West-Auto Botoșani.",
+    "Încarci imaginea (sau toate cele 6 imagini, în ordine, pentru carusel), lipești textul postării, apeși săgeata de lângă „Publică” → Programează → data și ora din calendar.",
+    "Programezi zilele 7–16 octombrie acum, iar restul în fiecare luni, după ce știi ce mașini s-au vândut.",
+    "Miercuri 7 oct, după 19:00: deschizi postarea manifest → cele trei puncte → Fixează în partea de sus a paginii. Schimbi coperta paginii cu 08-coperta-facebook.png.",
+    "Alternativ: îi dai sesiunii Claude de pe calculatorul tău promptul de mai jos și le programează ea, ca la postările din septembrie."
+   ]
+  },
+  {
+   "etapa": "TikTok (marți 6 oct, 20 min, apoi săptămânal)",
+   "pasi": [
+    "Profil → Editează profilul: bio-ul de mai jos. Dacă profilul permite link, pui https://wa.me/40771311941.",
+    "Clipurile: TikTok Studio pe calculator → Încarcă → descrierea + hashtagurile → Programează la 18:00. TikTok permite programarea cu până la 10 zile înainte.",
+    "Postările foto (7 și 9 oct): din aplicație, + → Fotografii, alegi imaginile în ordine, adaugi un sunet din „Trending” și publici la 18:00.",
+    "În fiecare clip din campanie: eticheta 07-video-eticheta.png pusă peste video în primele 3 secunde și cadrul final 06-video-final.png la sfârșit.",
+    "TikTok Promote (13, 20 și 27 oct): pe clipul cu cel mai bun timp de vizionare din săptămâna trecută → Promovează → Obiectiv: vizite pe profil → Public personalizat: 25–54 de ani, locația cea mai apropiată de Botoșani pe care o oferă → 30 lei/zi, 3 zile."
+   ]
+  },
+  {
+   "etapa": "Verificare înainte de fiecare publicare",
+   "pasi": [
+    "Mașina e încă în parc și prețul e cel de pe site.",
+    "Un preț tăiat apare doar dacă prețul vechi a fost cel mai mic preț practicat în ultimele 30 de zile (regula ANPC pentru reduceri).",
+    "La mașinile cu TVA deductibil, prețul final cu TVA e cel mai vizibil, iar „+ TVA” apare doar pentru firme.",
+    "Numerele de înmatriculare și datele fostului proprietar din acte sunt acoperite.",
+    "Clientul de la predare și-a dat acordul să apară; altfel filmezi doar mâinile și cheile.",
+    "Numărul 0771 311 941 și linkul wa.me/40771311941 sunt corecte.",
+    "Pe Tesla: FSD apare ca pachet cumpărat, cu funcții limitate în UE, nu ca „inclus” fără explicații."
+   ]
+  },
+  {
+   "etapa": "După lansare: rutina de luni (15 min)",
+   "pasi": [
+    "Ads Manager → coloanele: Cheltuieli, Conversații prin mesagerie începute, Cost pe conversație, CTR (link).",
+    "WhatsApp: numeri conversațiile cu eticheta DOSAR, test drive-urile programate și mașinile vândute din campanie.",
+    "TikTok Studio → Analize: vizualizări, timp mediu de vizionare și comentarii pe clip.",
+    "Regulă: o reclamă care a cheltuit peste 60 de lei cu un cost pe conversație de peste 25 de lei se oprește.",
+    "Regulă: dacă tot setul are costul peste 25 de lei după 7 zile, schimbi întâi vizualul (V1 în loc de static), apoi publicul.",
+    "Regulă: o mașină vândută iese din reclame în aceeași zi (altfel plătești mesaje pentru o mașină care nu mai există).",
+    "Îmi trimiți cifrele și îți spun ce schimbăm pentru săptămâna următoare."
+   ]
+  }
+ ],
+ "prompt_local": "Deschide Meta Business Suite pentru pagina West-Auto Botoșani și programează postările Facebook din calendarul campaniei „Fără povești” pentru 7–16 octombrie 2026, la ora 19:00, folosind textele și imaginile din folderul campanie-fara-povesti (branch-ul claude/campanie-facebook-tiktok-4op4k2 din repo-ul serbanbtz/PC). Imaginile sunt în vizuale/, textele în 03-texte.md, calendarul în 05-calendar.md. Înainte de fiecare postare verifică pe site că mașina e încă de vânzare și că prețul e același; dacă nu, sari peste ea și spune-mi. Nu publica nimic imediat: doar programează. În Ads Manager creează campania „WA | Fără povești | oct 2026” exact după 06-lansare.md, dar las-o ca schiță: o public eu."
+}

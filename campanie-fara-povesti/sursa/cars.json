@@ -1,0 +1,516 @@
+[
+ {
+  "key": "duster",
+  "title": "Dacia Duster 2013",
+  "name": "Dacia Duster 2013",
+  "specs": "1.6 benzină aspirat (fără turbo), cutie manuală",
+  "facts": [
+   "139.000 km reali, verificabili",
+   "Carte service completată până la 130.000 km",
+   "Ultima inspecție tehnică: martie 2026",
+   "AC, geamuri electrice, proiectoare, bare pe plafon, ESP"
+  ],
+  "price": "5.999 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "SUV sub 6.000 €, cu carte service și 139.000 km reali",
+  "dotari": [],
+  "post_when": "2026-09-29 09:00",
+  "km": "139.000",
+  "year": "2013",
+  "short": "Dacia Duster"
+ },
+ {
+  "key": "tiguan",
+  "title": "VW Tiguan 4Motion 2012",
+  "name": "VW Tiguan Highline 4Motion 2012",
+  "specs": "1.4 TSI 160 CP, manuală 6+1 trepte",
+  "facts": [
+   "190.000 km, carte service completă, raport CarVertical disponibil",
+   "Revizie majoră: kit distribuție pe lanț + pompă de apă",
+   "Bucșe de suspensie înlocuite, ulei și filtre schimbate",
+   "Tracțiune integrală 4Motion, consum mixt ~6 l/100 km"
+  ],
+  "price": "7.999 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "SUV 4x4 cu distribuția făcută",
+  "dotari": [
+   "Parcare automată asistată + senzori de parcare",
+   "Scaune față încălzite",
+   "Climatronic, pilot automat, comenzi pe volan",
+   "Faruri adaptive cu senzor de lumină, proiectoare de ceață",
+   "Cârlig de remorcare, asistență la coborârea în pantă",
+   "Jante din aliaj cu anvelope de iarnă"
+  ],
+  "post_when": "2026-09-29 13:00",
+  "km": "190.000",
+  "year": "2012",
+  "short": "VW Tiguan 4Motion"
+ },
+ {
+  "key": "teslay",
+  "title": "Tesla Model Y Performance 2022",
+  "name": "Tesla Model Y Performance 2022",
+  "specs": "Dual Motor AWD, 534 CP, baterie 82 kWh",
+  "facts": [
+   "158.169 km, fabricată în Gigafactory Berlin",
+   "Garanție oficială Tesla pentru baterie și motoare până la 24.06.2030 sau 192.000 km",
+   "Full Self-Driving (FSD) inclus în preț",
+   "Procesor AMD Ryzen, asistent Grok integrat"
+  ],
+  "price": "26.500 €",
+  "vat": true,
+  "warranty": "12 luni garanție",
+  "hook": "Tesla Model Y Performance cu Full Self-Driving inclus",
+  "dotari": [
+   "Jante 21″ Überturbine, frâne Performance cu etrieri roșii, eleron carbon",
+   "Faruri Full Matrix LED",
+   "Volan, scaune față și banchetă spate încălzite",
+   "Plafon panoramic din sticlă, geamuri spate fumurii",
+   "Sentry Mode + dashcam 360°",
+   "Cârlig de remorcare original"
+  ],
+  "post_when": "2026-09-29 19:00",
+  "km": "158.169",
+  "year": "2022",
+  "price_incl": "32.065 €",
+  "short": "Tesla Model Y Performance"
+ },
+ {
+  "key": "clio",
+  "title": "Renault Clio 2018",
+  "name": "Renault Clio 2018",
+  "specs": "1.5 dCi, cutie manuală",
+  "facts": [
+   "193.000 km, carte service completă în reprezentanță, raport CarVertical disponibil",
+   "Kit distribuție schimbat la 175.000 km",
+   "Inspecție tehnică la 192.000 km, ulei și filtru schimbate recent",
+   "Euro 6, consum mixt ~5 l/100 km"
+  ],
+  "price": "7.499 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "Renault Clio Euro 6, cu distribuția schimbată și istoric la Renault",
+  "dotari": [
+   "Faruri LED cu lumini de zi, faruri automate, proiectoare de ceață",
+   "Climatronic",
+   "Multimedia cu Bluetooth și comenzi pe volan",
+   "Pilot automat, computer de bord, afișaj digital",
+   "Mod ECO + Start/Stop"
+  ],
+  "post_when": "2026-09-30 09:00",
+  "km": "193.000",
+  "year": "2018",
+  "short": "Renault Clio"
+ },
+ {
+  "key": "qqt",
+  "title": "Nissan Qashqai Tekna automat 2014",
+  "name": "Nissan Qashqai Tekna 2014",
+  "specs": "1.6 dCi 131 CP, cutie automată",
+  "facts": [
+   "240.000 km, carte service completă în reprezentanță",
+   "Ultima inspecție la 230.000 km, raport RAR disponibil",
+   "Amortizoare și bucșe noi, ulei și filtre schimbate",
+   "Consum mixt ~6 l/100 km"
+  ],
+  "price": "9.999 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "SUV automat, cu camere 360° și plafon panoramic",
+  "dotari": [
+   "Camere 360° + parcare automată asistată",
+   "Plafon panoramic vitrat",
+   "Keyless Entry & Keyless Go",
+   "Scaune încălzite, tapițerie mixtă piele + textil",
+   "Navigație cu ecran tactil, Bluetooth, comenzi pe volan",
+   "Faruri Xenon + lumini de zi LED, adaptive și automate"
+  ],
+  "post_when": "2026-09-30 13:00",
+  "km": "240.000",
+  "year": "2014",
+  "short": "Nissan Qashqai automat"
+ },
+ {
+  "key": "chr",
+  "title": "Toyota C-HR GR Sport Hybrid 2021",
+  "name": "Toyota C-HR GR Sport 2021",
+  "specs": "2.0 Hybrid 184 CP, cutie automată e-CVT",
+  "facts": [
+   "130.000 km, istoric complet de service cu facturi",
+   "Ultima revizie: 16.10.2025",
+   "Euro 6, mod 100% electric (EV Mode)"
+  ],
+  "price": "22.499 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "Toyota C-HR GR Sport hibrid, cu istoric complet",
+  "dotari": [
+   "Scaune sport Alcantara/piele cu cusături roșii, volan sport din piele",
+   "Jante bicolore GR Sport, styling exterior exclusiv",
+   "Faruri Full LED Bi-Beam, fază lungă automată",
+   "Audio JBL, Apple CarPlay wireless și Android Auto",
+   "Keyless, scaune încălzite, Climatronic pe 2 zone",
+   "Park Assist cu senzori 360°, Toyota Safety Sense"
+  ],
+  "post_when": "2026-09-30 19:00",
+  "km": "130.000",
+  "year": "2021",
+  "short": "Toyota C-HR Hybrid"
+ },
+ {
+  "key": "p207",
+  "title": "Peugeot 207 SW 2011",
+  "name": "Peugeot 207 SW 2011",
+  "specs": "1.6 HDi, cutie manuală",
+  "facts": [
+   "280.000 km",
+   "Înmatriculată în România, ITP valabil până în 2027",
+   "Consum mixt 4,5–5 l/100 km"
+  ],
+  "price": "2.699 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "Break economic, înmatriculat, cu ITP până în 2027",
+  "dotari": [
+   "Aer condiționat",
+   "Jante din aliaj originale Peugeot",
+   "Bare longitudinale pe acoperiș",
+   "Proiectoare de ceață",
+   "Geamuri electrice, oglinzi reglabile electric",
+   "Radio CD, MP3, AUX, computer de bord"
+  ],
+  "post_when": "2026-10-01 09:00",
+  "km": "280.000",
+  "year": "2011",
+  "short": "Peugeot 207 SW"
+ },
+ {
+  "key": "sportA",
+  "title": "Kia Sportage 4x4 automat 2014",
+  "name": "Kia Sportage Facelift AWD 2014",
+  "specs": "2.0 CRDi 136 CP, cutie automată",
+  "facts": [
+   "261.000 km, carte service completă în reprezentanță, raport CarVertical",
+   "Kit transmisie (curea + role) nou, plăcuțe de frână și bucșe noi",
+   "ITP efectuat la 259.000 km",
+   "4x4 cu blocare la buton, consum mixt ~6 l/100 km"
+  ],
+  "price": "9.996 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "SUV 4x4 automat, cu Webasto pentru iarnă",
+  "dotari": [
+   "Încălzire auxiliară Webasto + volan, scaune față și banchetă încălzite",
+   "Faruri Xenon + LED adaptive, proiectoare de ceață",
+   "Climatronic, pilot automat, Start/Stop",
+   "Asistență la coborârea în pantă, mod Active ECO",
+   "Senzori de parcare",
+   "Jante din aliaj cu anvelope de iarnă"
+  ],
+  "post_when": "2026-10-01 13:00",
+  "km": "261.000",
+  "year": "2014",
+  "short": "Kia Sportage 4x4 automat"
+ },
+ {
+  "key": "tesla3",
+  "title": "Tesla Model 3 Long Range 2019",
+  "name": "Tesla Model 3 Long Range 2019",
+  "specs": "Dual Motor AWD",
+  "facts": [
+   "120.500 km",
+   "Baterie de înaltă tensiune nouă, schimbată la reprezentanța Tesla în 05.2026",
+   "Autonomie reală ~470 km",
+   "Garanție oficială Tesla pentru baterie și motoare până în 09.2027 sau 192.000 km"
+  ],
+  "price": "19.999 €",
+  "vat": true,
+  "warranty": "12 luni garanție",
+  "hook": "Tesla Model 3 cu baterie nouă, schimbată la Tesla",
+  "dotari": [
+   "Enhanced Autopilot, Hardware 3.0 (FSD Ready)",
+   "Volan tip Yoke + display suplimentar de bord",
+   "Summon din telefon, actualizări over-the-air",
+   "Scaune față și banchetă spate încălzite",
+   "Sentry Mode 360°",
+   "Faruri Full LED, interior All Black"
+  ],
+  "post_when": "2026-10-01 19:00",
+  "km": "120.500",
+  "year": "2019",
+  "price_incl": "24.199 €",
+  "short": "Tesla Model 3 Long Range"
+ },
+ {
+  "key": "golf",
+  "title": "VW Golf 5 2008",
+  "name": "VW Golf 5 United 2008",
+  "specs": "1.4 benzină 80 CP, cutie manuală",
+  "facts": [
+   "225.000 km, înmatriculată în România",
+   "Revizie recentă: ulei și filtre schimbate",
+   "Plăcuțe de frână, bucșe și anvelope noi",
+   "Euro 4"
+  ],
+  "price": "3.499 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "VW Golf 5 pe benzină, cu revizia făcută",
+  "dotari": [
+   "Climatizare / aer condiționat",
+   "Geamuri electrice, oglinzi electrice și încălzite",
+   "Sistem audio original Radio/CD",
+   "Închidere centralizată, ABS, ESP, airbag-uri"
+  ],
+  "post_when": "2026-10-02 09:00",
+  "km": "225.000",
+  "year": "2008",
+  "short": "VW Golf 5"
+ },
+ {
+  "key": "arona",
+  "title": "SEAT Arona Style 2018",
+  "name": "SEAT Arona Style 2018",
+  "specs": "1.6 TDI 95 CP, cutie manuală",
+  "facts": [
+   "230.000 km, carte service completă, import Finlanda",
+   "Distribuție schimbată la 194.000 km (01.2024), service major la 209.000 km",
+   "Revizie nouă în 04.2026 (ulei și filtre)",
+   "Euro 6"
+  ],
+  "price": "9.999 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "SUV compact Euro 6, cu CarPlay și pilot automat adaptiv",
+  "dotari": [
+   "Apple CarPlay și Android Auto, ecran tactil",
+   "Pilot automat adaptiv (ACC) + Front Assist",
+   "Keyless Entry & Keyless Go",
+   "Cameră marșarier + senzori de parcare",
+   "Scaune sport încălzite + Pachet Nordic (încălzire motor)",
+   "Lumini de zi LED, iluminare ambientală"
+  ],
+  "post_when": "2026-10-02 13:00",
+  "km": "230.000",
+  "year": "2018",
+  "short": "SEAT Arona"
+ },
+ {
+  "key": "qq2",
+  "title": "Nissan Qashqai+2 7 locuri 2011",
+  "name": "Nissan Qashqai+2 Tekna 2011",
+  "specs": "1.5 dCi 110 CP, manuală 6+1 trepte",
+  "facts": [
+   "230.000 km certificați, carte service completă, raport CarVertical",
+   "Plăcuțe de frână și bucșe noi, ulei și filtre schimbate",
+   "Inspecție tehnică la 220.000 km",
+   "Consum mixt ~6 l/100 km"
+  ],
+  "price": "6.499 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "SUV cu 7 locuri, pentru toată familia",
+  "dotari": [
+   "7 locuri",
+   "Plafon panoramic vitrat",
+   "Navigație Android cu ecran tactil, Bluetooth",
+   "Scaune față încălzite, Klimatronic",
+   "Faruri adaptive și automate, proiectoare de ceață",
+   "Cârlig de remorcare, jante din aluminiu cu anvelope de iarnă"
+  ],
+  "post_when": "2026-10-02 19:00",
+  "km": "230.000",
+  "year": "2011",
+  "short": "Nissan Qashqai+2, 7 locuri"
+ },
+ {
+  "key": "laguna",
+  "title": "Renault Laguna TomTom 2011",
+  "name": "Renault Laguna TomTom Edition 2011",
+  "specs": "1.5 dCi 110 CP, manuală 6 trepte",
+  "facts": [
+   "195.000 km, carte service completă în reprezentanță, inspecție la 180.000 km",
+   "Discuri și plăcuțe de frână noi, ulei și filtre schimbate",
+   "Consum mixt ~5 l/100 km"
+  ],
+  "price": "4.499 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "Laguna TomTom Edition, cu scaune electrice și Keyless",
+  "dotari": [
+   "Scaune electrice cu memorie și încălzire",
+   "Keyless Entry & Keyless Go",
+   "Navigație TomTom integrată",
+   "Faruri Xenon adaptive + lumini de zi LED",
+   "Klimatronic, pilot automat, senzori de parcare",
+   "Cârlig de remorcare"
+  ],
+  "post_when": "2026-10-03 09:00",
+  "km": "195.000",
+  "year": "2011",
+  "short": "Renault Laguna"
+ },
+ {
+  "key": "scenic",
+  "title": "Renault Scenic 2018",
+  "name": "Renault Scenic 2018",
+  "specs": "1.5 dCi 95 CP, cutie manuală",
+  "facts": [
+   "165.000 km, carte service completă în reprezentanță, raport CarVertical",
+   "Inspecție tehnică la 158.000 km, revizie recentă (ulei și filtru)",
+   "Euro 6, consum mixt ~5 l/100 km"
+  ],
+  "price": "7.999 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "Monovolum de familie, cu doar 165.000 km",
+  "dotari": [
+   "Faruri LED cu lumini de zi, faruri automate",
+   "Senzori de lumină și ploaie",
+   "Climatronic, pilot automat, computer de bord",
+   "Display digital, audio cu Bluetooth",
+   "Mod ECO + Start/Stop"
+  ],
+  "post_when": "2026-10-03 13:00",
+  "km": "165.000",
+  "year": "2018",
+  "short": "Renault Scenic"
+ },
+ {
+  "key": "a6man",
+  "title": "Audi A6 S-Line manual 2012",
+  "name": "Audi A6 C7 S-Line 2012 (model 2013)",
+  "specs": "2.0 TDI 177 CP, manuală 6+1 trepte",
+  "facts": [
+   "260.000 km, carte service completată până la 255.000 km",
+   "Raport CarVertical disponibil",
+   "Discuri și plăcuțe de frână față noi, ulei și filtru schimbate recent",
+   "Euro 5, consum mixt ~7 l/100 km"
+  ],
+  "price": "9.499 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "Audi A6 S-Line cu istoric complet și raport CarVertical",
+  "dotari": [
+   "Navigație MMI color",
+   "Climatronic bi-zonă",
+   "Faruri Xenon + lumini de zi LED + stopuri LED, senzori de ploaie și lumină",
+   "Pilot automat, comenzi pe volan, Start/Stop + Auto Hold",
+   "Cârlig de remorcare detașabil",
+   "Jante originale Audi R17"
+  ],
+  "post_when": "2026-10-03 19:00",
+  "km": "260.000",
+  "year": "2012",
+  "short": "Audi A6 S-Line"
+ },
+ {
+  "key": "kangoo",
+  "title": "Renault Kangoo 2012",
+  "name": "Renault Kangoo Expression 2012",
+  "specs": "1.5 dCi 110 CP, cutie manuală",
+  "facts": [
+   "260.000 km, istoric complet, verificabil",
+   "Revizie recentă: ulei și filtre schimbate",
+   "Consum mixt ~5 l/100 km"
+  ],
+  "price": "4.699 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "Renault Kangoo cu 5 locuri și uși culisante",
+  "dotari": [
+   "2 uși laterale culisante",
+   "5 locuri spațioase, banchetă rabatabilă complet",
+   "Cârlig de remorcare, bare pe pavilion",
+   "Aer condiționat",
+   "Radio CD, MP3, Bluetooth cu comenzi pe volan",
+   "ABS, ESP, ISOFIX"
+  ],
+  "post_when": "2026-10-04 09:00",
+  "km": "260.000",
+  "year": "2012",
+  "short": "Renault Kangoo"
+ },
+ {
+  "key": "v40",
+  "title": "Volvo V40 Ocean Race 2014",
+  "name": "Volvo V40 Ocean Race Edition 2014",
+  "specs": "1.6 D, manuală 6+1 trepte",
+  "facts": [
+   "222.300 km verificabili, istoric complet",
+   "Investiții 04.2026: distribuție, kit ambreiaj + volantă, brațe de suspensie, discuri și plăcuțe de frână, ulei și filtre – toate noi",
+   "Consum mixt ~4,7 l/100 km"
+  ],
+  "price": "6.199 €",
+  "vat": false,
+  "warranty": "12 luni garanție completă (motor, cutie, injectoare, turbină, DPF)",
+  "hook": "Volvo V40 Ocean Race, cu distribuția și ambreiajul noi",
+  "dotari": [
+   "Detalii exclusive interior/exterior, tapițerie dedicată",
+   "Jante din aliaj originale Volvo",
+   "Climatronic bi-zonă",
+   "City Safety (frânare automată la viteze mici)",
+   "Pilot automat, senzori de parcare, Start/Stop",
+   "Sistem audio premium Volvo cu Bluetooth"
+  ],
+  "post_when": "2026-10-04 13:00",
+  "km": "222.300",
+  "year": "2014",
+  "short": "Volvo V40"
+ },
+ {
+  "key": "sportM",
+  "title": "Kia Sportage 4x4 manual 2014",
+  "name": "Kia Sportage Facelift AWD 2014",
+  "specs": "2.0 CRDi 136 CP, manuală 6+1 trepte",
+  "facts": [
+   "260.000 km, carte service completă în reprezentanță, istoric verificabil",
+   "Kit transmisie (curea + role) nou, plăcuțe de frână și bucșe noi",
+   "4x4 cu blocare la buton, consum mixt ~6 l/100 km"
+  ],
+  "price": "9.497 €",
+  "vat": false,
+  "warranty": "12 luni garanție",
+  "hook": "Kia Sportage 4x4, cu volan, scaune și banchetă încălzite",
+  "dotari": [
+   "Volan, scaune față și banchetă spate încălzite",
+   "Faruri Xenon + LED adaptive, faruri automate",
+   "Climatronic, pilot automat, Start/Stop",
+   "Asistență la coborârea în pantă, moduri Eco/Normal/Sport",
+   "Senzori de parcare față și spate"
+  ],
+  "post_when": "2026-10-04 19:00",
+  "km": "260.000",
+  "year": "2014",
+  "short": "Kia Sportage 4x4 manual"
+ },
+ {
+  "key": "toledo",
+  "title": "SEAT Toledo 2013",
+  "name": "SEAT Toledo 2013",
+  "specs": "1.6 TDI 105 CP, cutie manuală",
+  "facts": [
+   "248.000 km, carte service completă, raport RAR disponibil",
+   "Bucșe de suspensie înlocuite, ulei și filtru schimbate",
+   "Euro 5, consum mixt ~4,3 l/100 km"
+  ],
+  "price": "5.999 €",
+  "vat": false,
+  "warranty": "12 luni garanție fără limită de km",
+  "hook": "Sedan diesel cu consum de ~4,3 l/100 km",
+  "dotari": [
+   "Climatronic",
+   "Scaune încălzite",
+   "Senzori de parcare",
+   "Pilot automat, computer de bord, Start/Stop",
+   "Lumini de zi LED, faruri automate, spălătoare faruri",
+   "Jante din aluminiu SEAT"
+  ],
+  "post_when": "2026-10-05 09:00",
+  "km": "248.000",
+  "year": "2013",
+  "short": "SEAT Toledo"
+ }
+]
