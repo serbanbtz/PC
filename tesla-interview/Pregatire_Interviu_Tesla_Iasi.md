@@ -1,6 +1,7 @@
 # Interviu Tesla – Sales Supervisor Iași (277071)
 
 **Joi, 8 octombrie 2026, ora 09:00 EEST** · Hotel International Iași, Conference Room 8, Str. Palat 5A
+
 **Intervievatori:** Liana Alexandra Dumitriu (Store Supervisor) & Moritz Beck (Sales Lead Hungary & Romania)
 
 > Regula pentru tot documentul: **[X]** = o cifră sau un detaliu real pe care îl completezi tu.
