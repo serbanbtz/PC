@@ -112,6 +112,19 @@ Fișa postului descrie un rol de **conducere a întregului magazin**: *„raport
 **Follow-up sigur: „Ce se întâmplă cu West Auto?”** Hotărăște-ți răspunsul onest **înainte** de joi. De exemplu:
 > [Tatăl/fratele meu] preia conducerea de zi cu zi. Eu nu voi mai avea niciun rol operațional și pot declara asta formal, conform politicii Tesla privind conflictul de interese. Dacă vin la Tesla, sunt 100% Tesla.
 
+**Follow-up posibil: „De ce nu ți-ai dus afacerea la nivelul următor?”**
+*Why didn't you take your business to the next level?*
+> E o întrebare corectă. În modelul nostru am crescut-o: de la [X] mașini pe an, când am preluat-o, la [Y] astăzi, și am trecut pe EV-uri înaintea oricui din zonă.
+>
+> Dar un dealer independent are un plafon natural. Depindem de importuri, ținem tot stocul din banii noștri și nu avem un brand în spate. Nivelul următor ar fi însemnat [credite mari / locații noi / să devenim dealer autorizat al unei mărci]. Ca familie, am decis să nu ne asumăm acel risc. A fost o decizie comună, nu doar a mea.
+>
+> Sincer, asta m-a ajutat să-mi clarific ce vreau. Ce îmi place cel mai mult nu e să cumpăr și să vând stoc ca patron, ci să conduc o echipă și să construiesc o experiență excelentă pentru client. Iar viitorul e electric. Pentru mine, nivelul următor nu e un dealer mai mare. E să fac ce știu cel mai bine la scara Tesla, în compania care conduce această schimbare.
+
+*Capcane:* nu da vina pe familie („decizie comună”), nu spune că piața din Iași e prea mică (plafonul e al **modelului de dealer independent**, nu al pieței), nu prezenta afacerea ca pe un eșec și nu spune sec „n-am avut bani”. Completează parantezele cu **motivul real**.
+
+**Și dacă insistă: „N-o să te întorci la afacere sau să-ți deschizi alta peste câțiva ani?”**
+> Nu. E o decizie de carieră asumată, nu o pauză. [Membrul familiei] conduce acum West Auto, iar eu vin la Tesla ca să construiesc ceva aici, pe termen lung.
+
 ### 4. Un membru al echipei care nu performează
 *How do you handle a team member who is underperforming?*
 > **S:** Unul dintre consultanții mei de vânzări avea trafic bun, cam [X] test drive-uri pe lună, dar închidea doar [X]%, față de media echipei de [Y]%.

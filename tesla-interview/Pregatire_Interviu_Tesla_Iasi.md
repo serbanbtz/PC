@@ -107,6 +107,18 @@ Fișa postului descrie un rol de **conducere a întregului magazin**: *„report
 **Follow-up sigur: „What happens with West Auto?”** Hotărăște-ți răspunsul onest **înainte** de joi. De exemplu:
 > [My father/brother] is taking over day-to-day management. I'll have no operational role, and I'm happy to declare it formally under Tesla's conflict-of-interest policy. If I join Tesla, I'm 100% Tesla.
 
+**Follow-up posibil: „Why didn't you take your business to the next level?”**
+> Fair question. Within its model, we did grow it: from [X] cars a year when I took over to [Y] today, and we moved into EVs before anyone else in our area.
+>
+> But an independent dealer has a natural ceiling. We depend on imports, we carry all the stock with our own money, and we don't have a brand behind us. The next level would have meant [taking on significant debt / opening new locations / becoming a franchise dealer]. As a family, we decided not to take that risk. It was a shared decision, not just mine.
+>
+> Honestly, it made me clear about what I want. What I enjoy most isn't buying and selling stock as an owner. It's leading a team and building a great customer experience, and I believe the future is electric. For me, the next level isn't a bigger dealership. It's doing what I do best at Tesla's scale, in the company that's leading that change.
+
+*Capcane:* nu da vina pe familie („decizie comună”), nu spune că piața din Iași e prea mică (plafonul e al **modelului de dealer independent**, nu al pieței), nu prezenta afacerea ca pe un eșec și nu spune sec „n-am avut bani”. Completează parantezele cu **motivul real**.
+
+**Și dacă insistă: „Won't you go back to it, or start your own business again?”**
+> No. This is a deliberate career decision, not a break. [Family member] runs West Auto now, and I'm joining Tesla to build something here for the long term.
+
 ### 4. Underperforming team member
 > **S:** One of the sales advisors on my team had plenty of traffic, about [X] test drives a month, but closed only [X]%, against a team average of [Y]%.
 >
