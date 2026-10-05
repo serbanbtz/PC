@@ -23,7 +23,7 @@ def slug(text):
 def convert(src, dst):
     md_text = src.read_text(encoding="utf-8")
     html = markdown.markdown(md_text, extensions=["tables", "sane_lists"])
-    html = re.sub(r"<li>\[ \] ", "<li>☐ ", html)
+    html = re.sub(r"<li>(?:\[ \] |☐ )", '<li class="todo">☐ ', html)
     html = re.sub(r"(\[[^\]<>]{1,80}\])(?!\()", r'<mark class="fill">\1</mark>', html)
     html = re.sub(r"<table>", '<div class="tbl"><table>', html)
     html = re.sub(r"</table>", "</table></div>", html)
