@@ -1,0 +1,279 @@
+<meta charset="utf-8">
+<title>Generator Anunțuri Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: the car's spec sheet on the left, three ready-to-paste listings on the right; one column on phones. */
+:root {
+  --bg: #f2f4f3;
+  --panel: #ffffff;
+  --ink: #17201d;
+  --muted: #5c6a65;
+  --line: #d7dfdb;
+  --accent: #0f6b5c;
+  --accent-soft: #e2f1ed;
+  --warn: #9a5b00;
+  --f-body: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1412; --panel: #161e1b; --ink: #e9efec; --muted: #9db0a8; --line: #26322e;
+    --accent: #5fc4ad; --accent-soft: #15302a; --warn: #f0b45a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1412; --panel: #161e1b; --ink: #e9efec; --muted: #9db0a8; --line: #26322e;
+  --accent: #5fc4ad; --accent-soft: #15302a; --warn: #f0b45a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 var(--f-body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 64px; display: grid; gap: 20px; }
+h1 { margin: 0; font-size: clamp(24px, 5vw, 30px); line-height: 1.15; }
+.lede { margin: 6px 0 0; color: var(--muted); max-width: 64ch; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+form, .out { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 18px; min-width: 0; }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; }
+legend { font-weight: 700; font-size: 13px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding: 0; margin-bottom: 4px; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.fields .wide { grid-column: 1 / -1; }
+@media (max-width: 460px) { .fields { grid-template-columns: 1fr; } }
+label { display: grid; gap: 4px; font-size: 14px; font-weight: 600; min-width: 0; }
+input, select, textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: 400 15px var(--f-body); padding: 9px 11px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; }
+@media (max-width: 460px) { .checks { grid-template-columns: 1fr; } }
+.checks label { display: flex; gap: 8px; align-items: center; font-weight: 400; }
+.checks input { width: auto; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs button { border: 1px solid var(--line); background: var(--panel); color: var(--muted); border-radius: 999px; padding: 8px 14px; font: 600 14px var(--f-body); cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.block { display: grid; gap: 6px; }
+.block-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.block-head b { font-size: 14px; }
+.count { font: 500 12.5px var(--f-mono); color: var(--muted); }
+.count.over { color: var(--warn); }
+pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px; font: 400 14.5px/1.55 var(--f-body); max-height: 520px; overflow-y: auto; }
+button.copy { border: 1px solid var(--accent); background: var(--accent); color: var(--panel); border-radius: 8px; padding: 8px 12px; font: 600 14px var(--f-body); cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ok { color: var(--accent); font-size: 13px; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+.ev[hidden] { display: none; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Generator de anunțuri auto</h1>
+    <p class="lede">Completezi datele mașinii o singură dată și primești anunțul pentru Autovit, OLX și Facebook, în același stil de fiecare dată. Datele de mai jos sunt un exemplu.</p>
+  </header>
+
+  <div class="grid">
+    <form id="f" autocomplete="off">
+      <fieldset>
+        <legend>Mașina</legend>
+        <div class="fields">
+          <label for="make">Marcă<input id="make" value="Tesla"></label>
+          <label for="model">Model<input id="model" value="Model 3"></label>
+          <label for="trim" class="wide">Versiune<input id="trim" value="Long Range AWD"></label>
+          <label for="year">An fabricație<input id="year" inputmode="numeric" value="2021"></label>
+          <label for="km">Kilometri<input id="km" inputmode="numeric" value="68000"></label>
+          <label for="fuel">Combustibil
+            <select id="fuel"><option selected>Electric</option><option>Plug-in hybrid</option><option>Hibrid</option><option>Benzină</option><option>Diesel</option></select></label>
+          <label for="hp">Putere (CP)<input id="hp" inputmode="numeric" value="440"></label>
+          <label for="gearbox">Cutie
+            <select id="gearbox"><option selected>Automată</option><option>Manuală</option></select></label>
+          <label for="drive">Tracțiune
+            <select id="drive"><option>Spate</option><option>Față</option><option selected>Integrală (4x4)</option></select></label>
+          <label for="color">Culoare<input id="color" value="Alb perlat"></label>
+          <label for="first">Prima înmatriculare<input id="first" value="Germania"></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="ev" id="ev">
+        <legend>Baterie</legend>
+        <div class="fields">
+          <label for="kwh">Capacitate (kWh)<input id="kwh" inputmode="decimal" value="75"></label>
+          <label for="range">Autonomie WLTP (km)<input id="range" inputmode="numeric" value="580"></label>
+          <label for="soh">Starea bateriei (SoH %)<input id="soh" inputmode="numeric" value="91"></label>
+          <label for="warranty-bat">Garanție baterie până la<input id="warranty-bat" value="2029 sau 192.000 km"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dotări</legend>
+        <div class="checks" id="opts"></div>
+        <label for="extra">Alte dotări (separate prin virgulă)<input id="extra" value="cârlig de remorcare, set de roți de iarnă"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Stare și condiții</legend>
+        <div class="checks" id="conds"></div>
+        <div class="fields">
+          <label for="price">Preț (€)<input id="price" inputmode="numeric" value="25900"></label>
+          <label for="vatmode">TVA
+            <select id="vatmode"><option value="margin" selected>Regim marjă (fără TVA deductibil)</option><option value="deductible">TVA deductibil pentru firme</option></select></label>
+          <label for="guarantee">Garanție oferită<input id="guarantee" value="12 luni"></label>
+          <label for="city">Locație<input id="city" value="Iași"></label>
+          <label for="seller">Firma<input id="seller" placeholder="Numele firmei"></label>
+          <label for="phone">Telefon<input id="phone" placeholder="07xx xxx xxx"></label>
+        </div>
+      </fieldset>
+      <p class="note">Verifică fiecare dotare pe mașină înainte să publici. Nu bifa ce nu ai verificat. Firma, telefonul, locația și garanția rămân salvate în acest browser pentru data viitoare.</p>
+    </form>
+
+    <section class="out" aria-live="polite">
+      <div class="tabs" role="group" aria-label="Platformă">
+        <button type="button" data-p="autovit" aria-pressed="true">Autovit</button>
+        <button type="button" data-p="olx" aria-pressed="false">OLX</button>
+        <button type="button" data-p="fb" aria-pressed="false">Facebook / Instagram</button>
+      </div>
+      <div class="block" id="title-block">
+        <div class="block-head"><b>Titlu</b><span class="count" id="t-count"></span></div>
+        <pre id="title"></pre>
+        <div><button type="button" class="copy" data-copy="title">Copiază titlul</button> <span class="ok" id="ok-title" hidden>Copiat</span></div>
+      </div>
+      <div class="block">
+        <div class="block-head"><b id="d-label">Descriere</b><span class="count" id="d-count"></span></div>
+        <pre id="desc"></pre>
+        <div><button type="button" class="copy" data-copy="desc">Copiază textul</button> <span class="ok" id="ok-desc" hidden>Copiat</span></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const OPTIONS = ['Autopilot', 'Pompă de căldură', 'Plafon panoramic', 'Scaune încălzite față', 'Scaune încălzite spate', 'Sistem audio premium', 'Cameră 360° / camere', 'Navigație', 'Jante de aliaj', 'Hayon electric', 'Încărcător de bord trifazic', 'Cablu de încărcare Type 2'];
+const OPT_ON = new Set(['Autopilot', 'Pompă de căldură', 'Plafon panoramic', 'Scaune încălzite față', 'Scaune încălzite spate', 'Sistem audio premium', 'Navigație', 'Jante de aliaj', 'Cablu de încărcare Type 2']);
+const CONDS = ['Istoric de service complet', 'Fără accidente', 'Carte de service', 'Două chei', 'Verificată în service înainte de vânzare', 'Înmatriculată RO, acte la zi', 'Posibilitate de finanțare sau leasing', 'Acceptăm mașina ta la schimb'];
+const COND_ON = new Set(['Istoric de service complet', 'Fără accidente', 'Două chei', 'Verificată în service înainte de vânzare', 'Posibilitate de finanțare sau leasing']);
+const $ = id => document.getElementById(id);
+let platform = 'autovit';
+
+function boxes(el, list, on, prefix) {
+  list.forEach((name, i) => {
+    const id = prefix + i;
+    const l = document.createElement('label'); l.htmlFor = id;
+    l.innerHTML = '<input type="checkbox" id="' + id + '"' + (on.has(name) ? ' checked' : '') + '> ' + name;
+    el.appendChild(l);
+  });
+}
+boxes($('opts'), OPTIONS, OPT_ON, 'opt');
+boxes($('conds'), CONDS, COND_ON, 'cond');
+
+const v = id => $(id).value.trim();
+const n = s => { const x = parseInt(String(s).replace(/\D/g, ''), 10); return isFinite(x) ? x : null; };
+const fmt = s => { const x = n(s); return x === null ? '' : x.toLocaleString('ro-RO'); };
+const picked = (list, prefix) => list.filter((_, i) => $(prefix + i).checked);
+
+function data() {
+  const extra = v('extra').split(',').map(s => s.trim()).filter(Boolean).map(s => s[0].toUpperCase() + s.slice(1));
+  return {
+    car: [v('make'), v('model'), v('trim')].filter(Boolean).join(' '),
+    year: v('year'), km: fmt(v('km')), fuel: v('fuel'), hp: v('hp'), gearbox: v('gearbox'), drive: v('drive'),
+    color: v('color'), first: v('first'), ev: v('fuel') === 'Electric' || v('fuel') === 'Plug-in hybrid',
+    kwh: v('kwh'), range: fmt(v('range')), soh: v('soh'), wbat: v('warranty-bat'),
+    opts: picked(OPTIONS, 'opt').concat(extra), conds: picked(CONDS, 'cond'),
+    price: fmt(v('price')), vat: $('vatmode').value, guarantee: v('guarantee'), city: v('city'), seller: v('seller'), phone: v('phone'),
+  };
+}
+const vatLine = d => d.vat === 'deductible' ? 'TVA deductibil pentru firme' : 'Preț final, regim marjă';
+
+function title(d, max) {
+  const parts = [d.car, d.year, d.km && d.km + ' km', d.ev && d.soh && 'baterie ' + d.soh + '%'].filter(Boolean);
+  let t = parts.join(' · ');
+  while (t.length > max && parts.length > 2) { parts.pop(); t = parts.join(' · '); }
+  return t;
+}
+
+function specs(d) {
+  return [
+    ['An', d.year], ['Kilometri', d.km && d.km + ' km'], ['Combustibil', d.fuel], ['Putere', d.hp && d.hp + ' CP'],
+    ['Cutie', d.gearbox], ['Tracțiune', d.drive], ['Culoare', d.color], ['Prima înmatriculare', d.first],
+  ].filter(x => x[1]).map(x => '• ' + x[0] + ': ' + x[1]).join('\n');
+}
+function battery(d) {
+  if (!d.ev) return '';
+  const rows = [['Capacitate', d.kwh && d.kwh + ' kWh'], ['Autonomie WLTP', d.range && d.range + ' km'],
+    ['Starea bateriei (SoH)', d.soh && d.soh + '%, raport disponibil'], ['Garanție baterie', d.wbat]].filter(x => x[1]);
+  return rows.length ? '\n\nBATERIE\n' + rows.map(x => '• ' + x[0] + ': ' + x[1]).join('\n') : '';
+}
+
+function autovit(d) {
+  return [
+    d.car + ', ' + d.year + (d.km ? ', ' + d.km + ' km' : '') + '.',
+    '\n\nDATE TEHNICE\n' + specs(d) + battery(d),
+    d.opts.length ? '\n\nDOTĂRI\n' + d.opts.map(o => '• ' + o).join('\n') : '',
+    d.conds.length ? '\n\nSTARE\n' + d.conds.map(o => '• ' + o).join('\n') : '',
+    '\n\nPREȚ ȘI CONDIȚII\n• ' + d.price + ' € (' + vatLine(d) + ')' + (d.guarantee ? '\n• Garanție: ' + d.guarantee : '') +
+      '\n• Test drive cu programare' + (d.city ? ', în ' + d.city : ''),
+    '\n\n' + [d.seller, d.phone].filter(Boolean).join(' · '),
+  ].join('');
+}
+function olx(d) {
+  const lines = [
+    d.car + ', ' + d.year + (d.km ? ', ' + d.km + ' km' : '') + ', ' + d.fuel.toLowerCase() + (d.hp ? ', ' + d.hp + ' CP' : '') + '.',
+  ];
+  if (d.ev && (d.soh || d.range)) lines.push('Baterie: ' + [d.soh && 'SoH ' + d.soh + '%', d.range && 'autonomie WLTP ' + d.range + ' km', d.wbat && 'garanție până la ' + d.wbat].filter(Boolean).join(', ') + '.');
+  if (d.opts.length) lines.push('Dotări: ' + d.opts.join(', ') + '.');
+  if (d.conds.length) lines.push(d.conds.join('. ') + '.');
+  lines.push('Preț: ' + d.price + ' € (' + vatLine(d).toLowerCase() + ').' + (d.guarantee ? ' Garanție ' + d.guarantee + '.' : ''));
+  lines.push('Test drive cu programare' + (d.city ? ' în ' + d.city : '') + '. ' + [d.seller, d.phone].filter(Boolean).join(', ') + '.');
+  return lines.join('\n\n');
+}
+function fb(d) {
+  const bullets = [
+    (d.km ? d.km + ' km' : d.fuel) + (d.hp ? ', ' + d.hp + ' CP' : ''),
+    d.ev && d.soh ? 'Baterie ' + d.soh + '% SoH' + (d.range ? ', ' + d.range + ' km autonomie WLTP' : '') : '',
+    ...d.opts.slice(0, 4),
+    d.conds.includes('Posibilitate de finanțare sau leasing') ? 'Finanțare și leasing' : '',
+  ].filter(Boolean).map(b => '✅ ' + b);
+  return [
+    'Nou în stoc: ' + d.car + ', ' + d.year, '', ...bullets, '',
+    '💶 ' + d.price + ' €' + (d.guarantee ? ' · garanție ' + d.guarantee : ''),
+    '📍 ' + [d.city, d.seller].filter(Boolean).join(', ') + ' · test drive cu programare',
+    d.phone ? '📞 ' + d.phone : '', '', tags(d),
+  ].join('\n').replace(/\n{3,}/g, '\n\n');
+}
+function tags(d) {
+  return [v('make'), v('model'), d.ev ? 'masinielectrice' : '', d.city, 'masinisecondhand'].filter(Boolean)
+    .map(t => '#' + t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '')).join(' ');
+}
+
+const TITLE_MAX = 70;
+function render() {
+  $('ev').hidden = !(v('fuel') === 'Electric' || v('fuel') === 'Plug-in hybrid');
+  const d = data();
+  $('title-block').hidden = platform === 'fb';
+  const t = title(d, TITLE_MAX);
+  $('title').textContent = t;
+  $('t-count').textContent = t.length + ' caractere';
+  $('t-count').classList.toggle('over', t.length > TITLE_MAX);
+  const text = platform === 'autovit' ? autovit(d) : platform === 'olx' ? olx(d) : fb(d);
+  $('desc').textContent = text;
+  $('d-label').textContent = platform === 'fb' ? 'Postare' : 'Descriere';
+  $('d-count').textContent = text.length + ' caractere';
+}
+
+for (const b of document.querySelectorAll('.tabs button'))
+  b.onclick = () => {
+    platform = b.dataset.p;
+    for (const x of document.querySelectorAll('.tabs button')) x.setAttribute('aria-pressed', String(x === b));
+    render();
+  };
+for (const b of document.querySelectorAll('button.copy'))
+  b.onclick = () => {
+    const el = $(b.dataset.copy), ok = $('ok-' + b.dataset.copy);
+    const done = () => { ok.hidden = false; setTimeout(() => { ok.hidden = true; }, 1600); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); ok.textContent = 'Selectat. Apasă Copiere.'; done(); };
+    try { navigator.clipboard.writeText(el.textContent).then(() => { ok.textContent = 'Copiat'; done(); }, fallback); } catch (e) { fallback(); }
+  };
+const KEEP = ['seller', 'phone', 'city', 'guarantee'], KEY = 'anunturi-firma-v1';
+try { const saved = JSON.parse(localStorage.getItem(KEY) || '{}'); for (const k of KEEP) if (saved[k]) $(k).value = saved[k]; } catch (e) {}
+function keep() { try { localStorage.setItem(KEY, JSON.stringify(Object.fromEntries(KEEP.map(k => [k, v(k)])))); } catch (e) {} }
+$('f').addEventListener('input', e => { if (KEEP.includes(e.target.id)) keep(); render(); });
+$('f').addEventListener('change', render);
+$('f').addEventListener('submit', e => e.preventDefault());
+render();
+</script>
