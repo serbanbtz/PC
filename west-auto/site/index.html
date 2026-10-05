@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>West Auto · Mașini electrice și hibride second-hand</title>
+<meta name="description" content="Mașini electrice și hibride second-hand, verificate, cu actele rezolvate. Test drive, finanțare și leasing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Public+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: a short hero that goes straight to the stock grid; trust points, financing and contact follow as plain bands. */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --ink: #10151c;
+  --muted: #586274;
+  --line: #dfe3ea;
+  --accent: #2847d4;
+  --accent-ink: #ffffff;
+  --ev: #12805c;
+  --ev-soft: #e3f3ec;
+  --tag: #8a5a00;
+  --tag-soft: #fbf0d9;
+  --f-display: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Public Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1117; --surface: #161b23; --ink: #edf0f5; --muted: #a0aabb; --line: #283040;
+    --accent: #8aa2ff; --accent-ink: #0d1117; --ev: #5fd3a6; --ev-soft: #12302a; --tag: #f2c46b; --tag-soft: #3a2e14;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1117; --surface: #161b23; --ink: #edf0f5; --muted: #a0aabb; --line: #283040;
+  --accent: #8aa2ff; --accent-ink: #0d1117; --ev: #5fd3a6; --ev-soft: #12302a; --tag: #f2c46b; --tag-soft: #3a2e14;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--f-body); }
+a { color: var(--accent); }
+.container { max-width: 1120px; margin: 0 auto; padding-inline: 16px; }
+header.top { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+header.top .container { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
+.brand { font: 700 22px/1 var(--f-display); color: var(--ink); text-decoration: none; letter-spacing: -.01em; }
+nav.links { display: flex; gap: 18px; align-items: center; }
+nav.links a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 15px; }
+nav.links a:hover { color: var(--ink); }
+@media (max-width: 640px) { nav.links a.opt { display: none; } }
+.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; padding: 12px 18px; font: 600 16px/1 var(--f-body); text-decoration: none; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { color: var(--accent); background: transparent; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.hero { padding-block: 48px 32px; display: grid; gap: 18px; }
+.hero h1 { font: 700 clamp(34px, 7vw, 60px)/1.02 var(--f-display); margin: 0; letter-spacing: -.02em; max-width: 16ch; text-wrap: balance; }
+.hero p { margin: 0; color: var(--muted); max-width: 52ch; font-size: 19px; }
+.hero .cta { display: flex; gap: 10px; flex-wrap: wrap; }
+.facts { display: flex; gap: 22px; flex-wrap: wrap; color: var(--muted); font-size: 15px; }
+.facts b { color: var(--ink); }
+section { padding-block: 36px; }
+h2 { font: 700 clamp(26px, 4.5vw, 36px)/1.1 var(--f-display); margin: 0 0 18px; letter-spacing: -.01em; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.filters button { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 14px; font: 600 14px var(--f-body); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.cars { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.car { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.photo { aspect-ratio: 16 / 10; max-width: 100%; background: var(--line); display: grid; place-items: center; position: relative; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo .ph { font: 700 22px var(--f-display); color: var(--muted); text-align: center; padding: 12px; }
+.badge { position: absolute; top: 10px; left: 10px; font: 600 12px/1 var(--f-body); padding: 6px 8px; border-radius: 6px; background: var(--ev-soft); color: var(--ev); }
+.badge.demo { left: auto; right: 10px; background: var(--tag-soft); color: var(--tag); }
+.info { padding: 16px; display: grid; gap: 10px; align-content: start; }
+.info h3 { margin: 0; font: 700 20px/1.2 var(--f-display); }
+.info .trim { color: var(--muted); font-size: 15px; margin-top: -6px; }
+.specs { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.specs b { color: var(--ink); font-weight: 600; }
+.price { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 10px; }
+.price strong { font: 700 24px var(--f-display); font-variant-numeric: tabular-nums; }
+.price small { color: var(--muted); }
+.empty { color: var(--muted); }
+.why { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+.why div { border-top: 3px solid var(--accent); padding-top: 12px; }
+.why h3 { margin: 0 0 6px; font: 700 19px var(--f-display); }
+.why p { margin: 0; color: var(--muted); }
+.band { background: var(--surface); border-block: 1px solid var(--line); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; align-items: start; }
+.two p { margin: 0 0 12px; max-width: 60ch; }
+.contact dl { margin: 0; display: grid; gap: 10px; }
+.contact dt { font-size: 13px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 600; }
+.contact dd { margin: 0; font-size: 18px; }
+footer { padding-block: 28px 40px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="container">
+    <a class="brand" href="#" id="brand">West Auto</a>
+    <nav class="links" aria-label="Meniu">
+      <a href="#stoc">Stoc</a>
+      <a href="#finantare" class="opt">Finanțare</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container hero">
+    <h1>Electrice și hibride rulate, verificate înainte să ajungă la tine</h1>
+    <p id="slogan"></p>
+    <div class="cta">
+      <a class="btn primary" href="#stoc">Vezi mașinile din stoc</a>
+      <a class="btn ghost" id="call" href="#contact">Programează un test drive</a>
+    </div>
+    <div class="facts" id="facts"></div>
+  </div>
+
+  <section id="stoc">
+    <div class="container">
+      <h2>În stoc acum</h2>
+      <div class="filters" role="group" aria-label="Filtrează după combustibil" id="filters"></div>
+      <div class="cars" id="cars"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Ce verificăm la fiecare mașină</h2>
+      <div class="why">
+        <div><h3>Bateria</h3><p>Pentru electrice și plug-in măsurăm starea bateriei și îți arătăm raportul, nu doar autonomia din anunț.</p></div>
+        <div><h3>Istoricul</h3><p>VIN, kilometraj, istoric de service și daune. Ce găsim îți spunem înainte de test drive.</p></div>
+        <div><h3>Actele</h3><p>Pentru mașinile aduse din UE rezolvăm RAR-ul, CIV-ul și ITP-ul. Primești mașina gata de drum.</p></div>
+        <div><h3>După vânzare</h3><p>Te sunăm după primele săptămâni și te ajutăm cu transferul în aplicația producătorului.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="finantare" class="band">
+    <div class="container two">
+      <div>
+        <h2>Finanțare și leasing</h2>
+        <p>Lucrăm cu bănci și firme de leasing, pentru persoane fizice și pentru firme. Îți explicăm pe înțeles avansul, rata și ce acte îți trebuie, iar dosarul îl trimitem noi.</p>
+        <p>Ai deja o mașină? O putem lua la schimb.</p>
+      </div>
+      <div>
+        <h2>Vrei un Tesla rulat?</h2>
+        <p>Am scris un ghid scurt cu tot ce merită verificat: bateria, garanția care trece la noul proprietar, opțiunile de software și transferul în aplicație.</p>
+        <p><a class="btn ghost" href="Ghid_Tesla_Second_Hand.pdf">Deschide ghidul (PDF)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container two">
+      <div>
+        <h2>Vino la un test drive</h2>
+        <p>Sună-ne înainte, ca mașina să fie încărcată și pregătită când ajungi.</p>
+      </div>
+      <dl id="contact-list"></dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" id="foot"></div>
+</footer>
+
+<script src="stoc.js"></script>
+<script>
+const F = window.FIRMA || {}, CARS = window.STOC || [];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const nr = x => Number(x).toLocaleString('ro-RO');
+const telHref = t => 'tel:' + String(t).replace(/[^\d+]/g, '');
+
+if (F.nume) { $('brand').textContent = F.nume; document.title = F.nume + ' · Mașini electrice și hibride second-hand'; }
+$('slogan').textContent = F.slogan || '';
+if (F.telefon) { $('call').href = telHref(F.telefon); $('call').textContent = 'Sună: ' + F.telefon; }
+
+const facts = [];
+if (F.aniPePiata) facts.push('<span><b>' + esc(F.aniPePiata) + ' ani</b> pe piață</span>');
+const evCount = CARS.filter(c => !c.exemplu && (c.combustibil === 'Electric' || c.combustibil === 'Plug-in')).length;
+if (evCount) facts.push('<span><b>' + evCount + '</b> electrice în stoc</span>');
+if (F.adresa) facts.push('<span>' + esc(F.adresa) + '</span>');
+$('facts').innerHTML = facts.join('');
+
+const GROUPS = [['Toate', () => true], ['Electrice', c => c.combustibil === 'Electric'],
+  ['Hibride și plug-in', c => /Hibrid|Plug-in/.test(c.combustibil)], ['Benzină și diesel', c => /Benzin|Diesel/.test(c.combustibil)]];
+let active = 0;
+function renderFilters() {
+  $('filters').innerHTML = '';
+  GROUPS.forEach(([label, test], i) => {
+    const n = CARS.filter(test).length;
+    if (i && !n) return;
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = label + ' (' + n + ')';
+    b.setAttribute('aria-pressed', String(i === active));
+    b.onclick = () => { active = i; renderFilters(); renderCars(); };
+    $('filters').appendChild(b);
+  });
+}
+function card(c) {
+  const name = [c.marca, c.model].filter(Boolean).join(' ');
+  const photo = c.poza ? '<img src="poze/' + esc(c.poza) + '" alt="' + esc(name + ' ' + (c.an || '')) + '" loading="lazy">' : '<span class="ph">' + esc(name) + '</span>';
+  const badge = c.combustibil === 'Electric' ? '<span class="badge">Electric</span>' : /Hibrid|Plug-in/.test(c.combustibil) ? '<span class="badge">' + esc(c.combustibil) + '</span>' : '';
+  const specs = [c.an && '<span><b>' + esc(c.an) + '</b></span>', c.km != null && '<span><b>' + nr(c.km) + '</b> km</span>',
+    c.putere && '<span><b>' + esc(c.putere) + '</b> CP</span>', c.baterieSoH && '<span>baterie <b>' + esc(c.baterieSoH) + '%</b></span>',
+    c.autonomie && '<span><b>' + nr(c.autonomie) + '</b> km WLTP</span>'].filter(Boolean).join('');
+  const more = c.anunt ? '<a href="' + esc(c.anunt) + '" target="_blank" rel="noopener">Vezi anunțul</a>'
+    : F.telefon ? '<a href="' + telHref(F.telefon) + '">Sună pentru detalii</a>' : '';
+  return '<article class="car"><div class="photo">' + photo + badge + (c.exemplu ? '<span class="badge demo">EXEMPLU</span>' : '') + '</div>' +
+    '<div class="info"><h3>' + esc(name) + '</h3>' + (c.versiune ? '<div class="trim">' + esc(c.versiune) + '</div>' : '') +
+    '<div class="specs">' + specs + '</div>' +
+    (c.dotari && c.dotari.length ? '<div class="specs">' + c.dotari.map(esc).join(' · ') + '</div>' : '') +
+    '<div class="price"><strong>' + nr(c.pret) + ' €</strong><small>' + (c.tva === 'deductibil' ? 'TVA deductibil' : 'preț final') + '</small>' + more + '</div></div></article>';
+}
+function renderCars() {
+  const list = CARS.filter(GROUPS[active][1]);
+  $('cars').innerHTML = list.length ? list.map(card).join('') : '<p class="empty">Momentan nu avem mașini în această categorie. Sună-ne: aducem la comandă.</p>';
+}
+renderFilters(); renderCars();
+
+const rows = [];
+if (F.telefon) rows.push(['Telefon', '<a href="' + telHref(F.telefon) + '">' + esc(F.telefon) + '</a>']);
+if (F.email) rows.push(['E-mail', esc(F.email)]);
+if (F.adresa) rows.push(['Adresă', esc(F.adresa) + '<br><a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(F.adresa) + '" target="_blank" rel="noopener">Deschide în Google Maps</a>']);
+if (F.program) rows.push(['Program', esc(F.program)]);
+if (F.facebook) rows.push(['Facebook', '<a href="' + esc(F.facebook) + '" target="_blank" rel="noopener">Pagina noastră</a>']);
+if (F.autovit) rows.push(['Autovit', '<a href="' + esc(F.autovit) + '" target="_blank" rel="noopener">Toate anunțurile</a>']);
+$('contact-list').innerHTML = rows.length ? rows.map(([k, v]) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>').join('')
+  : '<div><dt>Contact</dt><dd>Completează telefonul și adresa în fișierul stoc.js.</dd></div>';
+$('foot').textContent = '© ' + new Date().getFullYear() + ' ' + (F.nume || '') + (F.adresa ? ' · ' + F.adresa : '');
+</script>
+</body>
+</html>
