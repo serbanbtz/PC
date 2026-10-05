@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de predare</title>
+<style>
+:root {
+  --bg:#fafaf9; --surface:#ffffff; --text:#1c1917; --muted:#57534e; --border:#e7e5e4;
+  --accent:#cc0000; --quote-bg:#f5f5f4; --quote-border:#a8a29e; --mark-bg:#fef08a; --mark-text:#1c1917;
+  --th-bg:#f5f5f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#0c0a09; --surface:#1c1917; --text:#f5f5f4; --muted:#a8a29e; --border:#292524;
+    --accent:#ff5c5c; --quote-bg:#1c1917; --quote-border:#57534e; --mark-bg:#854d0e; --mark-text:#fef9c3;
+    --th-bg:#292524;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#0c0a09; --surface:#1c1917; --text:#f5f5f4; --muted:#a8a29e; --border:#292524;
+  --accent:#ff5c5c; --quote-bg:#1c1917; --quote-border:#57534e; --mark-bg:#854d0e; --mark-text:#fef9c3;
+  --th-bg:#292524;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--text);
+  font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+main { max-width:760px; margin:0 auto; padding:24px 16px 80px; }
+nav.toc { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--border);
+  display:flex; gap:6px; overflow-x:auto; padding:10px 16px; -webkit-overflow-scrolling:touch; }
+nav.toc a { flex:0 0 auto; font-size:13px; text-decoration:none; color:var(--muted);
+  border:1px solid var(--border); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+nav.toc a:hover { color:var(--accent); border-color:var(--accent); }
+h1 { font-size:26px; line-height:1.25; margin:8px 0 12px; }
+h2 { font-size:21px; margin:40px 0 12px; padding-top:12px; border-top:2px solid var(--accent); scroll-margin-top:56px; }
+h3 { font-size:17px; margin:28px 0 8px; scroll-margin-top:56px; }
+p, li { overflow-wrap:anywhere; }
+blockquote { margin:12px 0; padding:12px 16px; background:var(--quote-bg);
+  border-left:4px solid var(--quote-border); border-radius:6px; }
+blockquote p { margin:6px 0; }
+blockquote ul, blockquote ol { padding-left:20px; margin:6px 0; }
+mark.fill { background:var(--mark-bg); color:var(--mark-text); padding:0 3px; border-radius:3px; }
+.tbl { overflow-x:auto; margin:12px 0; border:1px solid var(--border); border-radius:8px; background:var(--surface); }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th, td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--border); }
+th { background:var(--th-bg); }
+tr:last-child td { border-bottom:0; }
+hr { border:0; height:0; margin:24px 0; }
+em { color:var(--muted); }
+blockquote em { color:inherit; }
+code { font-size:0.9em; }
+</style></head>
+</head>
+<body>
+<nav class="toc"><a href="#1-conflictul-de-interese-cu-tesla-ce-trebuie-rezolvat-formal">1. Conflictul de interese cu Tesla: ce trebuie rezolvat formal</a><a href="#2-contacte-cheie">2. Contacte-cheie</a><a href="#3-conturi-si-acces-fara-parole">3. Conturi și acces (fără parole)</a><a href="#4-achizitia-cum-alegem-si-cumparam-o-masina">4. Achiziția: cum alegem și cumpărăm o mașină</a><a href="#5-import-si-inmatriculare">5. Import și înmatriculare</a><a href="#6-pregatirea-masinii-pentru-vanzare">6. Pregătirea mașinii pentru vânzare</a><a href="#7-vanzarea">7. Vânzarea</a><a href="#8-livrarea">8. Livrarea</a><a href="#9-dupa-vanzare">9. După vânzare</a><a href="#10-bani-si-contabilitate">10. Bani și contabilitate</a><a href="#11-ce-se-face-si-cand">11. Ce se face și când</a><a href="#12-planul-de-predare-4-saptamani">12. Planul de predare (4 săptămâni)</a></nav>
+<main>
+<h1 id="manual-de-predare-west-auto">Manual de predare – West Auto</h1>
+<p><strong>Scopul:</strong> cine preia West Auto să poată conduce firma de zi cu zi fără tine. Te ajută și la interviul Tesla: răspunsul la „What happens with West Auto?” devine credibil când predarea e reală și scrisă.</p>
+<blockquote>
+<p><strong><mark class="fill">[X]</mark></strong> = completezi tu. Nu scrie <strong>niciodată parole</strong> în acest document. Ține-le într-un manager de parole (Bitwarden, 1Password) și dă acces persoanei care preia.</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cine preia</strong></td>
+<td><mark class="fill">[Nume, rol în familie]</mark></td>
+</tr>
+<tr>
+<td><strong>Data predării complete</strong></td>
+<td><mark class="fill">[zz.ll.2026]</mark></td>
+</tr>
+<tr>
+<td><strong>Unde găsești cifrele firmei</strong></td>
+<td><code>West_Auto_Vanzari.xlsx</code> (foaia „Analiza”)</td>
+</tr>
+<tr>
+<td><strong>Ultima actualizare a manualului</strong></td>
+<td><mark class="fill">[data]</mark></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="1-conflictul-de-interese-cu-tesla-ce-trebuie-rezolvat-formal">1. Conflictul de interese cu Tesla: ce trebuie rezolvat formal</h2>
+<p>Tesla va vrea să știe că nu mai ai <strong>niciun rol operațional</strong> într-un dealer care vinde Tesla second-hand în aceeași regiune. Discută cu <strong>contabilul și cu un avocat</strong> ce se aplică în cazul tău. De obicei, întrebările sunt:</p>
+<ul>
+<li>☐ Rămâi <strong>administrator</strong> la Registrul Comerțului (ONRC)? Dacă da, schimbarea administratorului e pasul cel mai clar.</li>
+<li>☐ Rămâi <strong>asociat</strong>, adică ai părți sociale? Spune-o deschis la Tesla și declar-o în formularul lor de conflict de interese.</li>
+<li>☐ Ai <strong>semnătura în bancă</strong> sau împuterniciri? Transferă-le.</li>
+<li>☐ Ești <strong>persoana de contact</strong> pe Autovit, OLX sau la furnizori? Schimbă contul pe numele noului responsabil.</li>
+</ul>
+<p><em>Ce spui la interviu, după ce ai decis:</em> „<mark class="fill">[Family member]</mark> has taken over day-to-day management. I have no operational role, and I'm happy to declare <mark class="fill">[my shareholding]</mark> formally.”</p>
+<hr />
+<h2 id="2-contacte-cheie">2. Contacte-cheie</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Nume / firmă</th>
+<th>Telefon</th>
+<th>Pentru ce îl suni</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contabil</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Facturi, TVA, raportări lunare</td>
+</tr>
+<tr>
+<td>Bancă (cont firmă)</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Plăți, extrase</td>
+</tr>
+<tr>
+<td>Finanțare clienți</td>
+<td>tbi bank: <mark class="fill">[persoana de contact]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Dosare de credit</td>
+</tr>
+<tr>
+<td>Leasing</td>
+<td><mark class="fill">[firma de leasing, persoana]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Leasing pentru firme și persoane fizice</td>
+</tr>
+<tr>
+<td>Transport din Germania</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Platformă, programări</td>
+</tr>
+<tr>
+<td>RAR Iași</td>
+<td><mark class="fill">[adresa]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Programări pentru omologare și ITP</td>
+</tr>
+<tr>
+<td>Înmatriculări (SPCRPCIV Iași)</td>
+<td><mark class="fill">[adresa]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Programări pentru numere</td>
+</tr>
+<tr>
+<td>Service partener</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Reparații, pregătire, garanție</td>
+</tr>
+<tr>
+<td>Service pentru electrice</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Diagnoză baterie, software</td>
+</tr>
+<tr>
+<td>Asigurări</td>
+<td><mark class="fill">[broker]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>RCA, CASCO pentru mașinile din stoc</td>
+</tr>
+<tr>
+<td>Furnizori principali (DE)</td>
+<td><mark class="fill">[dealer 1, dealer 2]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Achiziții</td>
+</tr>
+<tr>
+<td>Avocat</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>Contracte, ANPC, litigii</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="3-conturi-si-acces-fara-parole">3. Conturi și acces (fără parole)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Ce</th>
+<th>Pe numele cui e acum</th>
+<th>Cine îl preia</th>
+<th>Gata?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autovit (cont firmă)</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>OLX</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Facebook / Instagram</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>mobile.de (cont cumpărător)</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Internet banking</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>E-mail firmă și domeniu</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Program de facturare</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+<tr>
+<td>SPV / ANAF</td>
+<td><mark class="fill">[X]</mark></td>
+<td><mark class="fill">[X]</mark></td>
+<td>☐</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="4-achizitia-cum-alegem-si-cumparam-o-masina">4. Achiziția: cum alegem și cumpărăm o mașină</h2>
+<p><strong>De unde cumpărăm:</strong> <mark class="fill">[mobile.de, dealeri din Germania, licitații, clienți care predau mașina]</mark></p>
+<p><strong>Ce verificăm înainte să plătim:</strong>
+- <mark class="fill">[ ]</mark> VIN-ul din acte = VIN-ul de pe mașină
+- <mark class="fill">[ ]</mark> Istoric de service complet și kilometraj coerent
+- <mark class="fill">[ ]</mark> Istoric de daune (raport VIN, poze, vopsea măsurată)
+- <mark class="fill">[ ]</mark> <strong>Pentru electrice:</strong> starea bateriei (SoH), cu raport de la dealer sau citire din aplicație sau diagnoză
+- <mark class="fill">[ ]</mark> <strong>Pentru Tesla:</strong> ce opțiuni de software are mașina și dacă rămân după vânzare (Autopilot, FSD, conectivitate). Verifică pe factura sau contul vânzătorului.
+- <mark class="fill">[ ]</mark> Există <strong>CoC</strong> (certificat de conformitate)? Fără el, omologarea la RAR durează mai mult.
+- <mark class="fill">[ ]</mark> <strong>Regimul TVA al vânzătorului:</strong> factura e cu TVA deductibil sau în regim de marjă? Schimbă calculul de preț (vezi Calculatorul de import).</p>
+<p><strong>Limite de decizie:</strong>
+- Prețul maxim pe care îl poate aproba singur noul responsabil: <strong><mark class="fill">[X]</mark> €</strong>
+- Peste această sumă se discută cu: <strong><mark class="fill">[X]</mark></strong>
+- Stocul maxim de mașini în același timp: <strong><mark class="fill">[X]</mark></strong></p>
+<hr />
+<h2 id="5-import-si-inmatriculare">5. Import și înmatriculare</h2>
+<p>Pașii obișnuiți pentru o mașină adusă din Germania. <strong>Verifică la RAR Iași dacă s-a schimbat ceva</strong>: regulile se actualizează des, iar în 2026 verificările de VIN și de daune au devenit mai stricte.</p>
+<ol>
+<li><strong>Acte de la vânzător:</strong> Zulassungsbescheinigung Teil I și Teil II, factura sau contractul, CoC dacă există.</li>
+<li><strong>Transport:</strong> <mark class="fill">[cu platformă / pe roți cu numere de export]</mark>. Cost obișnuit: <mark class="fill">[X]</mark> €.</li>
+<li><strong>RAR:</strong> programare online, apoi certificatul de autenticitate și <strong>CIV-ul</strong> (cartea de identitate a vehiculului). Dacă mașina nu are omologare UE sau a fost modificată, urmează omologarea individuală.</li>
+<li><strong>ITP</strong>, valabil la data înmatriculării.</li>
+<li><strong>Înmatriculare</strong> la SPCRPCIV Iași, cu programare, sau vânzare cu actele pregătite pentru client, cum lucrăm de obicei: <mark class="fill">[X]</mark>.</li>
+<li><strong>Timp total obișnuit:</strong> de la plată până când mașina e gata de vânzare, <mark class="fill">[X]</mark> zile.</li>
+</ol>
+<blockquote>
+<p><strong>Atenție, din avertismentele RAR:</strong> nu cumpăra și nu vinde o mașină fără ca CIV-ul să fie rezolvat. Fără CIV, mașina nu se poate înmatricula.</p>
+</blockquote>
+<hr />
+<h2 id="6-pregatirea-masinii-pentru-vanzare">6. Pregătirea mașinii pentru vânzare</h2>
+<ul>
+<li>☐ Inspecție completă la <mark class="fill">[service partener]</mark></li>
+<li>☐ Reparații aprobate până la <mark class="fill">[X]</mark> € fără discuție</li>
+<li>☐ Curățare interior și exterior, polish dacă e nevoie</li>
+<li>☐ Pentru electrice: încărcare la 80%, actualizare software, cablu de încărcare verificat</li>
+<li>☐ Două chei, manual, roți de iarnă sau vară, după caz</li>
+<li>☐ Poze: minimum 25, în aceeași ordine (vezi Generatorul de anunțuri)</li>
+</ul>
+<hr />
+<h2 id="7-vanzarea">7. Vânzarea</h2>
+<p><strong>Anunțul:</strong> se scrie cu Generatorul de anunțuri, ca toate să arate la fel. Prețul îl stabilește <mark class="fill">[X]</mark>, pe baza calculului din Calculatorul de import.</p>
+<p><strong>Test drive:</strong>
+- <mark class="fill">[ ]</mark> Copie după buletin și permis
+- <mark class="fill">[ ]</mark> Traseul standard: <mark class="fill">[X]</mark>, cam <mark class="fill">[X]</mark> minute
+- <mark class="fill">[ ]</mark> Cine merge cu clientul: <mark class="fill">[X]</mark></p>
+<p><strong>Negociere:</strong> reducere maximă fără aprobare: <strong><mark class="fill">[X]</mark> €</strong>.</p>
+<p><strong>Finanțare:</strong>
+1. Clientul completează cererea pentru <mark class="fill">[tbi bank / leasing]</mark>.
+2. <mark class="fill">[Cine]</mark> trimite dosarul. Răspunsul vine de obicei în <mark class="fill">[X]</mark> ore.
+3. Nu predăm mașina până nu e confirmată plata integrală.</p>
+<p><strong>Contractul:</strong> se folosește modelul de contract din <mark class="fill">[unde e salvat]</mark>. Garanția oferită: <mark class="fill">[X luni / X km]</mark>.</p>
+<hr />
+<h2 id="8-livrarea">8. Livrarea</h2>
+<p><strong>Cu 3 zile înainte:</strong>
+- <mark class="fill">[ ]</mark> Plata sau finanțarea confirmate
+- <mark class="fill">[ ]</mark> Actele gata (CIV, contract, factură, ITP)
+- <mark class="fill">[ ]</mark> Mașina curată, încărcată sau cu plinul făcut</p>
+<p><strong>La livrare (30–45 de minute):</strong>
+- <mark class="fill">[ ]</mark> Explicăm mașina, aplicația, încărcarea (pentru electrice)
+- <mark class="fill">[ ]</mark> Semnăm procesul-verbal de predare
+- <mark class="fill">[ ]</mark> Facem o poză cu clientul, dacă vrea, pentru social media</p>
+<hr />
+<h2 id="9-dupa-vanzare">9. După vânzare</h2>
+<ul>
+<li><strong>Telefon după <mark class="fill">[X]</mark> zile:</strong> „Cum merge mașina? Aveți întrebări?” Așa prindem problemele înainte să devină reclamații.</li>
+<li><strong>Reclamații:</strong> îl sună <strong>în aceeași zi</strong> persoana responsabilă. Notăm problema, data și ce am promis. Soluție sau plan în 48 de ore. Pentru reparații în garanție: <mark class="fill">[procedura]</mark>.</li>
+<li><strong>Dacă vine o sesizare de la ANPC:</strong> răspunsul se trimite în termenul cerut. Sunăm întâi clientul, apoi răspundem în scris. Model de răspuns: <mark class="fill">[unde e salvat]</mark>.</li>
+<li><strong>Recomandări:</strong> fiecare client mulțumit primește <mark class="fill">[X]</mark>, de exemplu un bonus dacă aduce pe cineva.</li>
+</ul>
+<hr />
+<h2 id="10-bani-si-contabilitate">10. Bani și contabilitate</h2>
+<ul>
+<li><strong>TVA:</strong> mașinile cumpărate de la persoane fizice sau în regim de marjă se vând de obicei <strong>în regim special (TVA la marjă)</strong>. Cele cumpărate cu TVA deductibil, cu TVA normal. <strong>Contabilul decide pentru fiecare mașină.</strong> Cota standard de TVA e 21% (din august 2025).</li>
+<li><strong>Ce trimitem lunar contabilului:</strong> facturi de achiziție, facturi de vânzare, contracte, extrase. Termen: până pe <mark class="fill">[X]</mark> ale lunii.</li>
+<li><strong>Finanțarea stocului:</strong> <mark class="fill">[din bani proprii / linie de credit]</mark>. Limita: <mark class="fill">[X]</mark> €.</li>
+<li><strong>Cifrele firmei:</strong> se trec toate mașinile vândute în <code>West_Auto_Vanzari.xlsx</code>.</li>
+</ul>
+<hr />
+<h2 id="11-ce-se-face-si-cand">11. Ce se face și când</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Când</th>
+<th>Ce</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zilnic</strong></td>
+<td>Răspuns la toate mesajele în maximum 2 ore. Verificat stocul și programările.</td>
+</tr>
+<tr>
+<td><strong>Săptămânal</strong></td>
+<td>Anunțuri reactualizate. Prețuri revăzute pentru mașinile cu peste <mark class="fill">[30]</mark> de zile în stoc.</td>
+</tr>
+<tr>
+<td><strong>Lunar</strong></td>
+<td>Acte la contabil. Excelul cu vânzări completat. O privire pe marjă și pe zilele în stoc.</td>
+</tr>
+<tr>
+<td><strong>Anual</strong></td>
+<td>Asigurări, autorizații, contracte cu partenerii. <mark class="fill">[Alte termene]</mark></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="12-planul-de-predare-4-saptamani">12. Planul de predare (4 săptămâni)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Săptămâna</th>
+<th>Cine conduce</th>
+<th>Ce se întâmplă</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Tu</td>
+<td><mark class="fill">[Persoana]</mark> stă lângă tine la tot: achiziții, vânzări, livrări.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Împreună</td>
+<td><mark class="fill">[Persoana]</mark> face, tu verifici. Prima achiziție făcută de ea.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><mark class="fill">[Persoana]</mark></td>
+<td>Tu doar răspunzi la întrebări.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><mark class="fill">[Persoana]</mark></td>
+<td>Tu nu mai intervii. Bifăm conturile, accesul și pașii formali din secțiunea 1.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Semnătura predării:</strong> ☐ <mark class="fill">[Nume]</mark> confirmă că a primit manualul, accesul și contactele. Data: <mark class="fill">[X]</mark></p>
+</main>
+</body></html>
