@@ -143,6 +143,7 @@ Fișa postului descrie un rol de **conducere a întregului magazin**: *„raport
 ### 5. Management zilnic și motivarea echipei
 *How do you manage your team day-to-day and keep them motivated?*
 > Conduc din showroom, nu din birou.
+>
 > - **Ședința de dimineață, 10 minute:** cifrele de ieri, test drive-urile și livrările de azi, cine ce face, posibile blocaje.
 > - **În timpul zilei:** sunt cu echipa. Ascult discuțiile, dau feedback pe loc și intervin când e aglomerat. Scopul meu e să-i fac independenți, nu să le fac eu treaba.
 > - **Săptămânal:** o discuție scurtă unu-la-unu cu fiecare, despre cifre *și* despre dezvoltarea lui.
@@ -263,6 +264,7 @@ Fișa postului descrie un rol de **conducere a întregului magazin**: *„raport
 
 Aceasta e **șansa ta de a ieși în evidență**: niciun candidat din București nu cunoaște Iașiul ca tine.
 > Tesla nu se bazează pe publicitate clasică, deci creșterea vine din **test drive-uri, recomandări și comunitate**. În Iași m-aș concentra pe patru lucruri:
+>
 > 1. **Proprietarii actuali din regiune.** Azi merg la [Bacău/București] pentru service. Sunt cei mai buni ambasadori ai noștri, așa că i-aș invita la deschidere și aș folosi programul de recomandări (referral).
 > 2. **Firmele.** Iașiul are o comunitate mare de IT, medicină și universități, iar multe mașini se cumpără aici pe firmă, prin leasing. Aș organiza zile de test drive la sediile marilor angajatori și aș explica clar achiziția pe firmă și leasingul.
 > 3. **Test drive-uri peste tot.** Evenimente locale, centre comerciale, [evenimente locale specifice pe care le cunoști].

@@ -135,6 +135,7 @@ Fișa postului descrie un rol de **conducere a întregului magazin**: *„report
 
 ### 5. Day-to-day management & motivation
 > I lead from the floor, not from the office.
+>
 > - **Morning huddle, 10 minutes:** yesterday's numbers, today's test drives and deliveries, who does what, possible bottlenecks.
 > - **During the day:** I'm with the team. I listen to conversations, give feedback on the spot, and step in when it gets busy. My goal is to make people independent, not to do their job for them.
 > - **Weekly:** a short 1:1 with everyone on their numbers *and* their development.
@@ -242,6 +243,7 @@ Fișa postului descrie un rol de **conducere a întregului magazin**: *„report
 ### A. „How would you grow Tesla in Iași? / How would you build awareness for a new store?”
 Aceasta e **șansa ta de a ieși în evidență**: niciun candidat din București nu cunoaște Iașiul ca tine.
 > Tesla doesn't rely on classic advertising, so growth comes from **test drives, referrals and community**. In Iași I'd focus on four things:
+>
 > 1. **Existing owners in the region.** Today they drive to [Bacău/Bucharest] for service. They're our best ambassadors, so I'd invite them to the opening and use the referral program.
 > 2. **Companies.** Iași has a big IT, medical and university community, and many cars here are bought through companies and leasing. Test-drive days at large employers' offices, plus clear explanations of company purchase and leasing.
 > 3. **Test drives everywhere.** Local events, shopping centres, [specific local events you know].
