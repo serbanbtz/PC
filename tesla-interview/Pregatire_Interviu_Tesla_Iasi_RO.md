@@ -306,6 +306,8 @@ Fii pregătit să vorbești 30 de secunde despre: BYD (conform presei, a devenit
 ---
 
 ## 6. Fapte de știut despre Tesla în România (verifică pe tesla.com/ro_RO înainte de joi)
+> **Actualizare 5 octombrie:** în august, MG4 și BYD au trecut în fața Tesla, iar Tesla Bonus a fost valabil până pe 30 septembrie. Vezi fișa completă: **Fapte_Tesla_Romania_Oct2026** (cifrele T3, Rabla, Iași, garanție, surse).
+
 - **Model Y** a fost cea mai vândută mașină electrică din România în T1 2026 (355 de unități), conform presei. În primele 7 luni din 2026 au fost ~870 de unități, cu +341% față de anul anterior.
 - **Tesla Bonus de 3.600 €**, cumulabil cu **Rabla**, a coborât Model 3 sub 30.000 € și Model Y sub 34.000 € (vara 2026). **Verifică dacă oferta mai e activă în octombrie.**
 - **FSD (Supervised)** a fost aprobat de RDW (Olanda) în aprilie 2026 și activat în câteva țări. **Nu are aprobare la nivel UE**, așa că nu promite FSD pentru România.
