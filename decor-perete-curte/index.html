@@ -78,7 +78,9 @@ header{display:grid;gap:18px}
 .hint{font-size:.85rem;color:var(--ink-2)}
 
 /* swatch strip */
-.swatches{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(132px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.swatches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding-bottom:6px}
+@media (max-width:760px){.swatches{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(132px,1fr);overflow-x:auto;scrollbar-width:thin}}
+.sw .n b{font:500 .62rem var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent-ink);background:var(--accent);padding:1px 5px;border-radius:3px;margin-left:6px}
 .sw{display:grid;gap:6px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:6px 6px 9px;cursor:pointer;color:var(--ink);font:inherit}
 .sw img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:28% 45%;border-radius:3px;display:block}
 .sw .n{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-2)}
@@ -136,7 +138,7 @@ section{display:grid;gap:16px}
 <div class="wrap">
 <header>
   <span class="eyebrow">Placare perete exterior · simulări pe pozele tale · prețuri din 8 noiembrie 2026</span>
-  <h1>Peretele din curte: 7 variante de placare</h1>
+  <h1>Peretele din curte: 10 variante de placare</h1>
   <p class="lede">Am pus fiecare model direct pe pozele tale, în perspectiva reală a zidului, cu obiectele din curte lăsate în față. Sub poză ai produsul concret, prețul, cantitatea pentru 11 m și dacă e pe stoc. Trage de linia albă ca să compari înainte și după.</p>
   <div class="dims" aria-label="Dimensiunile peretelui">
     <div class="draw"><svg viewBox="0 0 1000 120" role="img" aria-label="Perete de 11 metri: aproximativ 6,5 metri zid din BCA și 4,5 metri gard din panouri de beton, înălțime 2,6 – 2,7 metri">
@@ -210,6 +212,7 @@ section{display:grid;gap:16px}
 
 <footer>
   <span>Prețuri și disponibilitate citite direct de pe dedeman.ro pe 8 noiembrie 2026. „În stoc online” = produsul apare cu livrare disponibilă la nivel național. „Stoc pe magazin” = Dedeman cere alegerea orașului ca să afișeze stocul.</span>
+  <span>Variantele 8–10: prețuri și stoc citite direct pe ruyidecor.ro, virtuoso.ro și q-home.ro pe 8 noiembrie 2026. Consumul de adeziv și de lac e estimarea mea; verifică pe ambalaj.</span>
   <span>Alternativele Hornbach provin din rezultate de căutare (prețuri din iunie–iulie 2026), pentru că site-ul Hornbach nu a putut fi deschis direct. Verifică-le înainte de comandă.</span>
   <span>Simulările sunt randări aproximative: culorile reale depind de lot și de lumină. Lungimea pe segmente (BCA / beton) e calculată din perspectiva pozelor.</span>
 </footer>
@@ -237,9 +240,19 @@ const L={
   hbTego:"https://www.hornbach.ro/p/panou-riflaj-decorativ-estetica-exterior-stejar-masiv-gri-34x600x2500-mm/10595603/",
   hbKlimex:"https://www.hornbach.ro/p/caramida-aparenta-interior-exterior-klimex-ardennes-sahara/7620496/",
   hbPierre:"https://www.hornbach.ro/p/piatra-decorativa-interior-exterior-klimex-pierre-seche-o-concrete-creme/6667529/",
-  hbCorten:"https://www.hornbach.ro/p/panou-gradina-palatino-space-vapor-otel-corten-99x180-cm/12399129/"
+  hbCorten:"https://www.hornbach.ro/p/panou-gradina-palatino-space-vapor-otel-corten-99x180-cm/12399129/",
+  ruyi:"https://ruyidecor.ro/products/set-10-panouri-decorative-tip-piatra-placa-3d-de-perete-interior-textura-realista-120x60-cm",
+  vbn:"https://vbndekor.ro/product/panou-decorativ-tip-piatra-hl6012-01-3cm/",
+  andral:"https://andralconstruct.ro/product/panou-piatra-flexibila-apc-crp-no10-light-grey/",
+  virtTec:"https://www.virtuoso.ro/c/wpc/riflaj/riflaj-wpc-coextrudat-canelat-maro-tec-219x26mm-3600mm-60-465-3-6",
+  wpcbro:"https://wpcbro.ro/produs/riflaj-coextrudat-canelat-asimetric-wpc-gri-inchis-pe-fond-maro-dimensiune-219x26mm/",
+  denbraven:D+"adeziv-poliuretanic-pentru-polistiren-den-braven-interior/-exterior-aplicare-cu-pistol-870-ml/p/5007287",
+  qh228:"https://www.q-home.ro/products/panou-decorativ-polistiren-caramida-653-228",
+  qh230:"https://www.q-home.ro/products/panou-decorativ-polistiren-caramida-653-230",
+  qhB013:"https://www.q-home.ro/products/panou-decorativ-polistiren-imitatie-caramida-b-013",
+  qhLac:"https://www.q-home.ro/products/lac-incolor-la-galeata-2-5-l-1"
 };
-const STOC_OK={c:"ok",t:"În stoc online"}, STOC_MAG={c:"warn",t:"Stoc pe magazin · alege orașul"}, REF={c:"ref",t:"Preț din căutare, de verificat"};
+const STOC_OK={c:"ok",t:"În stoc online"}, STOC_LIV={c:"ok",t:"În stoc · livrare 7–21 zile"}, STOC_MAG={c:"warn",t:"Stoc pe magazin · alege orașul"}, REF={c:"ref",t:"Preț din căutare, de verificat"};
 const V=[
  {id:"v1-lemn",img:"v1_lemn",nr:"01",t:"Riflaj din lemn termotratat",short:"Lemn termotratat",tag:"Lamele verticale din pin termotratat, în panouri gata făcute de 2,70 m: au exact înălțimea zidului.",total:"≈ 10.850 lei",totalNum:10850,
   items:[
@@ -303,15 +316,45 @@ const V=[
   pro:["Textură bogată și aspect de piatră naturală","Panourile se îmbină fără rosturi, deci merge mai repede decât klinkerul","Gri-ul se potrivește cu acoperișurile și tabla din jur"],
   con:["Fiind beton, e bine să-l tratezi cu hidrofobizant la 2–3 ani","Relieful adună praf","Panourile se lipesc doar pe un suport plan"],
   alt:'Variante: <a href="'+L.natimur+'" target="_blank" rel="noopener">piatră naturală Modulo Natimur Mineral Grey (Dedeman)</a>, 181,60 lei/m², sau <a href="'+L.hbPierre+'" target="_blank" rel="noopener">Hornbach Klimex Pierre Sèche, crem</a>, 146,77 lei/m².',
-  dur:4,ment:"hidrofobizare la 2–3 ani",diy:3,disp:STOC_MAG}
+  dur:4,ment:"hidrofobizare la 2–3 ani",diy:3,disp:STOC_MAG},
+ {id:"v8-piatra-riflaj",img:"v8_piatra_riflaj",nr:"08",nou:true,t:"Panouri tip piatră cu benzi de riflaj",short:"Piatră + riflaj",tag:"Panouri PU de 120 × 60 cm cu aspect de rocă despicată, gri bazalt, întrerupte de trei benzi verticale de riflaj WPC maro tec, fiecare cu o aplică. Totul se comandă online.",total:"≈ 7.740 lei",totalNum:7740,
+  items:[
+   {n:"Set 10 panouri decorative tip piatră, PU, 120 × 60 × 3–5 cm, culoarea Gri Bazalt (0,72 m²/panou)",s:"Ruyi Decor",u:L.ruyi,price:"1.199,93 lei / set de 10",old:"1.599,90 lei",stoc:STOC_OK,calc:"(11 − 3 × 0,88) m × 2,65 m ≈ 22 m² → 34 panouri cu pierderi → 4 seturi = 4.799,72 lei"},
+   {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"3 benzi × 4 plăci (88 cm lățime) = 12 plăci = 2.276,88 lei"},
+   {n:"Adeziv poliuretanic Den Braven, interior/exterior, 870 ml, pentru pistol",s:"Dedeman",u:L.denbraven,price:"32,49 lei / tub",promo:"până la 15.11.2026",stoc:STOC_OK,calc:"≈ 5 tuburi (estimare) = 162,45 lei"},
+   {n:"Grinzi pentru riflaj: profil CD 60 × 3000 mm zincat (riflajul se prinde în șuruburi, nu se lipește)",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"4 buc = 56,60 lei"},
+   {n:"Aplică exterior LED Globo Veronika 34168W, aspect lemn, IP54",s:"Dedeman",u:L.aplica,price:"146,90 lei / buc",old:"223 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"3 buc = 440,70 lei"}],
+  pro:["Combinația cerută: textură de piatră plus căldura lemnului","Panourile PU cântăresc sub 2 kg și se lipesc ușor pe zid","Riflajul WPC nu se vopsește și nu putrezește"],
+  con:["PU-ul e spumă vopsită: o lovitură puternică îl poate ciobi","Panourile identice se repetă; amestecă-le la montaj ca să nu se vadă modelul","Riflajul ajunge în 7–21 zile"],
+  alt:'Alternative: <a href="'+L.vbn+'" target="_blank" rel="noopener">VBN Dekor HL6012-01</a>, panou PU 120 × 60 cm, 170 lei/buc, alb pe stoc, alte culori la comandă; sau <a href="'+L.andral+'" target="_blank" rel="noopener">piatră flexibilă Andral 60 × 120 cm, gri deschis</a>, 89 lei/buc de la 5 bucăți, mai subțire (3–4 mm) și fără relief. Riflaj similar: <a href="'+L.wpcbro+'" target="_blank" rel="noopener">WPCBRO, canelat gri închis/maro</a>, 210,82 lei/placă.',
+  dur:3,ment:"minimă",diy:4,disp:STOC_OK},
+ {id:"v9-soclu-riflaj",img:"v9_soclu_riflaj",nr:"09",nou:true,t:"Soclu de piatră, riflaj deasupra",short:"Soclu + riflaj",tag:"Aceleași materiale, altă împărțire: două rânduri de panouri tip piatră jos (1,20 m), iar deasupra riflaj WPC maro tec pe toată lungimea. Arată ca un gard cu soclu de piatră.",total:"≈ 7.540 lei",totalNum:7540,
+  items:[
+   {n:"Set 10 panouri decorative tip piatră, PU, 120 × 60 cm, Gri Bazalt",s:"Ruyi Decor",u:L.ruyi,price:"1.199,93 lei / set de 10",old:"1.599,90 lei",stoc:STOC_OK,calc:"2 rânduri × 10 panouri = 20 → 2 seturi = 2.399,86 lei"},
+   {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"51 bucăți de 1,40 m, câte 2 dintr-o placă → 26 plăci = 4.933,24 lei"},
+   {n:"Adeziv poliuretanic Den Braven, 870 ml",s:"Dedeman",u:L.denbraven,price:"32,49 lei / tub",promo:"până la 15.11.2026",stoc:STOC_OK,calc:"≈ 3 tuburi (estimare) = 97,47 lei"},
+   {n:"Grinzi pentru riflaj: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"2 rânduri × 11 m → 8 buc = 113,20 lei"}],
+  pro:["Piatra stă jos, unde zidul se murdărește și se lovește mai des","Linie orizontală continuă: peretele pare mai lung și mai ordonat","Dintr-o placă de 3,6 m ies două bucăți, aproape fără pierderi"],
+  con:["Riflajul acoperă mai mult, deci e partea cea mai scumpă","La îmbinarea piatră–riflaj trebuie un profil de tranziție curat"],
+  alt:"Dacă vrei să scazi costul, riflajul poate începe de la 1,80 m în sus (trei rânduri de piatră). Atunci îți trebuie 3 seturi de panouri și mai puțin riflaj.",
+  dur:3,ment:"minimă",diy:4,disp:STOC_OK},
+ {id:"v10-polistiren-caramida",img:"v10_polistiren_caramida",nr:"10",nou:true,t:"Panouri din polistiren tip cărămidă",short:"Polistiren cărămidă",tag:"Panouri de 120 × 50 × 2 cm din polistiren, cu cărămizi roșii patinate, lipite direct pe zid și protejate cu lac pe bază de apă. Varianta cea mai ieftină cu aspect de cărămidă.",total:"≈ 3.310 lei",totalNum:3310,
+  items:[
+   {n:"Panou decorativ polistiren CĂRĂMIDĂ 653-228, 120 × 50 × 2 cm (0,6 m²) (în simulare)",s:"Q-Home",u:L.qh228,price:"49,00 lei / buc",stoc:STOC_OK,calc:"32 m² ÷ 0,6 = 54 buc = 2.646 lei"},
+   {n:"Lac incolor pe bază de apă, cu protecție UV, 2,5 L (obligatoriu la exterior)",s:"Q-Home",u:L.qhLac,price:"250,00 lei / găleată",stoc:STOC_OK,calc:"2 găleți (estimare, consumul nu e afișat) = 500 lei"},
+   {n:"Adeziv poliuretanic pentru polistiren Den Braven, 870 ml",s:"Dedeman",u:L.denbraven,price:"32,49 lei / tub",promo:"până la 15.11.2026",stoc:STOC_OK,calc:"≈ 5 tuburi (estimare) = 162,45 lei"}],
+  pro:["Cel mai mic cost pentru aspect de cărămidă","Foarte ușor: le lipești singur, se taie cu cutterul","Toate produsele sunt pe stoc online"],
+  con:["Polistirenul e moale: se adâncește la lovituri, iar câinele îl poate roade","Fără lac, culoarea se decolorează la soare. Lacul se reface la 2–3 ani","Nu folosi lac sau adeziv cu solvent: topește polistirenul"],
+  alt:'Alte modele Q-Home: <a href="'+L.qhB013+'" target="_blank" rel="noopener">B-013, roșu, 100 × 50 cm</a>, 29,90 lei/buc (64 buc ≈ 1.914 lei); <a href="'+L.qh230+'" target="_blank" rel="noopener">653-230, alb-gri patinat</a>, 49 lei/buc.',
+  dur:2,ment:"lac la 2–3 ani",diy:5,disp:STOC_OK}
 ];
 const $=s=>document.querySelector(s);
-let cur=V[2], ang="p2";
+let cur=V.find(v=>v.id==="v8-piatra-riflaj"), ang="p2";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function dots(n){return '<span class="dots" aria-label="'+n+' din 5">'+"●".repeat(n)+'<i>'+"●".repeat(5-n)+'</i></span>'}
 function chip(s){return '<span class="chip '+s.c+'">'+esc(s.t)+'</span>'}
 function renderSwatches(){
-  $("#swatches").innerHTML=V.map(v=>'<button type="button" class="sw" data-id="'+v.id+'" aria-pressed="'+(v===cur)+'"><img src="img/p2_'+v.img+'.jpg" alt="" loading="lazy"><span class="n">'+v.nr+'</span><span class="t">'+esc(v.short)+'</span><span class="p">'+esc(v.total)+'</span></button>').join("");
+  $("#swatches").innerHTML=V.map(v=>'<button type="button" class="sw" data-id="'+v.id+'" aria-pressed="'+(v===cur)+'"><img src="img/p2_'+v.img+'.jpg" alt="" loading="lazy"><span class="n">'+v.nr+(v.nou?'<b>nou</b>':'')+'</span><span class="t">'+esc(v.short)+'</span><span class="p">'+esc(v.total)+'</span></button>').join("");
 }
 function renderStage(){
   $("#imgBefore").src="img/"+ang+"_inainte.jpg";
