@@ -87,7 +87,12 @@ header{display:grid;gap:18px}
 .sw .t{font-family:var(--font-display);font-size:1.08rem;font-weight:600;line-height:1.05}
 .sw .p{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-2)}
 .sw[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+[hidden]{display:none!important}
 .older{display:grid;gap:10px}
+.extra{grid-column:1/-1;display:grid;gap:14px;border-top:1px solid var(--line);padding-top:20px}
+.extra-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+.extra .note-text{color:var(--ink-2);max-width:75ch;font-size:.93rem}
+.extra .items{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));column-gap:28px}
 .older summary{cursor:pointer;font:500 .85rem var(--font-mono);color:var(--ink-2);letter-spacing:.04em;padding:6px 0}
 .older[open] summary{margin-bottom:10px}
 
@@ -142,7 +147,7 @@ section{display:grid;gap:16px}
 <header>
   <span class="eyebrow">Placare perete exterior · simulări pe pozele tale · prețuri din 8 noiembrie 2026</span>
   <h1>Peretele din curte: variante luminoase</h1>
-  <p class="lede">Cinci variante noi, toate deschise la culoare: riflaj de lemn cu alb cald sau cu travertin bej și trei cu cărămidă albă, inclusiv panoul IdeoBricks pe care mi l-ai trimis. Fiecare e pusă pe pozele tale, în perspectiva reală a zidului. Sub poză ai produsul, prețul, cantitatea pentru 11 m și stocul. Trage de linia albă ca să compari înainte și după. Variantele anterioare sunt mai jos, într-o listă restrânsă.</p>
+  <p class="lede">La varianta 14 (IdeoBricks) poți vedea acum și curtea curățată și amenajată, plus o simulare de seară cu luminile aprinse. Folosește butoanele de sub poză. Cinci variante noi, toate deschise la culoare: riflaj de lemn cu alb cald sau cu travertin bej și trei cu cărămidă albă, inclusiv panoul IdeoBricks pe care mi l-ai trimis. Fiecare e pusă pe pozele tale, în perspectiva reală a zidului. Sub poză ai produsul, prețul, cantitatea pentru 11 m și stocul. Trage de linia albă ca să compari înainte și după. Variantele anterioare sunt mai jos, într-o listă restrânsă.</p>
   <div class="dims" aria-label="Dimensiunile peretelui">
     <div class="draw"><svg viewBox="0 0 1000 120" role="img" aria-label="Perete de 11 metri: aproximativ 6,5 metri zid din BCA și 4,5 metri gard din panouri de beton, înălțime 2,6 – 2,7 metri">
       <rect x="40" y="28" width="590" height="52" stroke-width="1" style="fill:var(--surface-2);stroke:var(--ink-2)"/>
@@ -183,6 +188,11 @@ section{display:grid;gap:16px}
     <div class="seg" role="group" aria-label="Unghiul pozei">
       <button type="button" id="angP2" aria-pressed="true">Unghi 1 · zidul din BCA</button>
       <button type="button" id="angP4" aria-pressed="false">Unghi 2 · gardul de beton</button>
+    </div>
+    <div class="seg" role="group" aria-label="Ce arată simularea" id="modeSeg" hidden>
+      <button type="button" data-mode="perete" aria-pressed="false">Doar peretele</button>
+      <button type="button" data-mode="curte" aria-pressed="true">Curte amenajată</button>
+      <button type="button" data-mode="seara" aria-pressed="false">Seara, cu lumini</button>
     </div>
     <span class="hint">Linia de sus închisă la culoare e o copertină din tablă, inclusă în toate variantele.</span>
   </div>
@@ -262,7 +272,11 @@ const L={
   terca:D+"placaj-ceramic-klinker-terca-armis-cotton-white-alb-6-5-x-21-5-cm/p/4024458",
   ideo:"https://ideolis.ro/product/panou-decorativ-3d-ideobricks-exterior/",
   adeplast:D+"adeziv-polistiren-adeplast-polistirol-eco-interior/-exterior-23-kg/p/5008978",
-  etalon:D+"adeziv-polistiren-pentru-lipire-si-spacluire-etalon-interior/-exterior-25-kg/p/6068694"
+  etalon:D+"adeziv-polistiren-pentru-lipire-si-spacluire-etalon-interior/-exterior-25-kg/p/6068694",
+  aplicaAlba:D+"aplica-exterior-cu-led-veronika-34168ws-2-x-3-w-2-x-290-lm-lumina-calda-alb-modern/p/1080461",
+  dolomita:D+"piatra-decorativa-naturala-decolex-dolomita-interior/-exterior-alb-16-22-mm-20-kg/p/7082359",
+  jardiniera:D+"jardiniera-din-lemn-model-mare-exterior-dreptunghiulara-gri-antracit-100-x-40-cm/p/7068847",
+  dala:D+"dala-beton-rezidentiala-elis-pavaje-umbra-p4-patrata-alb-crem-400-x-400-x-60-mm/p/6053540"
 };
 const STOC_OK={c:"ok",t:"În stoc online"}, STOC_LIV={c:"ok",t:"În stoc · livrare 7–21 zile"}, EPUIZAT={c:"warn",t:"Stoc epuizat · se face la comandă"}, MIXT={c:"warn",t:"Online + stoc pe magazin"}, STOC_MAG={c:"warn",t:"Stoc pe magazin · alege orașul"}, REF={c:"ref",t:"Preț din căutare, de verificat"};
 const V=[
@@ -391,7 +405,16 @@ const V=[
   con:["Se lipește bucată cu bucată, deci montajul durează","Zidul trebuie adus la plan înainte"],
   alt:'Premium, din ceramică: <a href="'+L.terca+'" target="_blank" rel="noopener">klinker Terca Armis Cotton White (Dedeman)</a>, 6 lei/bucată (≈ 360 lei/m²), de trei ori mai scump.',
   dur:4,ment:"strat acrilic la câțiva ani",diy:4,disp:STOC_OK},
- {id:"v14-ideobricks",grp:"nou",img:"v14_ideobricks",nr:"14",t:"Panouri IdeoBricks albe",short:"IdeoBricks",tag:"Panoul trimis de tine: polistiren EPS de 3 cm cu adeziv armat și tencuială decorativă albă, cu cărămizi în relief și rosturi gri. Panouri de 90 × 50 cm.",total:"≈ 3.190 lei",totalNum:3190,
+ {id:"v14-ideobricks",grp:"nou",img:"v14_ideobricks",nr:"14",scenes:{curte:"v14_curte_zi",seara:"v14_curte_seara"},
+  extra:{title:"Lumini și amenajarea curții",total:"≈ 4.590 lei",totalNote:"plus plante, gazon și manoperă",
+   note:"Aplicele sus–jos lipite de perete trimit lumina razant peste cărămizi, așa că relieful iese în evidență, iar conurile dau ritm peretelui. Am ales lumină caldă (3000 K), carcasă albă, care ziua aproape dispare pe zid, și protecție IP54. Le pui la aproximativ 1,85 m înălțime, la 2,7 m una de alta, între jardiniere, legate la un senzor crepuscular sau la un timer. În curte am scos betoniera, masa, roaba, sacii și tablele. Am pus o fâșie de pietriș alb lângă zid, gazon, dale crem și trei jardiniere antracit cu iarbă ornamentală. Cușca rămâne.",
+   items:[
+    {n:"Aplică exterior LED Globo Veronika 34168WS, albă, lumină sus–jos, 2 × 3 W, 3000 K, IP54",s:"Dedeman",u:L.aplicaAlba,price:"131,90 lei / buc",old:"200 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"4 buc = 527,60 lei"},
+    {n:"Piatră decorativă Decolex Dolomită albă, 16–22 mm, sac 20 kg",s:"Dedeman",u:L.dolomita,price:"37,90 lei / sac",old:"46,90 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"fâșie 11 × 0,55 m, 5 cm grosime ≈ 450 kg → 23 saci = 871,70 lei"},
+    {n:"Jardinieră din lemn, model mare, gri antracit, 100 × 40 × 41 cm",s:"Dedeman",u:L.jardiniera,price:"239,00 lei / buc",old:"299 lei",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"3 buc = 717 lei"},
+    {n:"Dală beton Elis Pavaje Umbra P4, alb-crem, 40 × 40 × 6 cm, suprafață spălată",s:"Dedeman",u:L.dala,price:"17,90 lei / buc",old:"19,29 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"6,25 buc/m²; exemplu 11 × 2 m = 22 m² → 138 buc = 2.470,20 lei"},
+    {n:"Iarbă ornamentală (6 tufe), gazon (~20 m²), bordură metalică, folie anti-buruieni sub pietriș, nisip pentru dale",s:"florărie / orice magazin",price:"separat",stoc:{c:"ref",t:"Nu e inclus în total"},calc:"la plante, cere soiuri netoxice pentru câini"}]},
+  t:"Panouri IdeoBricks albe",short:"IdeoBricks",tag:"Panoul trimis de tine: polistiren EPS de 3 cm cu adeziv armat și tencuială decorativă albă, cu cărămizi în relief și rosturi gri. Panouri de 90 × 50 cm.",total:"≈ 3.190 lei",totalNum:3190,
   items:[
    {n:"Panou decorativ 3D IdeoBricks 3 cm, 90 × 50 cm (0,40 m² util), EPS80 + plasă + tencuială decorativă",s:"Ideolis",u:L.ideo,price:"38,00 lei / buc",stoc:EPUIZAT,calc:"32 m² ÷ 0,40 = 80 buc = 3.040 lei"},
    {n:"Adeziv polistiren Adeplast Polistirol Eco, interior/exterior, 23 kg",s:"Dedeman",u:L.adeplast,price:"21,90 lei / sac",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"≈ 5 kg/m² → 7 saci = 153,30 lei"}],
@@ -413,7 +436,7 @@ const V=[
 ];
 
 const $=s=>document.querySelector(s);
-let cur=V.find(v=>v.id==="v11-alb-riflaj"), ang="p2";
+let cur=V.find(v=>v.id==="v14-ideobricks"), ang="p2", mode="curte";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function dots(n){return '<span class="dots" aria-label="'+n+' din 5">'+"●".repeat(n)+'<i>'+"●".repeat(5-n)+'</i></span>'}
 function chip(s){return '<span class="chip '+s.c+'">'+esc(s.t)+'</span>'}
@@ -424,7 +447,10 @@ function renderSwatches(){
 }
 function renderStage(){
   $("#imgBefore").src="img/"+ang+"_inainte.jpg";
-  $("#imgAfter").src="img/"+ang+"_"+cur.img+".jpg";
+  const m=cur.scenes?mode:"perete";
+  $("#imgAfter").src="img/"+ang+"_"+(m==="perete"?cur.img:cur.scenes[m])+".jpg";
+  $("#modeSeg").hidden=!cur.scenes;
+  document.querySelectorAll("#modeSeg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mode===m));
   $("#imgAfter").alt="Simulare: "+cur.t+", "+(ang==="p2"?"unghiul spre zidul din BCA":"unghiul spre gardul de beton");
   $("#imgBefore").alt="Peretele în starea actuală";
   $("#angP2").setAttribute("aria-pressed",ang==="p2"); $("#angP4").setAttribute("aria-pressed",ang==="p4");
@@ -434,8 +460,10 @@ function renderSheet(){
   $("#sheet").innerHTML=
    '<div class="sheet-head"><span class="eyebrow">Varianta '+v.nr+(v.rec?' · recomandarea mea':'')+'</span><div class="row"><h2>'+esc(v.t)+'</h2><div class="total">'+esc(v.total)+'<small>material, fără manoperă</small></div></div><p class="lede">'+esc(v.tag)+'</p></div>'+
    '<div class="items">'+v.items.map(it=>'<div class="item"><span class="name">'+(it.u?'<a href="'+it.u+'" target="_blank" rel="noopener">'+esc(it.n)+'</a>':esc(it.n))+'</span><div class="meta"><span>'+esc(it.s)+'</span><span class="num">'+esc(it.price)+(it.old?' <s>'+esc(it.old)+'</s>':'')+'</span>'+(it.promo?'<span>promo '+esc(it.promo)+'</span>':'')+chip(it.stoc)+'</div><span class="calc">'+esc(it.calc)+'</span></div>').join("")+'</div>'+
-   '<div class="side"><div><h4>Avantaje</h4><ul>'+v.pro.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><div><h4>Dezavantaje</h4><ul>'+v.con.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><p class="alt">'+v.alt+'</p></div>';
+   '<div class="side"><div><h4>Avantaje</h4><ul>'+v.pro.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><div><h4>Dezavantaje</h4><ul>'+v.con.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><p class="alt">'+v.alt+'</p></div>'+(v.extra?extraHTML(v.extra):'');
 }
+function itemHTML(it){return '<div class="item"><span class="name">'+(it.u?'<a href="'+it.u+'" target="_blank" rel="noopener">'+esc(it.n)+'</a>':esc(it.n))+'</span><div class="meta"><span>'+esc(it.s)+'</span><span class="num">'+esc(it.price)+(it.old?' <s>'+esc(it.old)+'</s>':'')+'</span>'+(it.promo?'<span>promo '+esc(it.promo)+'</span>':'')+chip(it.stoc)+'</div><span class="calc">'+esc(it.calc)+'</span></div>'}
+function extraHTML(x){return '<div class="extra"><div class="extra-head"><h3>'+esc(x.title)+'</h3><div class="total">'+esc(x.total)+'<small>'+esc(x.totalNote)+'</small></div></div><p class="note-text">'+esc(x.note)+'</p><div class="items">'+x.items.map(itemHTML).join("")+'</div></div>'}
 function renderTable(){
   $("#cmpBody").innerHTML=V.filter(v=>v.grp==="nou").map(v=>'<tr data-id="'+v.id+'"'+(v.rec?' class="rec"':'')+'><td><b>'+v.nr+' · '+esc(v.t)+'</b></td><td class="c">'+esc(v.total)+'</td><td>'+dots(v.dur)+'</td><td>'+esc(v.ment)+'</td><td>'+dots(v.diy)+'</td><td>'+chip(v.disp)+'</td></tr>').join("");
 }
@@ -449,6 +477,7 @@ function select(id,scroll){
 ["#swatches","#swatchesOld"].forEach(id=>$(id).addEventListener("click",e=>{const b=e.target.closest(".sw"); if(b) select(b.dataset.id,false)}));
 $("#cmpBody").addEventListener("click",e=>{const r=e.target.closest("tr"); if(r) select(r.dataset.id,true)});
 $("#angP2").addEventListener("click",()=>{ang="p2";renderStage()});
+$("#modeSeg").addEventListener("click",e=>{const b=e.target.closest("button"); if(b){mode=b.dataset.mode;renderStage()}});
 $("#angP4").addEventListener("click",()=>{ang="p4";renderStage()});
 const split=$("#split"), stage=$("#stage");
 function setSplit(){stage.style.setProperty("--split",split.value+"%")}

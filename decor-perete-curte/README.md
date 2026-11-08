@@ -21,7 +21,7 @@ schimbă unghiul pozei, iar sub poză apar produsul, prețul, cantitatea și sto
 | 11 | Tencuială albă caldă + 3 panouri de riflaj WPC + aplice | ≈ 4.230 lei + plasă |
 | 12 | Travertin flexibil bej (Unic Spot) + riflaj WPC în centru (recomandat) | ≈ 6.510 lei |
 | 13 | Cărămidă flexibilă albă Flexolith S-BAROK 118 (Q-Home) | ≈ 5.440 lei |
-| 14 | Panouri IdeoBricks albe (Ideolis, acum la comandă) | ≈ 3.190 lei |
+| 14 | Panouri IdeoBricks albe (Ideolis, acum la comandă); pe pagină și curtea amenajată ziua/seara cu 4 aplice sus–jos | ≈ 3.190 lei (+ ≈ 4.590 lei lumini și curte) |
 | 15 | IdeoBricks albe + riflaj WPC în centru | ≈ 5.320 lei |
 
 Prețuri și disponibilitate citite pe dedeman.ro (variantele 1–7) și pe ruyidecor.ro, virtuoso.ro, q-home.ro (variantele 8–10), plus unicspot.ro și ideolis.ro (variantele 11–15) la 8 noiembrie 2026 (multe sunt
@@ -30,3 +30,5 @@ din rezultate de căutare și trebuie verificate înainte de comandă.
 
 `img/` conține pozele originale (`*_inainte.jpg`) și simulările (`p2_*` = unghiul spre
 zidul din BCA, `p4_*` = unghiul spre gardul de beton).
+
+`*_v14_curte_zi.jpg` și `*_v14_curte_seara.jpg`: varianta 14 cu curtea curățată (fără betonieră, masă, roabă, saci) și amenajată (pietriș alb, gazon, dale crem, jardiniere antracit cu iarbă ornamentală), ziua și seara cu aplicele sus–jos aprinse.
