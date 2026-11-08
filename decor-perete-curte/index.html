@@ -87,6 +87,9 @@ header{display:grid;gap:18px}
 .sw .t{font-family:var(--font-display);font-size:1.08rem;font-weight:600;line-height:1.05}
 .sw .p{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-2)}
 .sw[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.older{display:grid;gap:10px}
+.older summary{cursor:pointer;font:500 .85rem var(--font-mono);color:var(--ink-2);letter-spacing:.04em;padding:6px 0}
+.older[open] summary{margin-bottom:10px}
 
 /* sheet */
 .sheet{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
@@ -138,8 +141,8 @@ section{display:grid;gap:16px}
 <div class="wrap">
 <header>
   <span class="eyebrow">Placare perete exterior · simulări pe pozele tale · prețuri din 8 noiembrie 2026</span>
-  <h1>Peretele din curte: 10 variante de placare</h1>
-  <p class="lede">Am pus fiecare model direct pe pozele tale, în perspectiva reală a zidului, cu obiectele din curte lăsate în față. Sub poză ai produsul concret, prețul, cantitatea pentru 11 m și dacă e pe stoc. Trage de linia albă ca să compari înainte și după.</p>
+  <h1>Peretele din curte: variante luminoase</h1>
+  <p class="lede">Cinci variante noi, toate deschise la culoare: riflaj de lemn cu alb cald sau cu travertin bej și trei cu cărămidă albă, inclusiv panoul IdeoBricks pe care mi l-ai trimis. Fiecare e pusă pe pozele tale, în perspectiva reală a zidului. Sub poză ai produsul, prețul, cantitatea pentru 11 m și stocul. Trage de linia albă ca să compari înainte și după. Variantele anterioare sunt mai jos, într-o listă restrânsă.</p>
   <div class="dims" aria-label="Dimensiunile peretelui">
     <div class="draw"><svg viewBox="0 0 1000 120" role="img" aria-label="Perete de 11 metri: aproximativ 6,5 metri zid din BCA și 4,5 metri gard din panouri de beton, înălțime 2,6 – 2,7 metri">
       <rect x="40" y="28" width="590" height="52" stroke-width="1" style="fill:var(--surface-2);stroke:var(--ink-2)"/>
@@ -184,12 +187,13 @@ section{display:grid;gap:16px}
     <span class="hint">Linia de sus închisă la culoare e o copertină din tablă, inclusă în toate variantele.</span>
   </div>
   <div class="swatches" id="swatches" role="group" aria-label="Alege varianta"></div>
+  <details class="older"><summary>Variante anterioare (10)</summary><div class="swatches" id="swatchesOld" role="group" aria-label="Variante anterioare"></div></details>
 </section>
 
 <section class="sheet" id="sheet" aria-live="polite"></section>
 
 <section aria-labelledby="cmpTitle">
-  <h2 id="cmpTitle">Comparație rapidă</h2>
+  <h2 id="cmpTitle">Comparație: variantele luminoase</h2>
   <div class="tbl">
     <table>
       <thead><tr><th>Variantă</th><th>Material estimat</th><th>Durabilitate</th><th>Întreținere</th><th>Montaj pe cont propriu</th><th>Disponibilitate</th></tr></thead>
@@ -212,6 +216,7 @@ section{display:grid;gap:16px}
 
 <footer>
   <span>Prețuri și disponibilitate citite direct de pe dedeman.ro pe 8 noiembrie 2026. „În stoc online” = produsul apare cu livrare disponibilă la nivel național. „Stoc pe magazin” = Dedeman cere alegerea orașului ca să afișeze stocul.</span>
+  <span>Variantele 11–15: prețuri și stoc citite pe virtuoso.ro, unicspot.ro, q-home.ro, ideolis.ro și dedeman.ro pe 8 noiembrie 2026. IdeoBricks apare acum cu stoc epuizat.</span>
   <span>Variantele 8–10: prețuri și stoc citite direct pe ruyidecor.ro, virtuoso.ro și q-home.ro pe 8 noiembrie 2026. Consumul de adeziv și de lac e estimarea mea; verifică pe ambalaj.</span>
   <span>Alternativele Hornbach provin din rezultate de căutare (prețuri din iunie–iulie 2026), pentru că site-ul Hornbach nu a putut fi deschis direct. Verifică-le înainte de comandă.</span>
   <span>Simulările sunt randări aproximative: culorile reale depind de lot și de lumină. Lungimea pe segmente (BCA / beton) e calculată din perspectiva pozelor.</span>
@@ -250,9 +255,16 @@ const L={
   qh228:"https://www.q-home.ro/products/panou-decorativ-polistiren-caramida-653-228",
   qh230:"https://www.q-home.ro/products/panou-decorativ-polistiren-caramida-653-230",
   qhB013:"https://www.q-home.ro/products/panou-decorativ-polistiren-imitatie-caramida-b-013",
-  qhLac:"https://www.q-home.ro/products/lac-incolor-la-galeata-2-5-l-1"
+  qhLac:"https://www.q-home.ro/products/lac-incolor-la-galeata-2-5-l-1",
+  unicTrav:"https://www.unicspot.ro/panou-piatra-flexibila-travertine/",
+  decorneo:"https://decorneo.ro/piatra-flexibila-travertin-line-cream/",
+  flexAlb:"https://www.q-home.ro/products/caramida-flexibila-flexolith-s-barok-118-o-cutie-2-5-mp",
+  terca:D+"placaj-ceramic-klinker-terca-armis-cotton-white-alb-6-5-x-21-5-cm/p/4024458",
+  ideo:"https://ideolis.ro/product/panou-decorativ-3d-ideobricks-exterior/",
+  adeplast:D+"adeziv-polistiren-adeplast-polistirol-eco-interior/-exterior-23-kg/p/5008978",
+  etalon:D+"adeziv-polistiren-pentru-lipire-si-spacluire-etalon-interior/-exterior-25-kg/p/6068694"
 };
-const STOC_OK={c:"ok",t:"În stoc online"}, STOC_LIV={c:"ok",t:"În stoc · livrare 7–21 zile"}, STOC_MAG={c:"warn",t:"Stoc pe magazin · alege orașul"}, REF={c:"ref",t:"Preț din căutare, de verificat"};
+const STOC_OK={c:"ok",t:"În stoc online"}, STOC_LIV={c:"ok",t:"În stoc · livrare 7–21 zile"}, EPUIZAT={c:"warn",t:"Stoc epuizat · se face la comandă"}, MIXT={c:"warn",t:"Online + stoc pe magazin"}, STOC_MAG={c:"warn",t:"Stoc pe magazin · alege orașul"}, REF={c:"ref",t:"Preț din căutare, de verificat"};
 const V=[
  {id:"v1-lemn",img:"v1_lemn",nr:"01",t:"Riflaj din lemn termotratat",short:"Lemn termotratat",tag:"Lamele verticale din pin termotratat, în panouri gata făcute de 2,70 m: au exact înălțimea zidului.",total:"≈ 10.850 lei",totalNum:10850,
   items:[
@@ -271,7 +283,7 @@ const V=[
   con:["De aproape se vede că modelul e imprimat","Tabla de 0,4 mm se poate îndoi dacă o lovești (roabă, minge)","În plin soare se încălzește, dar zidul tău stă mult în umbră"],
   alt:'Mai ieftin, din PVC: <a href="'+L.vox+'" target="_blank" rel="noopener">Lambriu exterior Vox Siding SVP-01 Vifront, PVC, stejar natur</a>, 45,90 lei/m² (de la 52,90), stoc pe magazin.',
   dur:4,ment:"aproape zero",diy:4,disp:STOC_MAG},
- {id:"v3-antracit-lemn",img:"v3_antracit_lemn",nr:"03",t:"Antracit cu benzi de lemn",short:"Antracit + lemn",tag:"Lambriu metalic gri antracit pe tot peretele, întrerupt de trei panouri de riflaj termotratat și trei aplice LED. Aspect modern, cost mediu.",total:"≈ 4.500 lei",totalNum:4500,rec:true,
+ {id:"v3-antracit-lemn",img:"v3_antracit_lemn",nr:"03",t:"Antracit cu benzi de lemn",short:"Antracit + lemn",tag:"Lambriu metalic gri antracit pe tot peretele, întrerupt de trei panouri de riflaj termotratat și trei aplice LED. Aspect modern, cost mediu.",total:"≈ 4.500 lei",totalNum:4500,
   items:[
    {n:"Lambriu metalic drept Jupiter, oțel zincat, gri atlantic RAL 7016 mat, 3000 × 260 × 0,45 mm, set 10 buc (7,8 m²)",s:"Dedeman",u:L.ral7016,price:"461,55 lei / set (59,17 lei/m²)",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"9 m × 11 rânduri ≈ 100 m → 34 buc → 4 seturi = 1.846 lei"},
    {n:"Riflaj decorativ tip panou, pin termotratat, Inco Industry, 2700 × 654 × 88 mm",s:"Dedeman",u:L.inco,price:"629,00 lei / panou",old:"679 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"3 panouri = 1.887 lei"},
@@ -317,7 +329,7 @@ const V=[
   con:["Fiind beton, e bine să-l tratezi cu hidrofobizant la 2–3 ani","Relieful adună praf","Panourile se lipesc doar pe un suport plan"],
   alt:'Variante: <a href="'+L.natimur+'" target="_blank" rel="noopener">piatră naturală Modulo Natimur Mineral Grey (Dedeman)</a>, 181,60 lei/m², sau <a href="'+L.hbPierre+'" target="_blank" rel="noopener">Hornbach Klimex Pierre Sèche, crem</a>, 146,77 lei/m².',
   dur:4,ment:"hidrofobizare la 2–3 ani",diy:3,disp:STOC_MAG},
- {id:"v8-piatra-riflaj",img:"v8_piatra_riflaj",nr:"08",nou:true,t:"Panouri tip piatră cu benzi de riflaj",short:"Piatră + riflaj",tag:"Panouri PU de 120 × 60 cm cu aspect de rocă despicată, gri bazalt, întrerupte de trei benzi verticale de riflaj WPC maro tec, fiecare cu o aplică. Totul se comandă online.",total:"≈ 7.740 lei",totalNum:7740,
+ {id:"v8-piatra-riflaj",img:"v8_piatra_riflaj",nr:"08",t:"Panouri tip piatră cu benzi de riflaj",short:"Piatră + riflaj",tag:"Panouri PU de 120 × 60 cm cu aspect de rocă despicată, gri bazalt, întrerupte de trei benzi verticale de riflaj WPC maro tec, fiecare cu o aplică. Totul se comandă online.",total:"≈ 7.740 lei",totalNum:7740,
   items:[
    {n:"Set 10 panouri decorative tip piatră, PU, 120 × 60 × 3–5 cm, culoarea Gri Bazalt (0,72 m²/panou)",s:"Ruyi Decor",u:L.ruyi,price:"1.199,93 lei / set de 10",old:"1.599,90 lei",stoc:STOC_OK,calc:"(11 − 3 × 0,88) m × 2,65 m ≈ 22 m² → 34 panouri cu pierderi → 4 seturi = 4.799,72 lei"},
    {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"3 benzi × 4 plăci (88 cm lățime) = 12 plăci = 2.276,88 lei"},
@@ -328,7 +340,7 @@ const V=[
   con:["PU-ul e spumă vopsită: o lovitură puternică îl poate ciobi","Panourile identice se repetă; amestecă-le la montaj ca să nu se vadă modelul","Riflajul ajunge în 7–21 zile"],
   alt:'Alternative: <a href="'+L.vbn+'" target="_blank" rel="noopener">VBN Dekor HL6012-01</a>, panou PU 120 × 60 cm, 170 lei/buc, alb pe stoc, alte culori la comandă; sau <a href="'+L.andral+'" target="_blank" rel="noopener">piatră flexibilă Andral 60 × 120 cm, gri deschis</a>, 89 lei/buc de la 5 bucăți, mai subțire (3–4 mm) și fără relief. Riflaj similar: <a href="'+L.wpcbro+'" target="_blank" rel="noopener">WPCBRO, canelat gri închis/maro</a>, 210,82 lei/placă.',
   dur:3,ment:"minimă",diy:4,disp:STOC_OK},
- {id:"v9-soclu-riflaj",img:"v9_soclu_riflaj",nr:"09",nou:true,t:"Soclu de piatră, riflaj deasupra",short:"Soclu + riflaj",tag:"Aceleași materiale, altă împărțire: două rânduri de panouri tip piatră jos (1,20 m), iar deasupra riflaj WPC maro tec pe toată lungimea. Arată ca un gard cu soclu de piatră.",total:"≈ 7.540 lei",totalNum:7540,
+ {id:"v9-soclu-riflaj",img:"v9_soclu_riflaj",nr:"09",t:"Soclu de piatră, riflaj deasupra",short:"Soclu + riflaj",tag:"Aceleași materiale, altă împărțire: două rânduri de panouri tip piatră jos (1,20 m), iar deasupra riflaj WPC maro tec pe toată lungimea. Arată ca un gard cu soclu de piatră.",total:"≈ 7.540 lei",totalNum:7540,
   items:[
    {n:"Set 10 panouri decorative tip piatră, PU, 120 × 60 cm, Gri Bazalt",s:"Ruyi Decor",u:L.ruyi,price:"1.199,93 lei / set de 10",old:"1.599,90 lei",stoc:STOC_OK,calc:"2 rânduri × 10 panouri = 20 → 2 seturi = 2.399,86 lei"},
    {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"51 bucăți de 1,40 m, câte 2 dintr-o placă → 26 plăci = 4.933,24 lei"},
@@ -338,7 +350,7 @@ const V=[
   con:["Riflajul acoperă mai mult, deci e partea cea mai scumpă","La îmbinarea piatră–riflaj trebuie un profil de tranziție curat"],
   alt:"Dacă vrei să scazi costul, riflajul poate începe de la 1,80 m în sus (trei rânduri de piatră). Atunci îți trebuie 3 seturi de panouri și mai puțin riflaj.",
   dur:3,ment:"minimă",diy:4,disp:STOC_OK},
- {id:"v10-polistiren-caramida",img:"v10_polistiren_caramida",nr:"10",nou:true,t:"Panouri din polistiren tip cărămidă",short:"Polistiren cărămidă",tag:"Panouri de 120 × 50 × 2 cm din polistiren, cu cărămizi roșii patinate, lipite direct pe zid și protejate cu lac pe bază de apă. Varianta cea mai ieftină cu aspect de cărămidă.",total:"≈ 3.310 lei",totalNum:3310,
+ {id:"v10-polistiren-caramida",img:"v10_polistiren_caramida",nr:"10",t:"Panouri din polistiren tip cărămidă",short:"Polistiren cărămidă",tag:"Panouri de 120 × 50 × 2 cm din polistiren, cu cărămizi roșii patinate, lipite direct pe zid și protejate cu lac pe bază de apă. Varianta cea mai ieftină cu aspect de cărămidă.",total:"≈ 3.310 lei",totalNum:3310,
   items:[
    {n:"Panou decorativ polistiren CĂRĂMIDĂ 653-228, 120 × 50 × 2 cm (0,6 m²) (în simulare)",s:"Q-Home",u:L.qh228,price:"49,00 lei / buc",stoc:STOC_OK,calc:"32 m² ÷ 0,6 = 54 buc = 2.646 lei"},
    {n:"Lac incolor pe bază de apă, cu protecție UV, 2,5 L (obligatoriu la exterior)",s:"Q-Home",u:L.qhLac,price:"250,00 lei / găleată",stoc:STOC_OK,calc:"2 găleți (estimare, consumul nu e afișat) = 500 lei"},
@@ -346,15 +358,69 @@ const V=[
   pro:["Cel mai mic cost pentru aspect de cărămidă","Foarte ușor: le lipești singur, se taie cu cutterul","Toate produsele sunt pe stoc online"],
   con:["Polistirenul e moale: se adâncește la lovituri, iar câinele îl poate roade","Fără lac, culoarea se decolorează la soare. Lacul se reface la 2–3 ani","Nu folosi lac sau adeziv cu solvent: topește polistirenul"],
   alt:'Alte modele Q-Home: <a href="'+L.qhB013+'" target="_blank" rel="noopener">B-013, roșu, 100 × 50 cm</a>, 29,90 lei/buc (64 buc ≈ 1.914 lei); <a href="'+L.qh230+'" target="_blank" rel="noopener">653-230, alb-gri patinat</a>, 49 lei/buc.',
-  dur:2,ment:"lac la 2–3 ani",diy:5,disp:STOC_OK}
+  dur:2,ment:"lac la 2–3 ani",diy:5,disp:STOC_OK},
+ {id:"v11-alb-riflaj",grp:"nou",img:"v11_alb_riflaj",nr:"11",t:"Alb cald cu panouri de riflaj",short:"Alb + riflaj",tag:"Zidul tencuit în alb cald, cu trei panouri late de riflaj WPC maro tec (1,30 m fiecare) și două aplice pe alb. Aspect curat, scandinav.",total:"≈ 4.230 lei + plasă",totalNum:4230,
+  items:[
+   {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"3 panouri × 6 plăci = 18 plăci = 3.415,32 lei"},
+   {n:"Tencuială decorativă Ceresit CT 174, 1,5 mm, praf de piatră, albă, 25 kg",s:"Dedeman",u:L.ct174,price:"189,00 lei / găleată",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"≈ 19 m² × 2,5 kg = 47 kg → 2 găleți = 378 lei"},
+   {n:"Strat de bază: adeziv pentru lipire și șpăcluire Etalon, 25 kg (cu plasă de fațadă din fibră de sticlă)",s:"Dedeman",u:L.etalon,price:"21,99 lei / sac",stoc:STOC_MAG,calc:"≈ 5 kg/m² → 4 saci = 87,96 lei, plus plasa și amorsa"},
+   {n:"Aplică exterior LED Globo Veronika 34168W, aspect lemn, IP54",s:"Dedeman",u:L.aplica,price:"146,90 lei / buc",old:"223 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"2 buc = 293,80 lei"},
+   {n:"Grinzi pentru riflaj: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"4 buc = 56,60 lei"}],
+  pro:["Cel mai luminos și mai curat aspect","Lemnul are spațiu să iasă în evidență pe alb","Tencuiala protejează definitiv zidul din BCA"],
+  con:["Tencuiala cere un meseriaș: strat de bază cu plasă, amorsă, finisaj","Pe alb se văd stropii de lângă soclu","Pe zid nu mai ai textură, doar finisajul fin al tencuielii"],
+  alt:"Dacă alb pur ți se pare prea rece, tencuiala se poate nuanța în magazin într-un bej foarte deschis.",
+  dur:4,ment:"spălare ocazională",diy:2,disp:MIXT},
+ {id:"v12-travertin-riflaj",grp:"nou",img:"v12_travertin_riflaj",nr:"12",rec:true,t:"Travertin bej cu riflaj în centru",short:"Travertin + riflaj",tag:"Plăci flexibile mari, 120 × 60 cm, cu aspect de travertin bej deschis, iar în mijlocul peretelui un panou de riflaj de 3 m cu două aplice.",total:"≈ 6.510 lei",totalNum:6510,
+  items:[
+   {n:"Panou decorativ flexibil Travertine, 60 × 120 cm, 2–3 mm, rezistent la apă și UV, interior/exterior",s:"Unic Spot",u:L.unicTrav,price:"109,50 lei / buc",stoc:STOC_OK,calc:"≈ 21 m² → 32 panouri cu pierderi = 3.504 lei"},
+   {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"14 plăci (3,07 m lățime) = 2.656,36 lei"},
+   {n:"Adeziv de contact, cum recomandă producătorul plăcilor",s:"orice magazin",price:"separat",stoc:{c:"ref",t:"Nu e inclus în total"},calc:"conform instrucțiunilor de montaj Unic Spot"},
+   {n:"Aplică exterior LED Globo Veronika 34168W, aspect lemn, IP54",s:"Dedeman",u:L.aplica,price:"146,90 lei / buc",old:"223 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"2 buc = 293,80 lei"},
+   {n:"Grinzi pentru riflaj: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"4 buc = 56,60 lei"}],
+  pro:["Cel mai elegant aspect, ca de piatră naturală","Plăcile mari au puține îmbinări și se montează repede","Plăcile și riflajul sunt pe stoc online"],
+  con:["Plăcile au 2–3 mm: zidul trebuie să fie plan, altfel se văd denivelările","Cea mai scumpă dintre variantele noi"],
+  alt:'Alternativă crem, cu pori de travertin: <a href="'+L.decorneo+'" target="_blank" rel="noopener">Decorneo, piatră flexibilă Travertin Line Cream</a>, 110 lei/buc (de la 145), 58 bucăți pe stoc.',
+  dur:3,ment:"minimă",diy:4,disp:STOC_OK},
+ {id:"v13-caramida-alba",grp:"nou",img:"v13_caramida_alba",nr:"13",t:"Cărămidă flexibilă albă",short:"Cărămidă albă",tag:"Cărămidă flexibilă Flexolith albă, cu rosturi gri, pe tot peretele, cu trei aplice calde. Clasic, luminos, fără întreținere.",total:"≈ 5.440 lei",totalNum:5440,
+  items:[
+   {n:"Cărămidă flexibilă Flexolith S-BAROK 118, albă, 4 mm, interior/exterior, cutie de 2,5 m²",s:"Q-Home",u:L.flexAlb,price:"299,00 lei / cutie",stoc:STOC_OK,calc:"32 m² → 13 cutii = 3.887 lei"},
+   {n:"Adeziv flexibil Primus Extraflex, exterior, 25 kg (adezivul formează și rostul, se poate nuanța)",s:"Dedeman",u:L.adeziv,price:"86,90 lei / sac",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"≈ 5 kg/m² → 7 saci = 608,30 lei"},
+   {n:"Strat acrilic final în 2 straturi: lac incolor pe bază de apă, 2,5 L",s:"Q-Home",u:L.qhLac,price:"250,00 lei / găleată",stoc:STOC_OK,calc:"2 găleți (estimare) = 500 lei"},
+   {n:"Aplică exterior LED Globo Veronika 34168W, aspect lemn, IP54",s:"Dedeman",u:L.aplica,price:"146,90 lei / buc",old:"223 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"3 buc = 440,70 lei"}],
+  pro:["Aspect real de cărămidă, nu de panou","Material mineral, subțire și flexibil, rezistent la îngheț","Nu trebuie rostuit: adezivul face rostul"],
+  con:["Se lipește bucată cu bucată, deci montajul durează","Zidul trebuie adus la plan înainte"],
+  alt:'Premium, din ceramică: <a href="'+L.terca+'" target="_blank" rel="noopener">klinker Terca Armis Cotton White (Dedeman)</a>, 6 lei/bucată (≈ 360 lei/m²), de trei ori mai scump.',
+  dur:4,ment:"strat acrilic la câțiva ani",diy:4,disp:STOC_OK},
+ {id:"v14-ideobricks",grp:"nou",img:"v14_ideobricks",nr:"14",t:"Panouri IdeoBricks albe",short:"IdeoBricks",tag:"Panoul trimis de tine: polistiren EPS de 3 cm cu adeziv armat și tencuială decorativă albă, cu cărămizi în relief și rosturi gri. Panouri de 90 × 50 cm.",total:"≈ 3.190 lei",totalNum:3190,
+  items:[
+   {n:"Panou decorativ 3D IdeoBricks 3 cm, 90 × 50 cm (0,40 m² util), EPS80 + plasă + tencuială decorativă",s:"Ideolis",u:L.ideo,price:"38,00 lei / buc",stoc:EPUIZAT,calc:"32 m² ÷ 0,40 = 80 buc = 3.040 lei"},
+   {n:"Adeziv polistiren Adeplast Polistirol Eco, interior/exterior, 23 kg",s:"Dedeman",u:L.adeplast,price:"21,90 lei / sac",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"≈ 5 kg/m² → 7 saci = 153,30 lei"}],
+  pro:["Relief real de cărămidă, cu tencuială minerală la suprafață","Ușor de lipit singur; adaugă și puțină izolație","Producătorul le face și în alte culori, la cerere"],
+  con:["Acum e stoc epuizat: trebuie comandat la producător","Miezul e polistiren: o lovitură puternică îl poate adânci"],
+  alt:"Sună sau scrie la Ideolis (datele sunt pe pagina produsului) pentru termen și preț la 80 de bucăți. Pe pagină apar două prețuri: 38 lei în coș și 34 lei în descriere.",
+  dur:3,ment:"minimă",diy:5,disp:EPUIZAT},
+ {id:"v15-ideobricks-riflaj",grp:"nou",img:"v15_ideobricks_riflaj",nr:"15",t:"IdeoBricks albe cu riflaj în centru",short:"IdeoBricks + riflaj",tag:"Aceleași panouri IdeoBricks albe, cu un panou de riflaj de 3 m în mijloc și două aplice: cărămidă albă și lemn, cum ai cerut.",total:"≈ 5.320 lei",totalNum:5320,
+  items:[
+   {n:"Panou decorativ 3D IdeoBricks 3 cm, 90 × 50 cm (0,40 m² util)",s:"Ideolis",u:L.ideo,price:"38,00 lei / buc",stoc:EPUIZAT,calc:"≈ 21 m² → 58 buc cu pierderi = 2.204 lei"},
+   {n:"Riflaj WPC coextrudat canelat, maro tec, 219 × 26 × 3600 mm",s:"Virtuoso",u:L.virtTec,price:"189,74 lei / placă de 3,6 m",old:"210,82 lei",stoc:STOC_LIV,calc:"14 plăci = 2.656,36 lei"},
+   {n:"Adeziv polistiren Adeplast Polistirol Eco, 23 kg",s:"Dedeman",u:L.adeplast,price:"21,90 lei / sac",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"5 saci = 109,50 lei"},
+   {n:"Aplică exterior LED Globo Veronika 34168W, aspect lemn, IP54",s:"Dedeman",u:L.aplica,price:"146,90 lei / buc",old:"223 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"2 buc = 293,80 lei"},
+   {n:"Grinzi pentru riflaj: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"4 buc = 56,60 lei"}],
+  pro:["Combină cele două lucruri cerute: cărămidă albă și riflaj","Riflajul din mijloc ascunde îmbinarea dintre zidul din BCA și gardul de beton"],
+  con:["Panourile IdeoBricks sunt acum la comandă","Riflajul e cam jumătate din cost"],
+  alt:"Aceeași compoziție merge și cu cărămida flexibilă Flexolith albă (varianta 13), care e pe stoc.",
+  dur:3,ment:"minimă",diy:4,disp:EPUIZAT}
 ];
+
 const $=s=>document.querySelector(s);
-let cur=V.find(v=>v.id==="v8-piatra-riflaj"), ang="p2";
+let cur=V.find(v=>v.id==="v11-alb-riflaj"), ang="p2";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function dots(n){return '<span class="dots" aria-label="'+n+' din 5">'+"●".repeat(n)+'<i>'+"●".repeat(5-n)+'</i></span>'}
 function chip(s){return '<span class="chip '+s.c+'">'+esc(s.t)+'</span>'}
+function swHTML(v){return '<button type="button" class="sw" data-id="'+v.id+'" aria-pressed="'+(v===cur)+'"><img src="img/p2_'+v.img+'.jpg" alt="" loading="lazy"><span class="n">'+v.nr+(v.nou?'<b>nou</b>':'')+'</span><span class="t">'+esc(v.short)+'</span><span class="p">'+esc(v.total)+'</span></button>'}
 function renderSwatches(){
-  $("#swatches").innerHTML=V.map(v=>'<button type="button" class="sw" data-id="'+v.id+'" aria-pressed="'+(v===cur)+'"><img src="img/p2_'+v.img+'.jpg" alt="" loading="lazy"><span class="n">'+v.nr+(v.nou?'<b>nou</b>':'')+'</span><span class="t">'+esc(v.short)+'</span><span class="p">'+esc(v.total)+'</span></button>').join("");
+  $("#swatches").innerHTML=V.filter(v=>v.grp==="nou").map(swHTML).join("");
+  $("#swatchesOld").innerHTML=V.filter(v=>v.grp!=="nou").map(swHTML).join("");
 }
 function renderStage(){
   $("#imgBefore").src="img/"+ang+"_inainte.jpg";
@@ -371,7 +437,7 @@ function renderSheet(){
    '<div class="side"><div><h4>Avantaje</h4><ul>'+v.pro.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><div><h4>Dezavantaje</h4><ul>'+v.con.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><p class="alt">'+v.alt+'</p></div>';
 }
 function renderTable(){
-  $("#cmpBody").innerHTML=V.map(v=>'<tr data-id="'+v.id+'"'+(v.rec?' class="rec"':'')+'><td><b>'+v.nr+' · '+esc(v.t)+'</b></td><td class="c">'+esc(v.total)+'</td><td>'+dots(v.dur)+'</td><td>'+esc(v.ment)+'</td><td>'+dots(v.diy)+'</td><td>'+chip(v.disp)+'</td></tr>').join("");
+  $("#cmpBody").innerHTML=V.filter(v=>v.grp==="nou").map(v=>'<tr data-id="'+v.id+'"'+(v.rec?' class="rec"':'')+'><td><b>'+v.nr+' · '+esc(v.t)+'</b></td><td class="c">'+esc(v.total)+'</td><td>'+dots(v.dur)+'</td><td>'+esc(v.ment)+'</td><td>'+dots(v.diy)+'</td><td>'+chip(v.disp)+'</td></tr>').join("");
 }
 function select(id,scroll){
   const v=V.find(x=>x.id===id); if(!v) return;
@@ -380,7 +446,7 @@ function select(id,scroll){
   if(location.hash!=="#"+id) history.replaceState(null,"","#"+id);
   if(scroll) $("#stage").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 }
-$("#swatches").addEventListener("click",e=>{const b=e.target.closest(".sw"); if(b) select(b.dataset.id,false)});
+["#swatches","#swatchesOld"].forEach(id=>$(id).addEventListener("click",e=>{const b=e.target.closest(".sw"); if(b) select(b.dataset.id,false)}));
 $("#cmpBody").addEventListener("click",e=>{const r=e.target.closest("tr"); if(r) select(r.dataset.id,true)});
 $("#angP2").addEventListener("click",()=>{ang="p2";renderStage()});
 $("#angP4").addEventListener("click",()=>{ang="p4";renderStage()});
