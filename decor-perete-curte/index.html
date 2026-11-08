@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peretele din curte</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: o planșă de mostre de materiale — vizualizator mare înainte/după, mostrele ca fâșii de selecție, apoi fișa tehnică a variantei și tabelul comparativ. */
+:root{
+  --bg:#eceeed;          /* beton deschis */
+  --surface:#fbfbfa;
+  --surface-2:#e2e5e3;
+  --ink:#1c2124;         /* grafit */
+  --ink-2:#4d5559;
+  --line:#c9cecb;
+  --accent:#8a4b20;      /* pin termotratat */
+  --accent-ink:#ffffff;
+  --ok:#2f6b3a;  --ok-bg:#dcebdc;
+  --warn:#8a5a0b; --warn-bg:#f3e6c8;
+  --font-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:6px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141719; --surface:#1d2124; --surface-2:#262b2e; --ink:#e5e8e7; --ink-2:#a6aeb1; --line:#353b3f;
+    --accent:#d58a52; --accent-ink:#1a1006; --ok:#8fd19a; --ok-bg:#1f3524; --warn:#e9be6c; --warn-bg:#3a2e14;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141719; --surface:#1d2124; --surface-2:#262b2e; --ink:#e5e8e7; --ink-2:#a6aeb1; --line:#353b3f;
+  --accent:#d58a52; --accent-ink:#1a1006; --ok:#8fd19a; --ok-bg:#1f3524; --warn:#e9be6c; --warn-bg:#3a2e14;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:.01em}
+h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:700}
+h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+h3{font-size:1.35rem}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* header */
+header{display:grid;gap:18px}
+.lede{max-width:66ch;color:var(--ink-2);font-size:1.02rem}
+.dims{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:10px}
+.dims .draw{overflow-x:auto}
+.dims svg{width:100%;min-width:560px;height:auto;display:block}
+.dims .facts{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.9rem;color:var(--ink-2)}
+.dims .facts b{color:var(--ink);font-weight:600}
+
+/* viewer */
+.studio{display:grid;gap:14px}
+.stage{position:relative;width:100%;max-width:100%;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--surface-2);user-select:none;touch-action:pan-y}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.stage .before{clip-path:inset(0 calc(100% - var(--split,50%)) 0 0)}
+.stage .bar{position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+.stage .knob{position:absolute;top:50%;left:var(--split,50%);width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:#fff;color:#1c2124;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.35);pointer-events:none;font:600 15px/1 var(--font-mono)}
+.stage input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.tag{position:absolute;top:12px;padding:3px 9px;border-radius:3px;background:rgba(20,23,25,.72);color:#fff;font:500 .72rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;pointer-events:none}
+.tag.l{left:12px}.tag.r{right:12px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.seg button{font:500 .88rem var(--font-body);border:0;background:transparent;color:var(--ink-2);padding:8px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hint{font-size:.85rem;color:var(--ink-2)}
+
+/* swatch strip */
+.swatches{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(132px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.sw{display:grid;gap:6px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:6px 6px 9px;cursor:pointer;color:var(--ink);font:inherit}
+.sw img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:28% 45%;border-radius:3px;display:block}
+.sw .n{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-2)}
+.sw .t{font-family:var(--font-display);font-size:1.08rem;font-weight:600;line-height:1.05}
+.sw .p{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-2)}
+.sw[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+
+/* sheet */
+.sheet{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+@media (max-width:820px){.sheet{grid-template-columns:minmax(0,1fr);padding:18px}}
+.sheet-head{display:grid;gap:8px;grid-column:1/-1}
+.sheet-head .row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;justify-content:space-between}
+.total{font-family:var(--font-mono);font-size:1.5rem;font-weight:500;color:var(--accent);white-space:nowrap}
+.total small{font-size:.75rem;color:var(--ink-2);font-weight:400;display:block;text-align:right}
+.items{display:grid;gap:12px;align-content:start}
+.item{display:grid;gap:4px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:0;padding-bottom:0}
+.item .name{font-weight:500}
+.item .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.85rem;color:var(--ink-2);align-items:center}
+.item .calc{font-family:var(--font-mono);font-size:.82rem;color:var(--ink)}
+.chip{display:inline-flex;align-items:center;gap:5px;font:500 .72rem/1 var(--font-mono);padding:4px 7px;border-radius:3px;letter-spacing:.02em}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.chip.ok{color:var(--ok);background:var(--ok-bg)}
+.chip.warn{color:var(--warn);background:var(--warn-bg)}
+.chip.ref{color:var(--ink-2);background:var(--surface-2)}
+.side{display:grid;gap:18px;align-content:start}
+.side h4{margin:0 0 6px;font:600 .78rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.side ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.alt{font-size:.88rem;color:var(--ink-2)}
+
+/* table */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.9rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 .74rem var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--surface-2)}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--surface-2)}
+td.c{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.dots{letter-spacing:2px;color:var(--accent);font-size:.8rem;white-space:nowrap}
+.dots i{font-style:normal;color:var(--line)}
+tr.rec td:first-child b::after{content:"recomandat";margin-left:8px;font:500 .66rem var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent-ink);background:var(--accent);padding:2px 6px;border-radius:3px;vertical-align:2px}
+
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.note{display:grid;gap:6px;align-content:start}
+.note h3{font-size:1.15rem}
+.note p{color:var(--ink-2);font-size:.92rem}
+footer{font-size:.82rem;color:var(--ink-2);display:grid;gap:6px;max-width:90ch;border-top:1px solid var(--line);padding-top:16px}
+section{display:grid;gap:16px}
+@media (prefers-reduced-motion:no-preference){.stage img{transition:opacity .25s}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="eyebrow">Placare perete exterior · simulări pe pozele tale · prețuri din 8 noiembrie 2026</span>
+  <h1>Peretele din curte: 7 variante de placare</h1>
+  <p class="lede">Am pus fiecare model direct pe pozele tale, în perspectiva reală a zidului, cu obiectele din curte lăsate în față. Sub poză ai produsul concret, prețul, cantitatea pentru 11 m și dacă e pe stoc. Trage de linia albă ca să compari înainte și după.</p>
+  <div class="dims" aria-label="Dimensiunile peretelui">
+    <div class="draw"><svg viewBox="0 0 1000 120" role="img" aria-label="Perete de 11 metri: aproximativ 6,5 metri zid din BCA și 4,5 metri gard din panouri de beton, înălțime 2,6 – 2,7 metri">
+      <rect x="40" y="28" width="590" height="52" stroke-width="1" style="fill:var(--surface-2);stroke:var(--ink-2)"/>
+      <rect x="630" y="32" width="330" height="48" stroke-width="1" style="fill:var(--bg);stroke:var(--ink-2)"/>
+      <g stroke-width="1" opacity=".45" style="stroke:var(--ink-2)">
+        <line x1="40" y1="45" x2="630" y2="45"/><line x1="40" y1="62" x2="630" y2="62"/>
+        <line x1="95" y1="28" x2="95" y2="45"/><line x1="150" y1="45" x2="150" y2="62"/><line x1="205" y1="28" x2="205" y2="45"/><line x1="260" y1="45" x2="260" y2="62"/><line x1="315" y1="28" x2="315" y2="45"/><line x1="370" y1="45" x2="370" y2="62"/><line x1="425" y1="28" x2="425" y2="45"/><line x1="480" y1="45" x2="480" y2="62"/><line x1="535" y1="28" x2="535" y2="45"/><line x1="590" y1="45" x2="590" y2="62"/>
+        <line x1="790" y1="32" x2="790" y2="80"/>
+      </g>
+      <text x="335" y="58" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" style="fill:var(--ink)">BCA ≈ 6,5 m</text>
+      <text x="795" y="60" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" style="fill:var(--ink)">panouri beton ≈ 4,5 m</text>
+      <g stroke-width="1.5" fill="none" style="stroke:var(--accent)">
+        <line x1="40" y1="100" x2="960" y2="100"/><line x1="40" y1="92" x2="40" y2="108"/><line x1="960" y1="92" x2="960" y2="108"/>
+        <line x1="34" y1="106" x2="46" y2="94"/><line x1="954" y1="106" x2="966" y2="94"/>
+        <line x1="20" y1="28" x2="20" y2="80"/><line x1="12" y1="28" x2="28" y2="28"/><line x1="12" y1="80" x2="28" y2="80"/>
+      </g>
+      <rect x="452" y="90" width="96" height="20" style="fill:var(--surface)"/>
+      <text x="500" y="105" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" style="fill:var(--accent)">11,00 m</text>
+      <text x="2" y="18" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="13" style="fill:var(--accent)">2,65 m</text>
+    </svg></div>
+    <div class="facts">
+      <span>Suprafață: <b class="num">11 × 2,65 ≈ 29 m²</b></span>
+      <span>Cu 10% pierderi la tăiere: <b class="num">≈ 32 m²</b></span>
+      <span>Prețurile de mai jos sunt <b>doar material</b>, fără manoperă</span>
+    </div>
+  </div>
+</header>
+
+<section class="studio" aria-label="Simulare">
+  <div class="stage" id="stage">
+    <img class="after" id="imgAfter" alt="">
+    <img class="before" id="imgBefore" alt="">
+    <span class="tag l">Înainte</span><span class="tag r">După</span>
+    <div class="bar"></div><div class="knob" aria-hidden="true">⇆</div>
+    <input type="range" id="split" min="0" max="100" value="35" aria-label="Glisează pentru a compara înainte și după">
+  </div>
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Unghiul pozei">
+      <button type="button" id="angP2" aria-pressed="true">Unghi 1 · zidul din BCA</button>
+      <button type="button" id="angP4" aria-pressed="false">Unghi 2 · gardul de beton</button>
+    </div>
+    <span class="hint">Linia de sus închisă la culoare e o copertină din tablă, inclusă în toate variantele.</span>
+  </div>
+  <div class="swatches" id="swatches" role="group" aria-label="Alege varianta"></div>
+</section>
+
+<section class="sheet" id="sheet" aria-live="polite"></section>
+
+<section aria-labelledby="cmpTitle">
+  <h2 id="cmpTitle">Comparație rapidă</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Variantă</th><th>Material estimat</th><th>Durabilitate</th><th>Întreținere</th><th>Montaj pe cont propriu</th><th>Disponibilitate</th></tr></thead>
+      <tbody id="cmpBody"></tbody>
+    </table>
+  </div>
+  <p class="hint">Apasă pe un rând ca să vezi simularea. Durabilitatea și dificultatea sunt estimările mele, orientative.</p>
+</section>
+
+<section aria-labelledby="prepTitle">
+  <h2 id="prepTitle">Înainte de montaj, oricare variantă alegi</h2>
+  <div class="notes">
+    <div class="note"><h3>Copertină pe coama zidului</h3><p>Sus, zidul e acum acoperit cu tablă ruginită și resturi de la vecin. O copertină din tablă vopsită (RAL 7016) făcută la comandă la un atelier de tinichigerie oprește apa să intre în spatele placării și îndreaptă linia de sus. Cere ofertă pe metru liniar pentru 11 m.</p></div>
+    <div class="note"><h3>BCA-ul nu rămâne descoperit</h3><p>BCA-ul absoarbe apa. Variantele 1–4 se montează pe șipci sau profile, cu 2–3 cm de aer în spate, deci zidul respiră. La 5, 6 și 7 se lucrează direct pe zid: întâi un strat de masă de șpaclu cu plasă, apoi amorsă, apoi finisajul.</p></div>
+    <div class="note"><h3>Soclul de beton rămâne liber</h3><p>Placarea pornește de deasupra soclului (cam 15 cm), ca stropii de la ploaie și pământul să nu ajungă pe ea. Așa apare și în simulări.</p></div>
+    <div class="note"><h3>Câinele</h3><p>Frunzele de plastic de jos pot fi roase. La variantele 4 și 5 pune primul rând de panouri verzi de la 40–50 cm în sus sau o bandă de lemn ori klinker la bază.</p></div>
+    <div class="note"><h3>Cum verifici stocul exact</h3><p>Pe pagina Dedeman apasă „Alege magazinul” și selectează orașul tău: îți arată stocul din magazinul local și termenul de livrare. Promoțiile Black Friday expiră pe 15 sau 30 noiembrie 2026, după care prețurile cresc.</p></div>
+  </div>
+</section>
+
+<footer>
+  <span>Prețuri și disponibilitate citite direct de pe dedeman.ro pe 8 noiembrie 2026. „În stoc online” = produsul apare cu livrare disponibilă la nivel național. „Stoc pe magazin” = Dedeman cere alegerea orașului ca să afișeze stocul.</span>
+  <span>Alternativele Hornbach provin din rezultate de căutare (prețuri din iunie–iulie 2026), pentru că site-ul Hornbach nu a putut fi deschis direct. Verifică-le înainte de comandă.</span>
+  <span>Simulările sunt randări aproximative: culorile reale depind de lot și de lumină. Lungimea pe segmente (BCA / beton) e calculată din perspectiva pozelor.</span>
+</footer>
+</div>
+
+<script>
+const D="https://www.dedeman.ro/ro/";
+const L={
+  inco:D+"riflaj-decorativ-tip-panou-pin-termotratat-inco-industry-maro-2700-x-654-x-88-mm/p/4024784",
+  lamele:D+"riflaj-tip-lamele-pin-termotratat-inco-industry-maro-2700-x-37-x-30-mm/p/4024783",
+  nuc:D+"lambriu-metalic-drept-jupiter-otel-zincat-nuc-imitatie-lemn-3000-x-260-x-0-4-mm-10-bucati/p/6062925",
+  ral7016:D+"lambriu-metalic-drept-jupiter-otel-zincat-gri-atlantic-ral-7016-mat-3000-x-260-x-0-45-mm-10-bucati/p/6072443",
+  profJ:D+"profil-lateral-j-pentru-lambriu-metalic-top-profil-sistem-otel-zincat-gri-atlantic-ral-7016-mat-2-m/p/6072449",
+  vox:D+"lambriu-exterior-vox-siding-svp-01-vifront-pvc-stejar-natur-3850-x-254-x-1-12-mm/p/4015735",
+  cd:D+"profil-gips-carton-fsy-tabla-din-otel-zincat-cd-60-x-3000-mm/p/5016159",
+  spring:D+"gard-viu-artificial/-panou-cu-frunze-imitatie-gard-viu-versay-spring-garden-verde-100-x-100-cm/p/7079029",
+  ivy:D+"gard-viu-artificial/-panou-cu-frunze-imitatie-gard-viu-versay-ivy-verde-100-x-100-cm/p/7079027",
+  moss:D+"gard-viu-artificial/-panou-cu-frunze-imitatie-gard-viu-versay-moss-verde-100-x-100-cm/p/7079026",
+  klinker:D+"placa-soclu-exterior-klinker-cieniowana-rustic-mata-maro-9584-6-5-x-24-5-cm/p/4013591",
+  adeziv:D+"adeziv-flexibil-pentru-gresie-si-faianta-primus-extraflex-exterior-gri-25-kg/p/5006501",
+  traviata:D+"piatra-decorativa-interior/-exterior-traviata-gri-40-x-20-x-2-cm/p/6077501",
+  natimur:D+"piatra-naturala-decorativa-modulo-natimur-mineral-grey-interior/-exterior-gri/p/4020622",
+  ct174:D+"tencuiala-decorativa-siliconica-silicatica-ceresit-ct-174-1-5-mm-structurata-aspect-praf-de-piatra-alb-interior/-exterior-25-kg/p/5008795",
+  aplica:D+"aplica-exterior-cu-led-veronika-34168w-2-x-3-w-2-x-290-lm-lumina-calda-aspect-lemn-modern/p/1080463",
+  hbTego:"https://www.hornbach.ro/p/panou-riflaj-decorativ-estetica-exterior-stejar-masiv-gri-34x600x2500-mm/10595603/",
+  hbKlimex:"https://www.hornbach.ro/p/caramida-aparenta-interior-exterior-klimex-ardennes-sahara/7620496/",
+  hbPierre:"https://www.hornbach.ro/p/piatra-decorativa-interior-exterior-klimex-pierre-seche-o-concrete-creme/6667529/",
+  hbCorten:"https://www.hornbach.ro/p/panou-gradina-palatino-space-vapor-otel-corten-99x180-cm/12399129/"
+};
+const STOC_OK={c:"ok",t:"În stoc online"}, STOC_MAG={c:"warn",t:"Stoc pe magazin · alege orașul"}, REF={c:"ref",t:"Preț din căutare, de verificat"};
+const V=[
+ {id:"v1-lemn",img:"v1_lemn",nr:"01",t:"Riflaj din lemn termotratat",short:"Lemn termotratat",tag:"Lamele verticale din pin termotratat, în panouri gata făcute de 2,70 m: au exact înălțimea zidului.",total:"≈ 10.850 lei",totalNum:10850,
+  items:[
+   {n:"Riflaj decorativ tip panou, pin termotratat, Inco Industry, maro, 2700 × 654 × 88 mm",s:"Dedeman",u:L.inco,price:"629,00 lei / panou",old:"679 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"11 m ÷ 0,654 m = 17 panouri × 629 lei = 10.693 lei"},
+   {n:"Substructură: profil CD 60 × 3000 mm, oțel zincat (sau șipci din lemn impregnat)",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"3 rânduri orizontale × 11 m → 11 buc = 156 lei"}],
+  pro:["Lemn adevărat, cel mai cald aspect","Panoul are deja înălțimea potrivită și nu cere adeziv","Se montează repede: un panou acoperă 65 cm"],
+  con:["Cea mai scumpă variantă","Fără ulei, lemnul devine gri-argintiu în 1–2 ani (unii preferă asta)","Ca să-și păstreze culoarea, are nevoie de ulei de exterior o dată pe an"],
+  alt:'Alternativă: <a href="'+L.hbTego+'" target="_blank" rel="noopener">Hornbach – panou exterior Estetica, riflaj din stejar masiv gri, 34 × 600 × 2500 mm</a>, 1.210 lei/buc (≈ 806 lei/m²), mai scump.',
+  dur:3,ment:"ulei anual (opțional)",diy:3,disp:STOC_MAG},
+ {id:"v2-metal-nuc",img:"v2_metal_nuc",nr:"02",t:"Lambriu metalic imitație nuc",short:"Metal aspect nuc",tag:"Lamele orizontale din tablă zincată vopsită cu model de lemn. Cel mai ieftin mod de a avea aspect de lemn fără întreținere.",total:"≈ 2.730 lei",totalNum:2730,
+  items:[
+   {n:"Lambriu metalic drept Jupiter, oțel zincat, nuc, imitație lemn, 3000 × 260 × 0,4 mm, set 10 buc (7,8 m²)",s:"Dedeman",u:L.nuc,price:"480,25 lei / set (61,57 lei/m²)",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"11 rânduri × 11 m = 121 m de lamelă → 41 buc → 5 seturi = 2.401 lei"},
+   {n:"Substructură verticală la 50 cm: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"23 buc = 325 lei"},
+   {n:"Profile de capăt J în culoare asortată, 2 m (pentru marginile laterale și sus)",s:"Dedeman",u:L.profJ,price:"de la ≈ 15 lei / 2 m",stoc:STOC_MAG,calc:"câteva bucăți, în funcție de finisaje"}],
+  pro:["Cel mai mic cost pentru aspect de lemn","Nu se vopsește și nu putrezește; garanție 24 luni","Ușor de montat pe cont propriu, cu șuruburi autoforante"],
+  con:["De aproape se vede că modelul e imprimat","Tabla de 0,4 mm se poate îndoi dacă o lovești (roabă, minge)","În plin soare se încălzește, dar zidul tău stă mult în umbră"],
+  alt:'Mai ieftin, din PVC: <a href="'+L.vox+'" target="_blank" rel="noopener">Lambriu exterior Vox Siding SVP-01 Vifront, PVC, stejar natur</a>, 45,90 lei/m² (de la 52,90), stoc pe magazin.',
+  dur:4,ment:"aproape zero",diy:4,disp:STOC_MAG},
+ {id:"v3-antracit-lemn",img:"v3_antracit_lemn",nr:"03",t:"Antracit cu benzi de lemn",short:"Antracit + lemn",tag:"Lambriu metalic gri antracit pe tot peretele, întrerupt de trei panouri de riflaj termotratat și trei aplice LED. Aspect modern, cost mediu.",total:"≈ 4.500 lei",totalNum:4500,rec:true,
+  items:[
+   {n:"Lambriu metalic drept Jupiter, oțel zincat, gri atlantic RAL 7016 mat, 3000 × 260 × 0,45 mm, set 10 buc (7,8 m²)",s:"Dedeman",u:L.ral7016,price:"461,55 lei / set (59,17 lei/m²)",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"9 m × 11 rânduri ≈ 100 m → 34 buc → 4 seturi = 1.846 lei"},
+   {n:"Riflaj decorativ tip panou, pin termotratat, Inco Industry, 2700 × 654 × 88 mm",s:"Dedeman",u:L.inco,price:"629,00 lei / panou",old:"679 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"3 panouri = 1.887 lei"},
+   {n:"Aplică exterior LED Globo Veronika 34168W, aspect lemn, IP54, 3000 K",s:"Dedeman",u:L.aplica,price:"146,90 lei / buc",old:"223 lei",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"3 buc = 441 lei"},
+   {n:"Substructură: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"23 buc = 325 lei"}],
+  pro:["Arată cel mai „de arhitect” la un cost rezonabil","Metalul nu cere întreținere; lemnul e doar pe 2 m din 11","Lumina caldă de seară pe lemn face curtea folosibilă și după apus"],
+  con:["Pe antracit se văd praful și stropii de lângă soclu","Aplicele cer un cablu electric adus la perete"],
+  alt:'Alternativă pentru benzi: panouri decorative din oțel corten, de ex. <a href="'+L.hbCorten+'" target="_blank" rel="noopener">Hornbach Palatino Space Vapor, 99 × 180 cm</a>, 2.100 lei/buc. Mult mai scump decât lemnul.',
+  dur:4,ment:"minimă",diy:3,disp:STOC_MAG},
+ {id:"v4-verde",img:"v4_verde",nr:"04",t:"Perete verde complet",short:"Perete verde",tag:"Panouri de 1 × 1 m cu frunze artificiale, prinse pe șipci. Ascunde complet zidul și se montează cel mai ușor.",total:"3.480 – 6.150 lei",totalNum:3480,
+  items:[
+   {n:"Gard viu artificial Versay Spring Garden, 100 × 100 cm, polietilenă (în simulare)",s:"Dedeman",u:L.spring,price:"179,90 lei / buc",old:"399 lei",promo:"până la 15.11.2026",stoc:STOC_OK,calc:"11 coloane × 3 rânduri (ultimul tăiat) = 33 buc = 5.937 lei"},
+   {n:"Varianta economică: Versay Ivy (iederă), 100 × 100 cm",s:"Dedeman",u:L.ivy,price:"99,00 lei / buc",old:"179 lei",promo:"până la 31.12.2026",stoc:STOC_OK,calc:"33 buc = 3.267 lei"},
+   {n:"Intermediar: Versay Moss, 100 × 100 cm, polietilenă",s:"Dedeman",u:L.moss,price:"109,90 lei / buc",old:"279 lei",promo:"până la 15.11.2026",stoc:STOC_OK,calc:"33 buc = 3.627 lei"},
+   {n:"Șipci orizontale: profil CD 60 × 3000 mm zincat",s:"Dedeman",u:L.cd,price:"14,15 lei / buc",stoc:STOC_MAG,calc:"4 rânduri × 11 m → 15 buc = 212 lei"}],
+  pro:["Singura variantă cu toate produsele în stoc online acum","O poți monta singur într-un weekend","Peretele stă mult în umbră, deci culoarea ține mai mult"],
+  con:["E plastic: în 3–5 ani se poate decolora (garanție 24 luni)","Prinde praf; se spală cu furtunul","Câinele poate roade rândul de jos"],
+  alt:"Poți combina modelele (Spring Garden în mijloc, Ivy la margini) ca să reduci costul.",
+  dur:2,ment:"spălare ocazională",diy:5,disp:STOC_OK},
+ {id:"v5-rame-verzi",img:"v5_rame_verzi",nr:"05",t:"Tencuială antracit cu grădini în rame",short:"Rame verzi",tag:"Zidul tencuit cu tencuială decorativă gri închis, cu patru „tablouri” verzi de 2 × 1,8 m încadrate în lemn termotratat.",total:"≈ 3.120 lei",totalNum:3120,
+  items:[
+   {n:"Tencuială decorativă siliconică-silicatică Ceresit CT 174, 1,5 mm, praf de piatră, 25 kg (nuanțată la magazin)",s:"Dedeman",u:L.ct174,price:"189,00 lei / găleată (albă)",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"2,5 kg/m² × 29 m² ≈ 73 kg → 3 găleți = 567 lei, + nuanțare și grund"},
+   {n:"Gard viu artificial Versay Ivy, 100 × 100 cm",s:"Dedeman",u:L.ivy,price:"99,00 lei / buc",old:"179 lei",promo:"până la 31.12.2026",stoc:STOC_OK,calc:"4 rame × 4 panouri = 16 buc = 1.584 lei"},
+   {n:"Rame: riflaj tip lamele, pin termotratat, Inco Industry, 2700 × 37 × 30 mm",s:"Dedeman",u:L.lamele,price:"60,50 lei / buc",stoc:STOC_MAG,calc:"4 rame × 4 lamele = 16 buc = 968 lei"}],
+  pro:["Tencuiala protejează BCA-ul definitiv","Verdele devine accent, nu acoperă tot, deci costă mai puțin","Panourile se pot schimba oricând cu alt model"],
+  con:["Tencuiala cere un meseriaș sau mult exercițiu","Zidul trebuie întâi șpăcluit cu plasă","Pe gri închis se văd stropii de la bază"],
+  alt:"Dacă vrei mai luminos, aceeași tencuială se poate nuanța gri deschis sau alb cald; ramele de lemn ies la fel de bine.",
+  dur:3,ment:"minimă",diy:2,disp:STOC_MAG},
+ {id:"v6-caramida",img:"v6_caramida",nr:"06",t:"Klinker aspect cărămidă",short:"Klinker",tag:"Plăcuțe de klinker de 6,5 × 24,5 cm lipite cu adeziv flexibil și rostuite. Varianta clasică: ține zeci de ani.",total:"≈ 2.270 lei",totalNum:2270,
+  items:[
+   {n:"Placă soclu exterior klinker Cerrad Cieniowana rustic, maro, 6,5 × 24,5 cm, rezistentă la îngheț, 0,5 m²/pachet",s:"Dedeman",u:L.klinker,price:"51,90 lei / m²",old:"54,89 lei",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"32 m² → 64 pachete = 1.661 lei"},
+   {n:"Adeziv flexibil Primus Extraflex, exterior, gri, 25 kg",s:"Dedeman",u:L.adeziv,price:"86,90 lei / sac",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"≈ 5 kg/m² → 7 saci = 608 lei"},
+   {n:"Mortar de rostuire pentru klinker (gri sau antracit)",s:"orice magazin",price:"separat",stoc:{c:"ref",t:"Nu e inclus în total"},calc:"rosturi de 1 cm"}],
+  pro:["Cea mai durabilă variantă, fără întreținere","Material ieftin pe m²","Nu se decolorează și nu se lovește"],
+  con:["Multă manoperă: aproximativ 1.700 de plăcuțe","Peretele trebuie adus la plan, cu plasă și amorsă","Odată lipit, nu mai schimbi aspectul ușor"],
+  alt:'Alternativă: <a href="'+L.hbKlimex+'" target="_blank" rel="noopener">Hornbach – cărămidă aparentă Klimex Ardennes Sahara</a> (beton, interior/exterior, rezistentă la îngheț), 203 lei/m², mai deschisă la culoare.',
+  dur:5,ment:"zero",diy:2,disp:STOC_MAG},
+ {id:"v7-piatra",img:"v7_piatra",nr:"07",t:"Piatră decorativă gri",short:"Piatră gri",tag:"Panouri de piatră din beton de 40 × 20 cm, cu fâșii suprapuse ca un zid de piatră stratificată.",total:"≈ 4.690 lei",totalNum:4690,
+  items:[
+   {n:"Piatră decorativă Star Stone Traviata, gri, 40 × 20 × 2 cm, beton, interior/exterior",s:"Dedeman",u:L.traviata,price:"9,99 lei / buc (124,88 lei/m²)",promo:"până la 15.11.2026",stoc:STOC_MAG,calc:"32 m² × 12,5 buc = 400 buc = 3.996 lei"},
+   {n:"Adeziv flexibil Primus Extraflex, exterior, 25 kg",s:"Dedeman",u:L.adeziv,price:"86,90 lei / sac",promo:"până la 30.11.2026",stoc:STOC_MAG,calc:"≈ 6 kg/m² → 8 saci = 695 lei"}],
+  pro:["Textură bogată și aspect de piatră naturală","Panourile se îmbină fără rosturi, deci merge mai repede decât klinkerul","Gri-ul se potrivește cu acoperișurile și tabla din jur"],
+  con:["Fiind beton, e bine să-l tratezi cu hidrofobizant la 2–3 ani","Relieful adună praf","Panourile se lipesc doar pe un suport plan"],
+  alt:'Variante: <a href="'+L.natimur+'" target="_blank" rel="noopener">piatră naturală Modulo Natimur Mineral Grey (Dedeman)</a>, 181,60 lei/m², sau <a href="'+L.hbPierre+'" target="_blank" rel="noopener">Hornbach Klimex Pierre Sèche, crem</a>, 146,77 lei/m².',
+  dur:4,ment:"hidrofobizare la 2–3 ani",diy:3,disp:STOC_MAG}
+];
+const $=s=>document.querySelector(s);
+let cur=V[2], ang="p2";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function dots(n){return '<span class="dots" aria-label="'+n+' din 5">'+"●".repeat(n)+'<i>'+"●".repeat(5-n)+'</i></span>'}
+function chip(s){return '<span class="chip '+s.c+'">'+esc(s.t)+'</span>'}
+function renderSwatches(){
+  $("#swatches").innerHTML=V.map(v=>'<button type="button" class="sw" data-id="'+v.id+'" aria-pressed="'+(v===cur)+'"><img src="img/p2_'+v.img+'.jpg" alt="" loading="lazy"><span class="n">'+v.nr+'</span><span class="t">'+esc(v.short)+'</span><span class="p">'+esc(v.total)+'</span></button>').join("");
+}
+function renderStage(){
+  $("#imgBefore").src="img/"+ang+"_inainte.jpg";
+  $("#imgAfter").src="img/"+ang+"_"+cur.img+".jpg";
+  $("#imgAfter").alt="Simulare: "+cur.t+", "+(ang==="p2"?"unghiul spre zidul din BCA":"unghiul spre gardul de beton");
+  $("#imgBefore").alt="Peretele în starea actuală";
+  $("#angP2").setAttribute("aria-pressed",ang==="p2"); $("#angP4").setAttribute("aria-pressed",ang==="p4");
+}
+function renderSheet(){
+  const v=cur;
+  $("#sheet").innerHTML=
+   '<div class="sheet-head"><span class="eyebrow">Varianta '+v.nr+(v.rec?' · recomandarea mea':'')+'</span><div class="row"><h2>'+esc(v.t)+'</h2><div class="total">'+esc(v.total)+'<small>material, fără manoperă</small></div></div><p class="lede">'+esc(v.tag)+'</p></div>'+
+   '<div class="items">'+v.items.map(it=>'<div class="item"><span class="name">'+(it.u?'<a href="'+it.u+'" target="_blank" rel="noopener">'+esc(it.n)+'</a>':esc(it.n))+'</span><div class="meta"><span>'+esc(it.s)+'</span><span class="num">'+esc(it.price)+(it.old?' <s>'+esc(it.old)+'</s>':'')+'</span>'+(it.promo?'<span>promo '+esc(it.promo)+'</span>':'')+chip(it.stoc)+'</div><span class="calc">'+esc(it.calc)+'</span></div>').join("")+'</div>'+
+   '<div class="side"><div><h4>Avantaje</h4><ul>'+v.pro.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><div><h4>Dezavantaje</h4><ul>'+v.con.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div><p class="alt">'+v.alt+'</p></div>';
+}
+function renderTable(){
+  $("#cmpBody").innerHTML=V.map(v=>'<tr data-id="'+v.id+'"'+(v.rec?' class="rec"':'')+'><td><b>'+v.nr+' · '+esc(v.t)+'</b></td><td class="c">'+esc(v.total)+'</td><td>'+dots(v.dur)+'</td><td>'+esc(v.ment)+'</td><td>'+dots(v.diy)+'</td><td>'+chip(v.disp)+'</td></tr>').join("");
+}
+function select(id,scroll){
+  const v=V.find(x=>x.id===id); if(!v) return;
+  cur=v; renderStage(); renderSheet();
+  document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===id));
+  if(location.hash!=="#"+id) history.replaceState(null,"","#"+id);
+  if(scroll) $("#stage").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+}
+$("#swatches").addEventListener("click",e=>{const b=e.target.closest(".sw"); if(b) select(b.dataset.id,false)});
+$("#cmpBody").addEventListener("click",e=>{const r=e.target.closest("tr"); if(r) select(r.dataset.id,true)});
+$("#angP2").addEventListener("click",()=>{ang="p2";renderStage()});
+$("#angP4").addEventListener("click",()=>{ang="p4";renderStage()});
+const split=$("#split"), stage=$("#stage");
+function setSplit(){stage.style.setProperty("--split",split.value+"%")}
+split.addEventListener("input",setSplit);
+window.addEventListener("hashchange",()=>select(location.hash.slice(1),false));
+renderSwatches(); renderTable();
+const h=location.hash.slice(1); if(V.some(v=>v.id===h)) cur=V.find(v=>v.id===h);
+renderStage(); renderSheet(); setSplit();
+document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===cur.id));
+// preload variant images for the current angle
+V.forEach(v=>{const i=new Image(); i.src="img/p4_"+v.img+".jpg"});
+</script>
+
+</body>
+</html>
